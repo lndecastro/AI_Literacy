@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 3 — How Machines Learn &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_3_How_Machines_Learn';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 4 — Generative AI and Large Language Models" href="Module_4_GenAI_LLMs.html" />
+    <link rel="prev" title="Module 2 — What Is AI and Its Many Branches" href="Module_2_AI_and_Its_Branches.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_7_Foundational_Models.html">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/docs/Module_3_How_Machines_Learn.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_3_How_Machines_Learn.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 3 — How Machines Learn</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-learning-paradigms">Part I — Learning Paradigms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">1.1 Supervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">1.2 Unsupervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-supervised-learning">1.3 Semi-Supervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl">1.4 Reinforcement Learning (RL)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-learning-strategies">Part II — Learning Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">2.1 Transfer Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federated-learning">2.2 Federated Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-learning">2.3 Evolutionary Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-learning">2.4 Hybrid Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-learning">2.5 Multimodal Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-frontier-of-learning">The New Frontier of Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-data-to-knowledge">From Data to Knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-3-how-machines-learn">
+<h1>Module 3 — How Machines Learn<a class="headerlink" href="#module-3-how-machines-learn" title="Link to this heading">#</a></h1>
+<p>Artificial Intelligence becomes truly intelligent when machines can <strong>learn from experience</strong>.<br />
+This module explores how computers acquire knowledge, adapt to data, and improve their performance over time.<br />
+It follows the two parts presented in the recorded video and slides: <strong>Learning Paradigms</strong> and <strong>Learning Strategies</strong>.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Understand and explain the different paradigms and strategies for learning machines and how they differ from traditional programming.</p></li>
+<li><p>Distinguish among the main <strong>learning paradigms</strong> — supervised, unsupervised, semi-supervised, and reinforcement learning.</p></li>
+<li><p>Describe key <strong>learning strategies</strong>, such as federated learning, transfer learning, evolution, hybrid and multi-modal learning.</p></li>
+</ul>
+</section>
+<section id="part-i-learning-paradigms">
+<h2>Part I — Learning Paradigms<a class="headerlink" href="#part-i-learning-paradigms" title="Link to this heading">#</a></h2>
+<p>The way a machine learns depends on the <strong>type of information</strong> available and the <strong>goal</strong> of the learning process.<br />
+Machine Learning can be categorized into four main paradigms: supervised, unsupervised, semi-supervised, and reinforcement learning.</p>
+<section id="supervised-learning">
+<h3>1.1 Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The most common and well-understood paradigm.</p></li>
+<li><p>The model learns from <strong>labeled data</strong> — examples where the desired output (target) is known.</p></li>
+<li><p>Objective: find a function that maps inputs (features) to outputs (labels).</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Predicting house prices (regression)</p></li>
+<li><p>Classifying emails as spam or not spam (classification)</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>Supervised learning mirrors <strong>learning by example</strong> — the machine imitates patterns it has seen before.</p>
+</div></blockquote>
+<p><strong>Popular algorithms:</strong> Linear Regression, Decision Trees, Random Forests, Support Vector Machines, Neural Networks.</p>
+</section>
+<section id="unsupervised-learning">
+<h3>1.2 Unsupervised Learning<a class="headerlink" href="#unsupervised-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Works with <strong>unlabeled data</strong> — the algorithm must find structure or patterns on its own (statistical regularities in the data).</p></li>
+<li><p>Objective: <strong>discover hidden relationships</strong> or <strong>group similar data points</strong>.</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Customer segmentation</p></li>
+<li><p>Topic discovery in text</p></li>
+<li><p>Dimensionality reduction and visualization</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Common techniques:</strong> Clustering (K-Means, DBSCAN, Hierarchical), Association Rules, Principal Component Analysis (PCA).</p>
+<blockquote>
+<div><p>Unsupervised learning is about exploration — letting the data reveal its own organization.</p>
+</div></blockquote>
+</section>
+<section id="semi-supervised-learning">
+<h3>1.3 Semi-Supervised Learning<a class="headerlink" href="#semi-supervised-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Combines small amounts of <strong>labeled data</strong> with large amounts of <strong>unlabeled data</strong>.</p></li>
+<li><p>Bridges the gap between supervised and unsupervised approaches.</p></li>
+<li><p>Useful when labeling is expensive or time-consuming (e.g., medical images, legal documents).</p></li>
+<li><p>Example: using a few labeled samples to train a model that then labels the rest automatically.</p></li>
+</ul>
+<p><strong>Key methods:</strong> Self-training, Co-training, Graph-based learning.</p>
+<blockquote>
+<div><p>Semi-supervised learning reflects a realistic compromise — <strong>humans label some data</strong>, AI learns the rest.</p>
+</div></blockquote>
+</section>
+<section id="reinforcement-learning-rl">
+<h3>1.4 Reinforcement Learning (RL)<a class="headerlink" href="#reinforcement-learning-rl" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Inspired by behavioral psychology — learning through <strong>trial and error</strong> and <strong>feedback</strong> from the environment.</p></li>
+<li><p>An <strong>agent</strong> interacts with an environment, performing actions and receiving <strong>rewards</strong> or <strong>penalties</strong>.</p></li>
+<li><p>Goal: learn a <strong>policy</strong> that maximizes long-term rewards.</p></li>
+<li><p>Sample applications: game playing (AlphaGo), robotics, autonomous driving, resource management.</p></li>
+</ul>
+<p><strong>Core components:</strong></p>
+<ul class="simple">
+<li><p>Agent → Learner/decision-maker</p></li>
+<li><p>Environment → Context of interaction</p></li>
+<li><p>State → Current situation</p></li>
+<li><p>Action → Possible moves</p></li>
+<li><p>Reward → Feedback signal</p></li>
+</ul>
+<blockquote>
+<div><p>Reinforcement learning mirrors how humans and animals learn: by doing, failing, and improving.</p>
+</div></blockquote>
+<p><img alt="Learning Paradigms" src="_images/LearningParadigms.png" /></p>
+</section>
+</section>
+<section id="part-ii-learning-strategies">
+<h2>Part II — Learning Strategies<a class="headerlink" href="#part-ii-learning-strategies" title="Link to this heading">#</a></h2>
+<p>While <em>learning paradigms</em> define <strong>what kind of information</strong> the machine receives, <em>learning strategies</em> define <strong>how</strong> the model adapts, shares, evolves, and integrates knowledge.</p>
+<p>Modern AI systems increasingly rely on <strong>distributed</strong>, <strong>hybrid</strong>, and <strong>multimodal</strong> approaches — extending machine learning beyond isolated datasets or single-task learning.</p>
+<section id="transfer-learning">
+<h3>2.1 Transfer Learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Transfer Learning</strong> enables a model trained on one task or dataset to be <strong>reused and fine-tuned</strong> for another.</p></li>
+<li><p>This mirrors human learning — we transfer prior knowledge to new but related situations.</p></li>
+<li><p>Example: using a pretrained image model (e.g., <strong>ResNet</strong>) to identify medical X-rays or an LLM fine-tuned on legal documents.</p></li>
+</ul>
+<p>Transfer learning reduces data requirements and training costs, accelerating model development in specialized domains.</p>
+<p><strong>Common applications:</strong></p>
+<ul class="simple">
+<li><p>Computer vision (ImageNet-based models)</p></li>
+<li><p>Natural language processing (GPT, BERT, T5 fine-tuning)</p></li>
+<li><p>Domain adaptation (general → specific context)</p></li>
+</ul>
+</section>
+<section id="federated-learning">
+<h3>2.2 Federated Learning<a class="headerlink" href="#federated-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Federated Learning</strong> allows multiple devices or organizations to <strong>train a shared model collaboratively</strong> without centralizing their data.</p></li>
+<li><p>Each participant trains the model locally, and only <strong>model updates (weights)</strong> are sent to a central aggregator.</p></li>
+<li><p>The data stays <strong>private and decentralized</strong>, supporting privacy and security.</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Protects sensitive data (e.g., healthcare, finance, mobile devices)</p></li>
+<li><p>Reduces communication costs and respects data ownership</p></li>
+<li><p>Enables global learning while keeping local autonomy</p></li>
+</ul>
+<blockquote>
+<div><p>Federated learning embodies the principle: <em>“Learn together, without sharing your secrets.”</em></p>
+</div></blockquote>
+</section>
+<section id="evolutionary-learning">
+<h3>2.3 Evolutionary Learning<a class="headerlink" href="#evolutionary-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Inspired by <strong>biological evolution</strong>, this strategy uses mechanisms like <strong>reproduction</strong>, <strong>selection</strong>, <strong>mutation</strong>, and <strong>crossover</strong> to optimize models or parameters over generations.</p></li>
+<li><p>Examples: <strong>Genetic Algorithms (GA)</strong>, <strong>Evolutionary Strategies</strong>, and <strong>Differential Evolution (DE)</strong>.</p></li>
+<li><p>Can evolve:</p>
+<ul>
+<li><p>Neural architectures (Neuroevolution)</p></li>
+<li><p>Hyperparameters (automated tuning)</p></li>
+<li><p>Feature sets and rule bases</p></li>
+</ul>
+</li>
+</ul>
+<p>Evolutionary learning explores populations of solutions, not just single models, enabling creative, adaptive problem-solving.</p>
+</section>
+<section id="hybrid-learning">
+<h3>2.4 Hybrid Learning<a class="headerlink" href="#hybrid-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Hybrid Learning</strong> combines multiple AI paradigms (symbolic, connectionist, evolutionary, fuzzy) to leverage their strengths.</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p><strong>Neuro-Fuzzy Systems</strong> — neural networks learning fuzzy rules automatically.</p></li>
+<li><p><strong>Fuzzy-Evolutionary Systems</strong> — evolutionary algorithms optimizing fuzzy controllers.</p></li>
+<li><p><strong>Neuro-Symbolic Systems</strong> — integrating logical reasoning with deep neural networks for explainability.</p></li>
+</ul>
+</li>
+<li><p>Hybrids enhance both <strong>interpretability</strong> and <strong>adaptability</strong>.</p></li>
+</ul>
+<blockquote>
+<div><p>Hybrid systems explores the strengths of different methods to generate more powerful solutions.</p>
+</div></blockquote>
+</section>
+<section id="multimodal-learning">
+<h3>2.5 Multimodal Learning<a class="headerlink" href="#multimodal-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Multimodal Learning</strong> integrates <strong>multiple types of data</strong>, such as text, images, audio, video and sensors, into a single learning framework.</p></li>
+<li><p>Humans naturally process multimodal information; AI systems are evolving in the same direction.</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p><strong>Vision-Language Models (VLMs)</strong> such as CLIP, Gemini, and GPT-4o that combine text and image understanding.</p></li>
+<li><p><strong>Speech-to-Text-to-Image</strong> pipelines that connect different sensory modalities.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>Multimodal AI reflects a shift from <em>single-sense</em> to <em>multi-sense</em> intelligence — toward perception that is more human-like.</p>
+</div></blockquote>
+<p><strong>Benefits:</strong></p>
+<ul class="simple">
+<li><p>Richer representations of the world</p></li>
+<li><p>Cross-domain understanding and reasoning</p></li>
+<li><p>More natural and flexible human-AI interaction</p></li>
+</ul>
+</section>
+</section>
+<section id="the-new-frontier-of-learning">
+<h2>The New Frontier of Learning<a class="headerlink" href="#the-new-frontier-of-learning" title="Link to this heading">#</a></h2>
+<p>The modern AI learning landscape is <strong>distributed, adaptive, and collaborative</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Strategy</p></th>
+<th class="head text-left"><p>Core Idea</p></th>
+<th class="head text-left"><p>Key Benefit</p></th>
+<th class="head text-left"><p>Example Application</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Transfer Learning</strong></p></td>
+<td class="text-left"><p>Reuse knowledge from one domain to another</p></td>
+<td class="text-left"><p>Reduces data/training cost</p></td>
+<td class="text-left"><p>Fine-tuned LLMs, medical imaging</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Federated Learning</strong></p></td>
+<td class="text-left"><p>Collaborative model training without data sharing</p></td>
+<td class="text-left"><p>Preserves privacy, enables collaboration</p></td>
+<td class="text-left"><p>Edge AI, mobile devices, hospitals</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Evolutionary Learning</strong></p></td>
+<td class="text-left"><p>Evolve models through selection and mutation</p></td>
+<td class="text-left"><p>Global optimization, creativity</p></td>
+<td class="text-left"><p>Neuroevolution, parameter tuning</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Hybrid Learning</strong></p></td>
+<td class="text-left"><p>Combine multiple paradigms into one system</p></td>
+<td class="text-left"><p>Interpretability + flexibility</p></td>
+<td class="text-left"><p>Neuro-fuzzy control, neuro-symbolic AI</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Multimodal Learning</strong></p></td>
+<td class="text-left"><p>Integrate multiple data types (text, image, sound)</p></td>
+<td class="text-left"><p>Human-like perception</p></td>
+<td class="text-left"><p>Vision-language models, AI assistants</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="Learning Strategies" src="_images/LearningStrategies.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="from-data-to-knowledge">
+<h2>From Data to Knowledge<a class="headerlink" href="#from-data-to-knowledge" title="Link to this heading">#</a></h2>
+<p>The learning process in AI can be visualized as a <strong>cycle of intelligence</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Collection</strong> → raw information from sensors, text, or human input</p></li>
+<li><p><strong>Preprocessing</strong> → cleaning, normalization, feature extraction</p></li>
+<li><p><strong>Learning</strong> → training models through one or more paradigms</p></li>
+<li><p><strong>Evaluation</strong> → measuring accuracy, precision, recall, or reward</p></li>
+<li><p><strong>Deployment</strong> → integrating models into applications</p></li>
+<li><p><strong>Feedback Loop</strong> → monitoring, retraining, and improving</p></li>
+</ol>
+<p><img alt="AI Learning Cycle" src="_images/LearningCycle.png" /></p>
+</section>
+<section id="reflection">
+<h2>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>How do these new learning strategies reflect the way humans learn — sharing knowledge, collaborating, and combining senses?<br />
+Which of these strategies do you think will dominate the next decade of AI development?</p>
+</div></blockquote>
+<p>Reflect on how <strong>collaboration</strong>, <strong>hybridization</strong>, and <strong>context-awareness</strong> are shaping the next generation of intelligent systems.</p>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>📘 Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Mitchell, T. M. (1997). <em>Machine Learning.</em>, McGraw-Hill.</p></li>
+<li><p>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning.</em>, The MIT Press.</p></li>
+<li><p>Sutton, R. S., &amp; Barto, A. G. (2018). <em>Reinforcement Learning: An Introduction.</em>, 2nd Ed., The MIT Press.</p></li>
+<li><p>Russell, S., &amp; Norvig, P. (2020). <em>Artificial Intelligence: A Modern Approach.</em>, 4th Ed., Pearson.</p></li>
+<li><p>Dendritic Institute (2025). <em>AI Literacy Series – Module 3: How Machines Learn.</em> (Slides &amp; video lecture)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_2_AI_and_Its_Branches.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 2 — What Is AI and Its Many Branches</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_4_GenAI_LLMs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 4 — Generative AI and Large Language Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-learning-paradigms">Part I — Learning Paradigms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">1.1 Supervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">1.2 Unsupervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-supervised-learning">1.3 Semi-Supervised Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-rl">1.4 Reinforcement Learning (RL)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-learning-strategies">Part II — Learning Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">2.1 Transfer Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federated-learning">2.2 Federated Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evolutionary-learning">2.3 Evolutionary Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-learning">2.4 Hybrid Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-learning">2.5 Multimodal Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-frontier-of-learning">The New Frontier of Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-data-to-knowledge">From Data to Knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 5 — Fundamentals of Prompt Engineering &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_5_Prompt_Engineering';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 6 - Context Engineering: Advanced AI Communication" href="Module_6_Context_Engineering.html" />
+    <link rel="prev" title="Module 4 — Generative AI and Large Language Models" href="Module_4_GenAI_LLMs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_7_Foundational_Models.html">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/docs/Module_5_Prompt_Engineering.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_5_Prompt_Engineering.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 5 — Fundamentals of Prompt Engineering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">5.1 Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-prompt-engineering">5.2 What is Prompt Engineering?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-prompt">5.3 Anatomy of a Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-prompt-engineering-matters">5.4 Why Prompt Engineering Matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-prompt">5.5 Example Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-deconstruct-this-prompt">Exercise 1: Deconstruct This Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-prompt-patterns-matter">5.6 Why Prompt Patterns Matter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-prompt-types">5.7 Common Prompt Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-comparison">5.8 Prompt Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-prompt-comparison-activity">Exercise 2: Prompt Comparison Activity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-iteration-matters">5.9 Why Iteration Matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-iterative-prompting-process">5.10 The Iterative Prompting Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-prompt-iteration-and-debugging-examples">Exercise 3: Prompt Iteration and Debugging Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-prompt-experiment-classwork">Exercise 4: Prompt Experiment Classwork</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-prompting-a-prompt-analysis-technique">5.11 Reverse Prompting: A Prompt Analysis Technique</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-prompting-example">Reverse Prompting Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-reverse-prompting">Exercise 5: Reverse Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-troubleshooting-and-improving-prompts">5.12 Tips for Troubleshooting and Improving Prompts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-prompt-quality">5.13 Assessing Prompt Quality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-5-fundamentals-of-prompt-engineering">
+<h1>Module 5 — Fundamentals of Prompt Engineering<a class="headerlink" href="#module-5-fundamentals-of-prompt-engineering" title="Link to this heading">#</a></h1>
+<p>Generative Artificial Intelligence (GenAI) has become one of the most transformative technological advancements of recent years, enabling systems to generate text, images, code, and even entire business solutions. To make the most of these tools, it is essential to understand not only what GenAI can do, but also how to interact with it effectively. This topic introduces the fundamentals of GenAI with a focus on <strong>Prompt Engineering</strong>—the art and science of crafting inputs that guide AI models toward accurate, creative, and useful outputs. By mastering prompt engineering, students will gain practical skills to explore the capabilities and limitations of GenAI, preparing them to apply these tools strategically in entrepreneurial and problem-solving contexts.</p>
+<section id="learning-objectives">
+<h2>5.1 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Understand the purpose and scope of prompt engineering.</p></li>
+<li><p>Identify the components that make up an effective prompt.</p></li>
+<li><p>Identify and apply different types of prompt design patterns.</p></li>
+<li><p>Compare how prompt structures influence AI outputs.</p></li>
+<li><p>Practice prompt improvement through iteration.</p></li>
+</ul>
+</section>
+<section id="what-is-prompt-engineering">
+<h2>5.2 What is Prompt Engineering?<a class="headerlink" href="#what-is-prompt-engineering" title="Link to this heading">#</a></h2>
+<p>Prompt engineering is the practice of crafting effective inputs (prompts) for large language models (LLMs) to produce accurate, relevant, and useful outputs.</p>
+<p>Unlike traditional programming, where you write rigid code, prompt engineering is about <strong>communicating naturally</strong> with an AI system — and doing so <strong>strategically</strong>.</p>
+</section>
+<section id="anatomy-of-a-prompt">
+<h2>5.3 Anatomy of a Prompt<a class="headerlink" href="#anatomy-of-a-prompt" title="Link to this heading">#</a></h2>
+<p>A good prompt typically includes:</p>
+<ol class="arabic simple">
+<li><p><strong>Instruction</strong>: What you want the model to do.</p>
+<ul class="simple">
+<li><p><em>e.g., “Summarize the text below in bullet points.”</em></p></li>
+</ul>
+</li>
+<li><p><strong>Context</strong> (optional): Background information or framing.</p>
+<ul class="simple">
+<li><p><em>e.g., “You are a customer support agent.”</em></p></li>
+</ul>
+</li>
+<li><p><strong>Input Data</strong>: The text, question, or file the model will process.</p>
+<ul class="simple">
+<li><p><em>e.g., “Customer review: The product broke in 2 days…”</em></p></li>
+</ul>
+</li>
+<li><p><strong>Output Format</strong> (optional): Desired structure or style.</p>
+<ul class="simple">
+<li><p><em>e.g., “Respond in JSON format with sentiment and category.”</em></p></li>
+</ul>
+</li>
+</ol>
+<p><img alt="Prompt Anatomy" src="_images/PromptAnatomy.png" /></p>
+</section>
+<section id="why-prompt-engineering-matters">
+<h2>5.4 Why Prompt Engineering Matters<a class="headerlink" href="#why-prompt-engineering-matters" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>It <strong>boosts model performance</strong> without changing the model itself.</p></li>
+<li><p>It helps tailor responses to specific <strong>tasks and audiences</strong>.</p></li>
+<li><p>It allows you to guide the model toward <strong>more reliable, interpretable results</strong>.</p></li>
+</ul>
+</section>
+<section id="example-prompt">
+<h2>5.5 Example Prompt<a class="headerlink" href="#example-prompt" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">scientific</span> <span class="n">editor</span><span class="o">.</span> <span class="n">Summarize</span> <span class="n">the</span> <span class="n">text</span> <span class="n">below</span> <span class="n">into</span> <span class="mi">3</span> <span class="n">bullet</span> <span class="n">points</span> <span class="k">for</span> <span class="n">a</span> <span class="n">general</span> <span class="n">audience</span><span class="o">.</span>
+
+<span class="n">Text</span><span class="p">:</span>
+<span class="n">Prompt</span> <span class="n">engineering</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">practice</span> <span class="n">of</span> <span class="n">crafting</span> <span class="n">effective</span> <span class="n">inputs</span> <span class="p">(</span><span class="n">prompts</span><span class="p">)</span> <span class="n">to</span> <span class="n">guide</span> <span class="n">generative</span> <span class="n">AI</span> <span class="n">models</span> <span class="n">like</span> <span class="n">ChatGPT</span><span class="p">,</span> <span class="n">Claude</span><span class="p">,</span> <span class="ow">or</span> <span class="n">Gemini</span> <span class="n">toward</span> <span class="n">producing</span> <span class="n">accurate</span><span class="p">,</span> <span class="n">relevant</span><span class="p">,</span> <span class="ow">and</span> <span class="n">useful</span> <span class="n">outputs</span><span class="o">.</span> <span class="n">It</span> <span class="n">involves</span> <span class="n">understanding</span> <span class="n">how</span> <span class="n">AI</span> <span class="n">interprets</span> <span class="n">language</span> <span class="ow">and</span> <span class="n">strategically</span> <span class="n">structuring</span> <span class="n">prompts</span> <span class="n">to</span> <span class="n">achieve</span> <span class="n">specific</span> <span class="n">goals</span><span class="p">,</span> <span class="n">whether</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">summarizing</span> <span class="n">text</span><span class="p">,</span> <span class="n">generating</span> <span class="n">code</span><span class="p">,</span> <span class="n">analyzing</span> <span class="n">data</span><span class="p">,</span> <span class="ow">or</span> <span class="n">creating</span> <span class="n">content</span><span class="o">.</span> <span class="n">Good</span> <span class="n">prompt</span> <span class="n">engineering</span> <span class="n">can</span> <span class="n">significantly</span> <span class="n">enhance</span> <span class="n">the</span> <span class="n">quality</span> <span class="n">of</span> <span class="n">AI</span> <span class="n">responses</span><span class="p">,</span> <span class="n">making</span> <span class="n">it</span> <span class="n">a</span> <span class="n">critical</span> <span class="n">skill</span> <span class="k">for</span> <span class="n">maximizing</span> <span class="n">productivity</span> <span class="ow">and</span> <span class="n">creativity</span> <span class="k">with</span> <span class="n">AI</span> <span class="n">tools</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise-1-deconstruct-this-prompt">
+<h2>Exercise 1: Deconstruct This Prompt<a class="headerlink" href="#exercise-1-deconstruct-this-prompt" title="Link to this heading">#</a></h2>
+<p>Given the prompt below, identify its components:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">legal</span> <span class="n">assistant</span><span class="o">.</span> <span class="n">Given</span> <span class="n">the</span> <span class="n">client</span><span class="s1">&#39;s message, extract the key legal issue and relevant date in bullet points.</span>
+
+<span class="n">Message</span><span class="p">:</span>
+<span class="n">I</span> <span class="n">was</span> <span class="n">evicted</span> <span class="n">without</span> <span class="n">notice</span> <span class="n">on</span> <span class="n">June</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">even</span> <span class="n">though</span> <span class="n">I</span> <span class="n">paid</span> <span class="n">rent</span> <span class="n">until</span> <span class="n">July</span><span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="why-prompt-patterns-matter">
+<h2>5.6 Why Prompt Patterns Matter<a class="headerlink" href="#why-prompt-patterns-matter" title="Link to this heading">#</a></h2>
+<p>Prompt patterns are reusable structures that help you get consistent, high-quality results from language models. Understanding them empowers you to choose the right style for your goal.</p>
+</section>
+<section id="common-prompt-types">
+<h2>5.7 Common Prompt Types<a class="headerlink" href="#common-prompt-types" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Instructional Prompts</strong>
+Directly ask the model to perform a task, e.g.:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Summarize</span> <span class="n">the</span> <span class="n">following</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">three</span> <span class="n">sentences</span><span class="o">.</span> <span class="p">[</span><span class="n">Input</span> <span class="n">article</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Role-Based Prompts</strong>
+Assign the model a specific identity or role to guide tone and knowledge.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">career</span> <span class="n">coach</span><span class="o">.</span> <span class="n">Give</span> <span class="n">me</span> <span class="n">advice</span> <span class="n">on</span> <span class="n">how</span> <span class="n">to</span> <span class="n">negotiate</span> <span class="n">a</span> <span class="n">salary</span> <span class="k">raise</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Chain-of-Thought Prompts</strong>
+Encourage step-by-step reasoning or breakdown of complex tasks.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What is the square root of 144? Explain the steps before giving the answer.
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Zero-Shot Prompts</strong>
+Provide only the instruction and input — no examples.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Translate</span> <span class="n">the</span> <span class="n">following</span> <span class="n">sentence</span> <span class="n">into</span> <span class="n">Portuguese</span><span class="p">:</span> <span class="s2">&quot;How are you?&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Few-Shot Prompts</strong>
+Include examples of input/output pairs to guide the model.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Translate the following:
+English: Good morning → Portuguese: Bom dia
+English: Thank you → Portuguese: Obrigado
+English: I’m hungry → Portuguese:
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: a prompt can be of more than one type simultaneously, e.g. Prompt 1 above is also a zero-shot prompt.</p>
+</div></blockquote>
+<p><img alt="Prompt Types" src="_images/PromptTypes.png" /></p>
+</section>
+<section id="prompt-comparison">
+<h2>5.8 Prompt Comparison<a class="headerlink" href="#prompt-comparison" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pattern</p></th>
+<th class="head"><p>Use Case</p></th>
+<th class="head"><p>Example Role/Task</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Instructional</p></td>
+<td><p>Clear single-step tasks</p></td>
+<td><p>“Summarize this paragraph.”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Role-Based</p></td>
+<td><p>Tone/personality alignment</p></td>
+<td><p>“You are a financial advisor…”</p></td>
+</tr>
+<tr class="row-even"><td><p>Chain-of-Thought</p></td>
+<td><p>Complex reasoning, multi-step problems</p></td>
+<td><p>“Explain each step before giving the answer.”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zero-Shot</p></td>
+<td><p>Fast and generic tasks</p></td>
+<td><p>“Translate to Spanish…”</p></td>
+</tr>
+<tr class="row-even"><td><p>Few-Shot</p></td>
+<td><p>Custom structure or format</p></td>
+<td><p>“English → French examples…”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exercise-2-prompt-comparison-activity">
+<h2>Exercise 2: Prompt Comparison Activity<a class="headerlink" href="#exercise-2-prompt-comparison-activity" title="Link to this heading">#</a></h2>
+<p>Use the following task and try prompting it in three different styles.</p>
+<p><strong>Task</strong>: Recommend three books for someone interested in artificial intelligence.</p>
+</section>
+<section id="why-iteration-matters">
+<h2>5.9 Why Iteration Matters<a class="headerlink" href="#why-iteration-matters" title="Link to this heading">#</a></h2>
+<p>Prompting is often <strong>not a one-shot process</strong>. Even good prompts may return incomplete, vague, or misleading results. The key is to <strong>test, analyze, and refine</strong>.</p>
+<p>Iteration helps you:</p>
+<ul class="simple">
+<li><p>Clarify vague requests</p></li>
+<li><p>Add or remove unnecessary detail</p></li>
+<li><p>Adjust tone or output format</p></li>
+<li><p>Explore different framing approaches</p></li>
+</ul>
+</section>
+<section id="the-iterative-prompting-process">
+<h2>5.10 The Iterative Prompting Process<a class="headerlink" href="#the-iterative-prompting-process" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Draft the initial prompt</strong><br />
+<em>Write a basic version of your request.</em></p></li>
+<li><p><strong>Review the output</strong><br />
+<em>Is it accurate? Detailed enough? In the right tone or format?</em></p></li>
+<li><p><strong>Refine the prompt</strong><br />
+<em>Add missing instructions, clarify goals, or adjust roles.</em></p></li>
+<li><p><strong>Test again</strong><br />
+<em>Compare outputs, note improvements, and repeat if needed.</em></p></li>
+</ol>
+<p><img alt="Iterative Prompting" src="_images/IterativePrompt.png" /></p>
+</section>
+<section id="exercise-3-prompt-iteration-and-debugging-examples">
+<h2>Exercise 3: Prompt Iteration and Debugging Examples<a class="headerlink" href="#exercise-3-prompt-iteration-and-debugging-examples" title="Link to this heading">#</a></h2>
+<p><strong>Poor Prompt:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Explain</span> <span class="n">the</span> <span class="n">stock</span> <span class="n">market</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Improved Prompt (Iteration 1):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Explain</span> <span class="n">the</span> <span class="n">stock</span> <span class="n">market</span> <span class="ow">in</span> <span class="n">simple</span> <span class="n">terms</span> <span class="k">for</span> <span class="n">a</span> <span class="n">high</span> <span class="n">school</span> <span class="n">student</span><span class="p">,</span> <span class="n">using</span> <span class="mi">3</span> <span class="n">key</span> <span class="n">points</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Improved Prompt (Iteration 2):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Explain</span> <span class="n">the</span> <span class="n">stock</span> <span class="n">market</span> <span class="ow">in</span> <span class="n">simple</span> <span class="n">terms</span> <span class="k">for</span> <span class="n">a</span> <span class="n">high</span> <span class="n">school</span> <span class="n">student</span><span class="o">.</span> <span class="n">Use</span> <span class="mi">3</span> <span class="n">bullet</span> <span class="n">points</span> <span class="ow">and</span> <span class="n">include</span> <span class="n">one</span> <span class="n">analogy</span> <span class="n">related</span> <span class="n">to</span> <span class="n">daily</span> <span class="n">life</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise-4-prompt-experiment-classwork">
+<h2>Exercise 4: Prompt Experiment Classwork<a class="headerlink" href="#exercise-4-prompt-experiment-classwork" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You support retail sales analysis at Contoso. The VP of Regional Sales needs an assessment to guide monthly discount strategies.
+Task: Compare net ‘ Sales’ for this observation to average for all ‘Product’ sold under this ‘Discount Band’, and ‘ Sales’ for this ‘Product’ in this ‘Month’.
+| Segment | Country | Product | Discount Band | Sales | Month | Year |
+| Government | United States of America | Montana | Medium | 178500.35 | October | 2014 |
+
+Step 1 – Chain-of-Thought (show your work):
+1. Compare Averages: Current vs average Sales with this Product and Discount Band, and vs average Sales with this Product and Month.
+2. Compare Segment: Calculate and compare this point to performance of this Product in each other Segment in this Country.
+3. Compare Country: Calculate and compare this point to all performance in the Country, and performance in all Countries.
+4. Compare Product: Calculate and compare this point to all performance of this Product, and performance of all Products.
+5. Compare and Discuss: Review this point in comparison to historical, country, and product performance, and infer overall performance.
+Step 2 – Analysis:
+Write a concise paragraph identifying trends and discussing likely drivers behind any variance.
+Step 3 – Prediction:
+Based on findings, advise whether Contoso should continue, adjust, or halt this Discount Band.
+</pre></div>
+</div>
+</section>
+<section id="reverse-prompting-a-prompt-analysis-technique">
+<h2>5.11 Reverse Prompting: A Prompt Analysis Technique<a class="headerlink" href="#reverse-prompting-a-prompt-analysis-technique" title="Link to this heading">#</a></h2>
+<p>Beyond writing prompts, there are methods to <strong>analyze and understand</strong> how prompts work. These techniques help you learn, debug, and improve your prompting skills.
+Reverse prompting means starting from an <strong>output</strong> and asking:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What kind of prompt would generate this result?
+</pre></div>
+</div>
+<p>It is useful for:</p>
+<ul class="simple">
+<li><p>Understanding how specific outputs were created</p></li>
+<li><p>Reverse-engineering effective prompt patterns</p></li>
+<li><p>Teaching and learning prompt design by working backwards</p></li>
+</ul>
+<blockquote>
+<div><p>Reverse prompting is not a prompt type itself — it is an <strong>analytical method</strong> for understanding model behavior and improving your own prompt engineering skills.</p>
+</div></blockquote>
+<p>To reverse-prompting you can use a technique called <strong>meta-prompt</strong>, which asks the LLM to reverse prompt an output. Here is a general-purpose structure you can adapt to your context and use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Here</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">AI</span><span class="o">-</span><span class="n">generated</span> <span class="n">output</span><span class="p">:</span>
+
+<span class="p">[</span><span class="n">PASTE</span> <span class="n">OUTPUT</span> <span class="n">HERE</span><span class="p">]</span>
+
+<span class="n">Your</span> <span class="n">task</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">reverse</span> <span class="n">prompt</span> <span class="n">this</span> <span class="n">output</span><span class="o">.</span> 
+<span class="n">That</span> <span class="n">means</span><span class="p">:</span> <span class="n">propose</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">possible</span> <span class="n">prompts</span> <span class="n">that</span> <span class="n">could</span> <span class="n">have</span> <span class="n">generated</span> <span class="n">it</span><span class="o">.</span> 
+<span class="n">Explain</span> <span class="n">your</span> <span class="n">reasoning</span> <span class="ow">and</span> <span class="n">show</span> <span class="n">how</span> <span class="n">different</span> <span class="n">phrasings</span> <span class="n">might</span> <span class="n">affect</span> <span class="n">the</span> <span class="n">response</span><span class="o">.</span>
+</pre></div>
+</div>
+<section id="reverse-prompting-example">
+<h3>Reverse Prompting Example<a class="headerlink" href="#reverse-prompting-example" title="Link to this heading">#</a></h3>
+<p><strong>Output (from the AI):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Set</span> <span class="n">a</span> <span class="n">consistent</span> <span class="n">study</span> <span class="n">schedule</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Use</span> <span class="n">active</span> <span class="n">recall</span> <span class="ow">and</span> <span class="n">spaced</span> <span class="n">repetition</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Take</span> <span class="n">short</span> <span class="n">breaks</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">fatigue</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Reversed Prompt:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What are three key steps a student should follow when preparing for an exam?
+</pre></div>
+</div>
+<p>This shows how reverse prompting can help:</p>
+<ul class="simple">
+<li><p><strong>Understand AI outputs in their domain</strong> (if you see a list of steps, you can practice inferring what kind of question led to it).</p></li>
+<li><p><strong>Learn effective prompt patterns</strong> (e.g., phrasing requests around “three key steps” often yields structured, actionable advice).</p></li>
+<li><p><strong>Apply to your projects</strong> by practicing both sides: writing prompts and analyzing outputs to refine your own strategy.</p></li>
+</ul>
+</section>
+<section id="exercise-5-reverse-prompting">
+<h3>Exercise 5: Reverse Prompting<a class="headerlink" href="#exercise-5-reverse-prompting" title="Link to this heading">#</a></h3>
+<p>Below is an AI-generated output. Your task is to <strong>work backwards</strong> and write the possible prompt(s) that might have generated it, and then <strong>use a reverse prompt method</strong> to do the same and compare with your proposed prompts.</p>
+<p><strong>AI Output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Identify</span> <span class="n">a</span> <span class="n">clear</span> <span class="n">market</span> <span class="n">pain</span> <span class="n">point</span> <span class="n">that</span> <span class="n">your</span> <span class="n">AI</span> <span class="n">solution</span> <span class="n">can</span> <span class="n">address</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Build</span> <span class="n">a</span> <span class="n">prototype</span> <span class="n">to</span> <span class="n">demonstrate</span> <span class="n">feasibility</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Prepare</span> <span class="n">a</span> <span class="n">pitch</span> <span class="n">deck</span> <span class="n">that</span> <span class="n">communicates</span> <span class="n">your</span> <span class="n">value</span> <span class="n">proposition</span> <span class="ow">and</span> <span class="n">business</span> <span class="n">model</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Your Task:</strong></p>
+<ul class="simple">
+<li><p>Propose at least <strong>two different prompts</strong> that could have led to this output.</p></li>
+<li><p>Compare how each proposed prompt would shape the AI’s response.</p></li>
+<li><p><strong>Use a meta-prompt to reverse prompt this output</strong> and compare with your proposed prompts.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Here</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">AI</span><span class="o">-</span><span class="n">generated</span> <span class="n">output</span><span class="p">:</span>
+
+<span class="mf">1.</span>	<span class="n">Identify</span> <span class="n">a</span> <span class="n">clear</span> <span class="n">market</span> <span class="n">pain</span> <span class="n">point</span> <span class="n">that</span> <span class="n">your</span> <span class="n">AI</span> <span class="n">solution</span> <span class="n">can</span> <span class="n">address</span><span class="o">.</span>
+<span class="mf">2.</span>	<span class="n">Build</span> <span class="n">a</span> <span class="n">prototype</span> <span class="p">(</span><span class="n">MVP</span><span class="p">)</span> <span class="n">to</span> <span class="n">demonstrate</span> <span class="n">feasibility</span><span class="o">.</span>
+<span class="mf">3.</span>	<span class="n">Prepare</span> <span class="n">a</span> <span class="n">pitch</span> <span class="n">deck</span> <span class="n">that</span> <span class="n">communicates</span> <span class="n">your</span> <span class="n">value</span> <span class="n">proposition</span> <span class="ow">and</span> <span class="n">business</span> <span class="n">model</span><span class="o">.</span>
+
+<span class="n">Reverse</span> <span class="n">prompt</span> <span class="n">this</span> <span class="n">output</span><span class="p">:</span> <span class="n">propose</span> <span class="n">at</span> <span class="n">least</span> <span class="n">two</span> <span class="n">different</span> <span class="n">prompts</span> <span class="n">that</span> <span class="n">might</span> <span class="n">have</span> <span class="n">produced</span> <span class="n">it</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">each</span> <span class="n">proposed</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">explain</span> <span class="n">why</span> <span class="n">it</span> <span class="n">would</span> <span class="n">likely</span> <span class="n">generate</span> <span class="n">this</span> <span class="n">output</span> <span class="ow">and</span> <span class="n">how</span> <span class="n">changing</span> <span class="n">its</span> <span class="n">phrasing</span> <span class="n">might</span> <span class="n">alter</span> <span class="n">the</span> <span class="n">answer</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="tips-for-troubleshooting-and-improving-prompts">
+<h2>5.12 Tips for Troubleshooting and Improving Prompts<a class="headerlink" href="#tips-for-troubleshooting-and-improving-prompts" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>If output is <strong>too generic</strong>: Add specific instructions or examples.</p></li>
+<li><p>If output <strong>hallucinates</strong>: Ask the model to “only use provided information” or to look for verifiable sources. You can also ask the model to cite the sources.</p></li>
+<li><p>If output <strong>misses important parts</strong>: Reframe the prompt with clearer structure.</p></li>
+<li><p>If output is <strong>inconsistent</strong>: Use role and format specifications.</p></li>
+</ul>
+<p><strong>Hallucination</strong> is when a model (confidently) outputs incorrect or invented information.</p>
+<blockquote>
+<div><p>Note: Once you understand how the LLM generates its output, hallucinations become a natural outcome and our role as moderators becomes evident.</p>
+</div></blockquote>
+</section>
+<section id="assessing-prompt-quality">
+<h2>5.13 Assessing Prompt Quality<a class="headerlink" href="#assessing-prompt-quality" title="Link to this heading">#</a></h2>
+<p>Five criteria to judge the effectiveness of a prompt-output pair:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criterion</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. Relevance</strong></p></td>
+<td><p>Is the response aligned with the prompt’s intent?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. Completeness</strong></p></td>
+<td><p>Does the answer cover all requested aspects?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. Clarity</strong></p></td>
+<td><p>Is the response easy to understand and well-structured?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4. Factual Accuracy</strong></p></td>
+<td><p>Are the claims and data points correct and verifiable?</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5. Format</strong></p></td>
+<td><p>Does the output follow the requested format or style?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Techniques to Reduce or Identify Hallucinations</strong></p>
+<ul class="simple">
+<li><p>Ask the model to <strong>cite its sources</strong> or say “Only use the provided text/file.”</p></li>
+<li><p>Clarify that the model should say <strong>“I don’t know”</strong> if unsure.</p></li>
+<li><p>Specify that the answer should be based <strong>only on the uploaded file</strong> or context.</p></li>
+</ul>
+</section>
+<section id="reflection">
+<h2>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>How does communicating with an AI model differ from communicating with another person?<br />
+Which prompt pattern felt most intuitive to you, and which required the most experimentation?<br />
+How might prompt engineering change the way you research, write, or solve problems?</p>
+</div></blockquote>
+<p>Reflect on how <strong>intentional interaction</strong> with AI changes your role from passive user to <em>active collaborator</em>.<br />
+Each prompt you craft is a design decision — shaping not just what the AI produces, but how you think about inquiry, evidence, and creativity.<br />
+Remember that the goal of prompt engineering is not perfection, but <strong>partnership</strong>: using language to co-create meaning and insight.</p>
+</section>
+<section id="further-reading">
+<h2>📘 Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Prompt Engineering Guide, <a class="reference external" href="https://www.promptingguide.ai/">https://www.promptingguide.ai/</a></p></li>
+<li><p>OpenAI Platform, <a class="reference external" href="https://platform.openai.com/docs/guides/prompt-engineering">https://platform.openai.com/docs/guides/prompt-engineering</a></p></li>
+<li><p>White, J. et al. (2023). <em>A Prompt Pattern Catalog to Enhance AI-Assisted Creativity and Problem-Solving.</em>, arXiv: 2302.11382 <a class="reference external" href="https://arxiv.org/abs/2302.11382">https://arxiv.org/abs/2302.11382</a>.</p></li>
+<li><p>Zhou, Y. et al. (2023). <em>Large Language Models Are Human-Level Prompt Engineers.</em>, arXiv:2211.01910 <a class="reference external" href="https://arxiv.org/abs/2211.01910">https://arxiv.org/abs/2211.01910</a></p></li>
+<li><p>Mollick, E. &amp; Mollick, L. R. (2024). <em>Co-Intelligence: Living and Working with AI.</em>, Portfolio.</p></li>
+<li><p>Russell, S. &amp; Norvig, P. (2020). <em>Artificial Intelligence: A Modern Approach</em> — Chapter 24, “Natural Language Systems and Interaction.”, Pearson.</p></li>
+<li><p>Dendritic Institute (2025). <em>AI Literacy Series – Module 5: Fundamentals of Prompt Engineering.</em> (Slides &amp; video lecture)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_4_GenAI_LLMs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 4 — Generative AI and Large Language Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_6_Context_Engineering.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 6 - Context Engineering: Advanced AI Communication</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">5.1 Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-prompt-engineering">5.2 What is Prompt Engineering?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-prompt">5.3 Anatomy of a Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-prompt-engineering-matters">5.4 Why Prompt Engineering Matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-prompt">5.5 Example Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-deconstruct-this-prompt">Exercise 1: Deconstruct This Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-prompt-patterns-matter">5.6 Why Prompt Patterns Matter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-prompt-types">5.7 Common Prompt Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-comparison">5.8 Prompt Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-prompt-comparison-activity">Exercise 2: Prompt Comparison Activity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-iteration-matters">5.9 Why Iteration Matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-iterative-prompting-process">5.10 The Iterative Prompting Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-prompt-iteration-and-debugging-examples">Exercise 3: Prompt Iteration and Debugging Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-prompt-experiment-classwork">Exercise 4: Prompt Experiment Classwork</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-prompting-a-prompt-analysis-technique">5.11 Reverse Prompting: A Prompt Analysis Technique</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-prompting-example">Reverse Prompting Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-reverse-prompting">Exercise 5: Reverse Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-troubleshooting-and-improving-prompts">5.12 Tips for Troubleshooting and Improving Prompts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-prompt-quality">5.13 Assessing Prompt Quality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

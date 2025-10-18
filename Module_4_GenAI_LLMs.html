@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 4 — Generative AI and Large Language Models &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_4_GenAI_LLMs';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 5 — Fundamentals of Prompt Engineering" href="Module_5_Prompt_Engineering.html" />
+    <link rel="prev" title="Module 3 — How Machines Learn" href="Module_3_How_Machines_Learn.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_7_Foundational_Models.html">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/docs/Module_4_GenAI_LLMs.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_4_GenAI_LLMs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 4 — Generative AI and Large Language Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-from-traditional-ai-to-generative-ai">Part I — From Traditional AI to Generative AI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-ai-learning-to-solve-specific-tasks">1.1 Traditional AI: Learning to Solve Specific Tasks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-ai-learning-to-create">1.2 Generative AI: Learning to Create</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-generative-models-work">1.3 How Generative Models Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-large-language-models-llms">Part II — Large Language Models (LLMs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-large-language-model">2.1 What Is a Large Language Model?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transformer-revolution">2.2 The Transformer Revolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-capabilities-and-applications">Part III — Capabilities and Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-capabilities">3.1 Core Capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-modal-generative-ai">3.2 Cross-Modal Generative AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-limitations-and-beyond">Part IV — Limitations and Beyond</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-limitations">4.1 Key Limitations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-ai-collaboration-and-the-role-of-prompts">4.2 Human-AI Collaboration and the Role of Prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-generative-ai-landscape">4.3 The Generative AI Landscape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-human-centered-future-of-generative-ai">4.4 The Human-Centered Future of Generative AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-4-generative-ai-and-large-language-models">
+<h1>Module 4 — Generative AI and Large Language Models<a class="headerlink" href="#module-4-generative-ai-and-large-language-models" title="Link to this heading">#</a></h1>
+<p>Artificial Intelligence has entered a new era — one where machines not only <strong>analyze</strong> information but also <strong>create</strong> it. <strong>Generative AI (GenAI)</strong> represents the most visible and transformative branch of modern AI, capable of producing text, images, music, videos, and even software code. At the heart of this revolution are <strong>Large Language Models (LLMs)</strong> — systems that learn patterns of human language and use them to generate coherent, contextually appropriate responses.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Explain what Generative AI is and how it differs from traditional AI.</p></li>
+<li><p>Describe the core architecture and functioning of <strong>Large Language Models (LLMs)</strong>.</p></li>
+<li><p>Identify key applications, benefits, and risks associated with generative models.</p></li>
+<li><p>Understand how prompts, tokens, and context shape AI-generated content.</p></li>
+<li><p>Reflect on the ethical, social, and creative implications of AI that can generate new knowledge and artifacts.</p></li>
+</ul>
+</section>
+<section id="part-i-from-traditional-ai-to-generative-ai">
+<h2>Part I — From Traditional AI to Generative AI<a class="headerlink" href="#part-i-from-traditional-ai-to-generative-ai" title="Link to this heading">#</a></h2>
+<section id="traditional-ai-learning-to-solve-specific-tasks">
+<h3>1.1 Traditional AI: Learning to Solve Specific Tasks<a class="headerlink" href="#traditional-ai-learning-to-solve-specific-tasks" title="Link to this heading">#</a></h3>
+<p><strong>Traditional</strong> AI systems — such as those used in classification, recommendation, or forecasting — are mostly analytical in nature. They analyze data, detect patterns, make predictions, cluster, recommend, etc., based on what they have learned. They are also sometimes called <strong>narrow AI</strong>, because they are design to perform specific tasks.</p>
+<p>Examples include:</p>
+<ul class="simple">
+<li><p>Credit risk scoring</p></li>
+<li><p>Medical diagnosis models</p></li>
+<li><p>Recommendation systems (e.g., Netflix, Amazon)</p></li>
+</ul>
+<p>These systems excel at <strong>solving a problem</strong> but not at <strong>creation</strong>.</p>
+</section>
+<section id="generative-ai-learning-to-create">
+<h3>1.2 Generative AI: Learning to Create<a class="headerlink" href="#generative-ai-learning-to-create" title="Link to this heading">#</a></h3>
+<p><strong>Generative AI (GenAI)</strong> goes beyond solving a problem. It learns the <strong>underlying structure of data</strong> and uses it to produce new, original content that did not exist before.</p>
+<blockquote>
+<div><p>Generative AI does not just answer questions — it <strong>creates</strong> possibilities.</p>
+</div></blockquote>
+<p><strong>Examples of Generative AI:</strong></p>
+<ul class="simple">
+<li><p><strong>Text generation:</strong> ChatGPT, Claude, Gemini, LLaMA, Grok</p></li>
+<li><p><strong>Image generation:</strong> DALL·E, Midjourney, Stable Diffusion</p></li>
+<li><p><strong>Audio and music:</strong> Suno, MusicLM</p></li>
+<li><p><strong>Video:</strong> Runway, Pika, Sora, Google Veo</p></li>
+<li><p><strong>Code generation:</strong> GitHub Copilot, Amazon CodeWhisperer, Cursor</p></li>
+</ul>
+</section>
+<section id="how-generative-models-work">
+<h3>1.3 How Generative Models Work<a class="headerlink" href="#how-generative-models-work" title="Link to this heading">#</a></h3>
+<p>Generative AI models are trained to estimate the <strong>probability distribution</strong> of data. Once trained, they can sample from that distribution to generate <strong>plausible new instances</strong> — words, pixels, or notes for example.</p>
+<p>Generative AI learns <em>how data is structured</em>, not just <em>what it contains</em>.</p>
+<p><strong>Core generative model families:</strong></p>
+<ul class="simple">
+<li><p><strong>VAEs (Variational Autoencoders)</strong> — encode and decode data to generate similar but novel samples.</p></li>
+<li><p><strong>GANs (Generative Adversarial Networks)</strong> — use a <em>generator</em> and a <em>discriminator</em> in competition to produce realistic outputs.</p></li>
+<li><p><strong>Diffusion Models</strong> — iteratively remove noise from data to create high-quality images or signals.</p></li>
+<li><p><strong>Autoregressive Models</strong> — generate data by predicting the next element in a sequence based on the preceding elements.</p></li>
+<li><p><strong>Flow Based Models</strong> — learn a transformation (a flow) that maps a simple distribution (like a Gaussian) to the complex data distribution.</p></li>
+<li><p><strong>Transformers</strong> — predict the next token in a sequence, forming the foundation of LLMs.</p></li>
+</ul>
+</section>
+</section>
+<section id="part-ii-large-language-models-llms">
+<h2>Part II — Large Language Models (LLMs)<a class="headerlink" href="#part-ii-large-language-models-llms" title="Link to this heading">#</a></h2>
+<section id="what-is-a-large-language-model">
+<h3>2.1 What Is a Large Language Model?<a class="headerlink" href="#what-is-a-large-language-model" title="Link to this heading">#</a></h3>
+<p>A <strong>Large Language Model (LLM)</strong> is a neural network trained on vasts amounts of text to <strong>predict the next word (token)</strong> in a sequence. Through this simple objective, it learns grammar, facts, style, reasoning patterns, and even creative expression.</p>
+<p>LLMs do not “know” language, they <strong>model</strong> it.</p>
+<p><strong>Key characteristics:</strong></p>
+<ul class="simple">
+<li><p>Trained on vasts amounts of text data (e.g. books, articles, web content, code).</p></li>
+<li><p>Contain billions to trillions of parameters (learned weights).</p></li>
+<li><p>Use <strong>transformer architectures</strong> with <em>self-attention mechanisms</em> to capture context.</p></li>
+</ul>
+</section>
+<section id="the-transformer-revolution">
+<h3>2.2 The Transformer Revolution<a class="headerlink" href="#the-transformer-revolution" title="Link to this heading">#</a></h3>
+<p>Introduced in 2017 (<em>Vaswani et al., “Attention Is All You Need”,  Advances in neural information processing systems, 30</em>), the <strong>Transformer</strong> architecture replaced recurrence with attention.<br />
+It allowed models to:</p>
+<ul class="simple">
+<li><p>Understand relationships across long text sequences.</p></li>
+<li><p>Train efficiently in parallel on large datasets.</p></li>
+<li><p>Scale to massive sizes, enabling GPT, BERT, Claude, Gemini, and others.</p></li>
+</ul>
+<p><strong>Key components:</strong></p>
+<ul class="simple">
+<li><p><strong>Self-Attention/Multi-Head Attention</strong>: The central mechanism that weighs the relevance of every token to all others to compute contextual understanding.</p></li>
+<li><p><strong>Encoder and Decoder Stacks</strong>: The overall structure, where the Encoder processes the input sequence and the Decoder generates the output sequence.</p></li>
+<li><p><strong>Input Embeddings (with Positional Encoding)</strong>: Converts tokens into vectors and adds crucial information about the sequence order, as the model processes words simultaneously.</p></li>
+<li><p><strong>Feed-Forward Network (FFN)</strong>: A layered neural network applied after attention to further refine and transform the representation of each token.</p></li>
+<li><p><strong>Residual Connections &amp; Layer Normalization</strong>: Structural elements used around every sub-layer to stabilize the training of very deep models.</p></li>
+</ul>
+</section>
+</section>
+<section id="part-iii-capabilities-and-applications">
+<h2>Part III — Capabilities and Applications<a class="headerlink" href="#part-iii-capabilities-and-applications" title="Link to this heading">#</a></h2>
+<p>LLMs are <strong>general-purpose language engines</strong> — capable of performing multiple tasks without explicit reprogramming.</p>
+<section id="core-capabilities">
+<h3>3.1 Core Capabilities<a class="headerlink" href="#core-capabilities" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Text generation and summarization</strong></p></li>
+<li><p><strong>Question answering and tutoring</strong></p></li>
+<li><p><strong>Translation and language understanding</strong></p></li>
+<li><p><strong>Coding and data analysis</strong></p></li>
+<li><p><strong>Creative writing and ideation</strong></p></li>
+<li><p><strong>Dialogue and conversation (chatbots, assistants)</strong></p></li>
+</ul>
+</section>
+<section id="cross-modal-generative-ai">
+<h3>3.2 Cross-Modal Generative AI<a class="headerlink" href="#cross-modal-generative-ai" title="Link to this heading">#</a></h3>
+<p>The boundaries between modalities are dissolving — many modern models are <strong>multimodal</strong>. They can process <strong>text, images, audio, and video</strong> in the same framework.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p><strong>GPT-4o, Gemini, Claude 3.5</strong> — integrate text, image, and speech.</p></li>
+<li><p><strong>Runway Gen-2, Pika</strong> — generate video from text prompts.</p></li>
+<li><p><strong>ImageBind</strong> — learns representations across six sensory modalities.</p></li>
+</ul>
+<blockquote>
+<div><p>Multimodal AI represents a step toward <em>synthetic general perception</em>, a system that sees, hears, and speaks like humans do.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="part-iv-limitations-and-beyond">
+<h2>Part IV — Limitations and Beyond<a class="headerlink" href="#part-iv-limitations-and-beyond" title="Link to this heading">#</a></h2>
+<p>Despite their power, LLMs are <strong>not intelligent in a human sense</strong>, they rely entirely on learned statistical associations.</p>
+<section id="key-limitations">
+<h3>4.1 Key Limitations<a class="headerlink" href="#key-limitations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Hallucination</strong> — producing plausible but false or unverifiable information.</p></li>
+<li><p><strong>Data bias</strong> — reflecting stereotypes or systemic biases in training data.</p></li>
+<li><p><strong>Opacity</strong> — lack of transparency in model reasoning.</p></li>
+<li><p><strong>Context sensitivity</strong> — difficulty in maintaining consistency over long dialogues.</p></li>
+<li><p><strong>Resource intensity</strong> — high energy, data, and compute demands.</p></li>
+</ul>
+<p>An LLM’s “creativity” is a form of <strong>statistical generalization</strong>, not conscious invention.</p>
+</section>
+<section id="human-ai-collaboration-and-the-role-of-prompts">
+<h3>4.2 Human-AI Collaboration and the Role of Prompts<a class="headerlink" href="#human-ai-collaboration-and-the-role-of-prompts" title="Link to this heading">#</a></h3>
+<p>Generative AI becomes truly powerful when guided by <strong>human intention</strong>. A well-crafted <strong>prompt</strong> provides context, constraints, and purpose.</p>
+<ul class="simple">
+<li><p>Prompts are <strong>instructions or cues</strong> that shape how the model responds.</p></li>
+<li><p>Effective prompting involves specifying:</p>
+<ul>
+<li><p><strong>Instruction</strong>: The core “what to do” command (e.g., “Summarize,” “Translate,” or “Write”).</p></li>
+<li><p><strong>Context (Optional)</strong>: The “who or why” framing information (e.g., specifying a persona like “You are a legal expert” or a setting).</p></li>
+<li><p><strong>Input Data</strong>: The “what to process” material (e.g., a long article, a block of code, or a specific question).</p></li>
+<li><p><strong>Output Format (Optional)</strong>: The “how to structure it” requirement (e.g., “in bullet points,” “as a YAML file”, or “using a friendly tone”).</p></li>
+</ul>
+</li>
+<li><p>This is the basics of <strong>Prompt Engineering</strong>, covered in the next module.</p></li>
+</ul>
+<blockquote>
+<div><p>The intelligence of GenAI emerges not only from the model but from the <strong>interaction between human and machine</strong>.</p>
+</div></blockquote>
+</section>
+<section id="the-generative-ai-landscape">
+<h3>4.3 The Generative AI Landscape<a class="headerlink" href="#the-generative-ai-landscape" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Model Type</p></th>
+<th class="head text-left"><p>Input → Output</p></th>
+<th class="head text-left"><p>Examples</p></th>
+<th class="head text-left"><p>Typical Applications</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Text-to-Text (LLMs)</strong></p></td>
+<td class="text-left"><p>Text → Text</p></td>
+<td class="text-left"><p>GPT, Claude, Gemini</p></td>
+<td class="text-left"><p>Writing, tutoring, summarizing</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Text-to-Image</strong></p></td>
+<td class="text-left"><p>Text → Image</p></td>
+<td class="text-left"><p>DALL·E, Midjourney, Stable Diffusion</p></td>
+<td class="text-left"><p>Art, design, visualization</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Text-to-Audio</strong></p></td>
+<td class="text-left"><p>Text → Sound/Music</p></td>
+<td class="text-left"><p>Suno, MusicLM</p></td>
+<td class="text-left"><p>Sound design, storytelling</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Text-to-Video</strong></p></td>
+<td class="text-left"><p>Text → Video</p></td>
+<td class="text-left"><p>Runway, Pika, Sora</p></td>
+<td class="text-left"><p>Animation, film previsualization</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Multimodal Models</strong></p></td>
+<td class="text-left"><p>Text + Image + Audio → Mixed Output</p></td>
+<td class="text-left"><p>GPT-4o, Gemini, ImageBind</p></td>
+<td class="text-left"><p>Assistants, education, perception AI</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="the-human-centered-future-of-generative-ai">
+<h3>4.4 The Human-Centered Future of Generative AI<a class="headerlink" href="#the-human-centered-future-of-generative-ai" title="Link to this heading">#</a></h3>
+<p>Generative AI challenges us to redefine what it means to <strong>create</strong>, <strong>learn</strong>, and <strong>communicate</strong>. Its value depends not only on what it can generate, but on <strong>how responsibly and creatively we use it</strong>. The future belongs to those who understand both the <strong>capabilities</strong> and the <strong>limits</strong> of AI, and who can combine machine efficiency with human purpose.</p>
+</section>
+</section>
+<section id="reflection">
+<h2>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>What distinguishes human creativity from machine generation?<br />
+How can we ensure that generative AI enhances, rather than replaces, human imagination?</p>
+</div></blockquote>
+<p>Reflect on how GenAI changes your relationship with knowledge, authorship, and originality — and how prompt design can help maintain control, integrity, and ethics in AI-assisted creation.</p>
+</section>
+<section id="further-reading">
+<h2>📘 Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning.</em>, The MIT Press.</p></li>
+<li><p>Vaswani, A. et al. (2017). <em>Attention Is All You Need.</em>, Advances in neural information processing systems, 30.</p></li>
+<li><p>Bommasani, R. et al. (2022). <em>On the Opportunities and Risks of Foundation Models.</em>, arXiv preprint arXiv:2108.07258 <a class="reference external" href="https://arxiv.org/abs/2108.07258">https://arxiv.org/abs/2108.07258</a>.</p></li>
+<li><p>Mitchell, M. (2020). <em>Artificial Intelligence: A Guide for Thinking Humans.</em>, Picador Paper.</p></li>
+<li><p>Dendritic Institute (2025). <em>AI Literacy Series – Module 4: Generative AI and Large Language Models.</em> (Slides &amp; video lecture)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_3_How_Machines_Learn.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 3 — How Machines Learn</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_5_Prompt_Engineering.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 5 — Fundamentals of Prompt Engineering</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-from-traditional-ai-to-generative-ai">Part I — From Traditional AI to Generative AI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-ai-learning-to-solve-specific-tasks">1.1 Traditional AI: Learning to Solve Specific Tasks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-ai-learning-to-create">1.2 Generative AI: Learning to Create</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-generative-models-work">1.3 How Generative Models Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-large-language-models-llms">Part II — Large Language Models (LLMs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-large-language-model">2.1 What Is a Large Language Model?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transformer-revolution">2.2 The Transformer Revolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-capabilities-and-applications">Part III — Capabilities and Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-capabilities">3.1 Core Capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-modal-generative-ai">3.2 Cross-Modal Generative AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-limitations-and-beyond">Part IV — Limitations and Beyond</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-limitations">4.1 Key Limitations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-ai-collaboration-and-the-role-of-prompts">4.2 Human-AI Collaboration and the Role of Prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-generative-ai-landscape">4.3 The Generative AI Landscape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-human-centered-future-of-generative-ai">4.4 The Human-Centered Future of Generative AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

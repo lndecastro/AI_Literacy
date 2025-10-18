@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 2 — What Is AI and Its Many Branches &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_2_AI_and_Its_Branches';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 3 — How Machines Learn" href="Module_3_How_Machines_Learn.html" />
+    <link rel="prev" title="Module 1: A Brief History of Artificial Intelligence" href="Module_1_AI_History.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_7_Foundational_Models.html">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/docs/Module_2_AI_and_Its_Branches.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_2_AI_and_Its_Branches.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 2 — What Is AI and Its Many Branches</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-ai-machine-learning-neural-networks-and-deep-learning">Part I — AI, Machine Learning, Neural Networks, and Deep Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-ai">1.1 Artificial Intelligence (AI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml">1.2 Machine Learning (ML)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks-nn">1.3 Neural Networks (NN)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl">1.4 Deep Learning (DL)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-computational-intelligence-natural-computing-and-soft-computing">Part II — Computational Intelligence, Natural Computing, and Soft Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-intelligence-ci">2.1 Computational Intelligence (CI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-computing-nc">2.2 Natural Computing (NC)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-computing-sc">2.3 Soft Computing (SC)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-big-data-data-science-knowledge-discovery-data-mining-and-nlp">Part III — Big Data, Data Science, Knowledge Discovery, Data Mining, and NLP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data">3.1 Big Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science-ds">3.2 Data Science (DS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-discovery-in-databases-kdd-and-data-mining-dm">3.3 Knowledge Discovery in Databases (KDD) and Data Mining (DM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-language-processing-nlp">3.4 Natural Language Processing (NLP)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ecosystem-at-a-glance">AI Ecosystem at a Glance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-2-what-is-ai-and-its-many-branches">
+<h1>Module 2 — What Is AI and Its Many Branches<a class="headerlink" href="#module-2-what-is-ai-and-its-many-branches" title="Link to this heading">#</a></h1>
+<p>Artificial Intelligence is not a single technology but a <strong>collection of ideas, methods, and paradigms</strong> aimed at making machines capable of perception, reasoning, learning, and action.<br />
+This module expands the question <em>“What is AI?”</em> into a broader exploration of its <strong>many branches</strong>, from early rule-based systems to modern deep learning and data-driven intelligence.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Define Artificial Intelligence and distinguish it from automation and conventional programming.</p></li>
+<li><p>Explain the relationship between <strong>AI</strong>, <strong>Machine Learning</strong>, <strong>Neural Networks</strong>, and <strong>Deep Learning</strong>.</p></li>
+<li><p>Describe other important paradigms — <strong>Computational Intelligence</strong>, <strong>Natural Computing</strong>, and <strong>Soft Computing</strong>.</p></li>
+<li><p>Understand the role of <strong>Big Data</strong>, <strong>Data Science</strong>, <strong>Knowledge Discovery</strong>, and <strong>Natural Language Processing</strong> in the AI ecosystem.</p></li>
+</ul>
+</section>
+<section id="part-i-ai-machine-learning-neural-networks-and-deep-learning">
+<h2>Part I — AI, Machine Learning, Neural Networks, and Deep Learning<a class="headerlink" href="#part-i-ai-machine-learning-neural-networks-and-deep-learning" title="Link to this heading">#</a></h2>
+<p>AI began as a <strong>broad field</strong> seeking to replicate human reasoning, but gradually branched into <strong>data-driven subfields</strong> that learn from examples instead of rules and <strong>automation approaches</strong> that allow machines to make decisions in complex environments, from the automation of tasks to autonomous navigation systems.</p>
+<section id="artificial-intelligence-ai">
+<h3>1.1 Artificial Intelligence (AI)<a class="headerlink" href="#artificial-intelligence-ai" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The science and engineering of building systems that can perform tasks requiring human intelligence — such as reasoning, learning, perception, and decision-making.</p></li>
+<li><p>Encompasses both <strong>symbolic AI</strong> (rule-based logic) and <strong>sub-symbolic AI</strong> (learning from data).</p></li>
+<li><p>AI is the <strong>umbrella term</strong> under which all other branches fit (sometimes only partially).</p></li>
+</ul>
+</section>
+<section id="machine-learning-ml">
+<h3>1.2 Machine Learning (ML)<a class="headerlink" href="#machine-learning-ml" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A subset of AI focused on <strong>algorithms that learn from data</strong>.</p></li>
+<li><p>Instead of being explicitly programmed, ML models discover <strong>patterns and relationships</strong> that allow them to make predictions or classifications.</p></li>
+<li><p>Examples: spam filtering, fraud detection, recommendation systems.</p></li>
+</ul>
+<p><strong>AI learns from data; traditional programming follows rules.</strong></p>
+</section>
+<section id="neural-networks-nn">
+<h3>1.3 Neural Networks (NN)<a class="headerlink" href="#neural-networks-nn" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Inspired by biological neurons, <strong>artificial neural networks</strong> simulate interconnected nodes that process signals.</p></li>
+<li><p>Early neural models (Perceptrons) could only learn simple relationships; later architectures (multilayer perceptrons) captured more complex patterns.</p></li>
+</ul>
+</section>
+<section id="deep-learning-dl">
+<h3>1.4 Deep Learning (DL)<a class="headerlink" href="#deep-learning-dl" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A <strong>subset of ML</strong> using networks with many hidden layers (“deep” architectures).</p></li>
+<li><p>Enables breakthroughs in <strong>image recognition</strong>, <strong>speech</strong>, and <strong>language generation</strong>.</p></li>
+<li><p>Deep learning thrives on <strong>large datasets</strong> and <strong>high-performance GPUs</strong>.</p></li>
+</ul>
+<blockquote>
+<div><p>Deep Learning is to AI what the engine is to a car — a driver of today’s transformative progress.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="part-ii-computational-intelligence-natural-computing-and-soft-computing">
+<h2>Part II — Computational Intelligence, Natural Computing, and Soft Computing<a class="headerlink" href="#part-ii-computational-intelligence-natural-computing-and-soft-computing" title="Link to this heading">#</a></h2>
+<p>While ML focuses on data-driven adaptation, another branch — <strong>Computational Intelligence (CI)</strong> — explores how <strong>nature itself computes</strong>.<br />
+These paradigms study emergent, adaptive, and self-organizing behaviors.</p>
+<section id="computational-intelligence-ci">
+<h3>2.1 Computational Intelligence (CI)<a class="headerlink" href="#computational-intelligence-ci" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A multidisciplinary field that focuses on developing algorithms and models <strong>inspired by nature and human cognition</strong> to tackle complex problems.</p></li>
+<li><p>Core approaches:</p>
+<ul>
+<li><p><strong>Evolutionary Algorithms</strong> (utilize principles of natural evolution, such as selection and genetic variation, to perform search and optimization)</p></li>
+<li><p><strong>Fuzzy Systems</strong> (handle uncertainty and imprecision by allowing for degrees of truth rather than binary logic)</p></li>
+<li><p><strong>Artificial Neural Networks</strong> (mimic the human brain’s structure and function to design learning machines)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="natural-computing-nc">
+<h3>2.2 Natural Computing (NC)<a class="headerlink" href="#natural-computing-nc" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A multidisciplinary field, which combines concepts from biology, computer science, and engineering to develop innovative computational tools and approaches.</p></li>
+<li><p>Core approaches:</p>
+<ul>
+<li><p><strong>Computing Inspired by Nature</strong> (develop algorithms and models that draw inspiration from natural phenomena, such as evolutionary algorithms, artificial immune systems, neural networks, and swarm intelligence. These approaches mimic nature’s strategies to solve complex computational problems)</p></li>
+<li><p><strong>Computational Synthesis of Nature</strong> (focuses on generating natural patterns and behaviors in computers, essentially simulating nature through computational means. This can include artificial life, fractal geometry, and other nature-inspired simulations)</p></li>
+<li><p><strong>Computing with New Natural Materials</strong> (explores the potential of using novel natural materials for computing, which could lead to the design of new types of computers or computational systems)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="soft-computing-sc">
+<h3>2.3 Soft Computing (SC)<a class="headerlink" href="#soft-computing-sc" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Proposed by <strong>Lotfi A. Zadeh</strong> in the early 1990s, <strong>Soft Computing</strong> was envisioned as a <strong>new computational paradigm</strong> that emulates the human mind’s ability to reason under uncertainty, imprecision, and partial truth.</p></li>
+<li><p>At its core, Soft Computing integrates <strong>fuzzy logic</strong>, <strong>neural networks</strong>, and <strong>evolutionary computation</strong>, often forming <strong>hybrid systems</strong> that combine their strengths.</p></li>
+<li><p>Sample <strong>Hybrid Systems</strong>:</p>
+<ul>
+<li><p><strong>Neuro-Fuzzy Systems</strong> (learning fuzzy rules automatically)</p></li>
+<li><p><strong>Fuzzy-Evolutionary Systems</strong> (optimizing membership functions or rule bases)</p></li>
+<li><p><strong>Neuro-Evolutionary Systems</strong> (evolving network architectures or weights)</p></li>
+</ul>
+</li>
+<li><p>Used in systems that require <strong>flexibility and adaptability</strong>, such as control systems and decision support.</p></li>
+</ul>
+</section>
+</section>
+<section id="part-iii-big-data-data-science-knowledge-discovery-data-mining-and-nlp">
+<h2>Part III — Big Data, Data Science, Knowledge Discovery, Data Mining, and NLP<a class="headerlink" href="#part-iii-big-data-data-science-knowledge-discovery-data-mining-and-nlp" title="Link to this heading">#</a></h2>
+<p>Modern AI depends on the <strong>availability of usually massive data</strong> and <strong>tools to extract knowledge</strong> from it.</p>
+<section id="big-data">
+<h3>3.1 Big Data<a class="headerlink" href="#big-data" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Big Data</strong> refers not only to massive and complex data sets but also to the <strong>technological ecosystem</strong> required to <strong>store, manage, and process</strong> them efficiently.</p></li>
+<li><p>It encompasses three tightly connected layers:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Infrastructure (Hardware Layer)</strong> — large-scale storage systems, distributed databases, and high-performance computing or cloud environments that host the data.</p></li>
+<li><p><strong>Software Infrastructure (Processing Layer)</strong> — frameworks such as <strong>Hadoop</strong>, <strong>Spark</strong>, and <strong>Databricks</strong> that enable parallel processing, data streaming, and large-scale analytics.</p></li>
+<li><p><strong>Knowledge Infrastructure (Application Layer)</strong> — algorithms, models, and visualization tools that extract insights, support decision-making, and enable machine learning and AI applications.</p></li>
+</ol>
+</li>
+<li><p>Big Data is still defined by the classical <strong>3 V’s</strong> — <strong>Volume</strong>, <strong>Velocity</strong> and <strong>Variety</strong> — but its impact depends on the <strong>integration of scalable computation and intelligent analytics</strong>.</p></li>
+<li><p>Together, these layers provide the <strong>backbone of modern AI</strong>, offering both the <strong>fuel (data)</strong> and the <strong>engine (infrastructure)</strong> that make large-scale learning and reasoning possible.</p></li>
+</ul>
+<blockquote>
+<div><p>In essence, Big Data is not just <em>about data</em> — it is about the <strong>data, computation, and knowledge systems</strong> that allow us to turn information into intelligence.</p>
+</div></blockquote>
+</section>
+<section id="data-science-ds">
+<h3>3.2 Data Science (DS)<a class="headerlink" href="#data-science-ds" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>An interdisciplinary field combining <strong>statistics, computer science, and domain knowledge</strong> to extract insights from data.</p></li>
+<li><p>Involves the full data pipeline: collection → processing → exploratory analysis → modeling.</p></li>
+<li><p>Data Science operationalizes AI into decision-making processes.</p></li>
+</ul>
+</section>
+<section id="knowledge-discovery-in-databases-kdd-and-data-mining-dm">
+<h3>3.3 Knowledge Discovery in Databases (KDD) and Data Mining (DM)<a class="headerlink" href="#knowledge-discovery-in-databases-kdd-and-data-mining-dm" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>KDD</strong> is the overall process of discovering useful information from large data repositories.</p></li>
+<li><p><strong>Data Mining</strong> is one of its steps — the application of algorithms to extract patterns or predictive models.</p></li>
+<li><p>These techniques form the <strong>analytical backbone</strong> of modern AI systems.</p></li>
+</ul>
+<blockquote>
+<div><p>If Data Science is the process, <strong>Data Mining</strong> is the toolset.</p>
+</div></blockquote>
+</section>
+<section id="natural-language-processing-nlp">
+<h3>3.4 Natural Language Processing (NLP)<a class="headerlink" href="#natural-language-processing-nlp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A branch of AI focused on enabling machines to <strong>understand and generate human language</strong>.</p></li>
+<li><p>Core tasks: text classification, sentiment analysis, translation, summarization, and dialogue generation.</p></li>
+<li><p>Modern NLP is powered by <strong>transformer models</strong> and <strong>Large Language Models (LLMs)</strong>.</p></li>
+</ul>
+<blockquote>
+<div><p>NLP bridges human communication and machine reasoning — it makes interaction with AI <em>natural</em>.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="ai-ecosystem-at-a-glance">
+<h2>AI Ecosystem at a Glance<a class="headerlink" href="#ai-ecosystem-at-a-glance" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Branch</p></th>
+<th class="head text-left"><p>Focus</p></th>
+<th class="head text-left"><p>Inspiration</p></th>
+<th class="head text-left"><p>Example Applications</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Symbolic AI</strong></p></td>
+<td class="text-left"><p>Logic, rules, reasoning</p></td>
+<td class="text-left"><p>Human cognition</p></td>
+<td class="text-left"><p>Expert systems, planning</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Machine Learning</strong></p></td>
+<td class="text-left"><p>Data-driven learning</p></td>
+<td class="text-left"><p>Statistics and learning machines</p></td>
+<td class="text-left"><p>Predictions, recommendations</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Deep Learning</strong></p></td>
+<td class="text-left"><p>Hierarchical neural networks</p></td>
+<td class="text-left"><p>Brain structure</p></td>
+<td class="text-left"><p>Vision, speech, text generation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Computational Intelligence</strong></p></td>
+<td class="text-left"><p>Natural adaptation</p></td>
+<td class="text-left"><p>Evolution, approximate reasoning, neural cognition</p></td>
+<td class="text-left"><p>Optimization, robotics</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Natural Computing</strong></p></td>
+<td class="text-left"><p>Computing inspired or implemented by nature</p></td>
+<td class="text-left"><p>Biological and physical processes (DNA, cells, ecosystems)</p></td>
+<td class="text-left"><p>Bioinformatics, molecular computing, emergent systems</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Soft Computing</strong></p></td>
+<td class="text-left"><p>Approximate reasoning and hybrid systems</p></td>
+<td class="text-left"><p>Fuzzy logic</p></td>
+<td class="text-left"><p>Control systems, decision support</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Data Science</strong></p></td>
+<td class="text-left"><p>Insight extraction and inference</p></td>
+<td class="text-left"><p>Learning from data</p></td>
+<td class="text-left"><p>Analytics, dashboards</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>NLP</strong></p></td>
+<td class="text-left"><p>Language understanding and generation</p></td>
+<td class="text-left"><p>Human communication</p></td>
+<td class="text-left"><p>Chatbots, translation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="reflection">
+<h2>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Which branch of AI feels closest to your field or interest area?<br />
+How do these paradigms complement one another to form today’s AI ecosystem?</p>
+</div></blockquote>
+<p>Reflect on how diverse approaches — symbolic, statistical, and nature-inspired — collectively contribute to the intelligence we observe in modern systems.</p>
+</section>
+<section id="further-reading">
+<h2>📘 Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Russell, S., &amp; Norvig, P. (2021). <em>Artificial Intelligence: A Modern Approach.</em></p></li>
+<li><p>Zadeh, L. A. (1994). <em>Fuzzy Logic, Neural Networks, and Soft Computing.</em>, Communications of the ACM, 37(3), pp. 77-84.</p></li>
+<li><p>Engelbrecht, A. P. (2007). <em>Computational Intelligence: An Introduction.</em>, John Wiley &amp; Sons.</p></li>
+<li><p>Mitchell, T. M. (1997). <em>Machine Learning.</em>, McGraw-Hill Education.</p></li>
+<li><p>de Castro, L. N. (2006). <em>Fundamentals of Natural Computing: Basic Concepts, Algorithms, and Applications</em>, CRC Press.</p></li>
+<li><p>de Castro, L. N. &amp; Ferrari, D. G. (2016). <em>Data Mining: Basic Concepts, Algorithms, and Applications</em>, Saraiva (in Portuguese).</p></li>
+<li><p>Dendritic Institute (2025). <em>AI Literacy Series – Module 2: What Is AI and Its Many Branches.</em> (Slides &amp; video lecture)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_1_AI_History.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 1: A Brief History of Artificial Intelligence</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_3_How_Machines_Learn.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 3 — How Machines Learn</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-ai-machine-learning-neural-networks-and-deep-learning">Part I — AI, Machine Learning, Neural Networks, and Deep Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-intelligence-ai">1.1 Artificial Intelligence (AI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ml">1.2 Machine Learning (ML)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks-nn">1.3 Neural Networks (NN)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-dl">1.4 Deep Learning (DL)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-computational-intelligence-natural-computing-and-soft-computing">Part II — Computational Intelligence, Natural Computing, and Soft Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-intelligence-ci">2.1 Computational Intelligence (CI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-computing-nc">2.2 Natural Computing (NC)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-computing-sc">2.3 Soft Computing (SC)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-big-data-data-science-knowledge-discovery-data-mining-and-nlp">Part III — Big Data, Data Science, Knowledge Discovery, Data Mining, and NLP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data">3.1 Big Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-science-ds">3.2 Data Science (DS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-discovery-in-databases-kdd-and-data-mining-dm">3.3 Knowledge Discovery in Databases (KDD) and Data Mining (DM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-language-processing-nlp">3.4 Natural Language Processing (NLP)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ecosystem-at-a-glance">AI Ecosystem at a Glance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

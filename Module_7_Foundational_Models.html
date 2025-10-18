@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 7 – Foundational Models and General-Purpose LLMs &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_7_Foundational_Models';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 8 — Sample Case Studies and Applications of AI" href="Module_8_Sample_Case_Studies.html" />
+    <link rel="prev" title="Module 6 - Context Engineering: Advanced AI Communication" href="Module_6_Context_Engineering.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/docs/Module_7_Foundational_Models.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_7_Foundational_Models.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 7 – Foundational Models and General-Purpose LLMs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-six-overview-of-leading-foundational-ai-tools">The Big Six: Overview of Leading Foundational AI Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-dimensions">Comparative Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-and-societal-dimensions">Ethical and Societal Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handson-exploration-suggested-activity">Hands‑On Exploration (Suggested Activity)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-visuals">Suggested Visuals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-vendorneutral">📘 Further Reading (vendor‑neutral)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-should-leave-with">✅ What you should leave with</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-7-foundational-models-and-general-purpose-llms">
+<h1>Module 7 – Foundational Models and General-Purpose LLMs<a class="headerlink" href="#module-7-foundational-models-and-general-purpose-llms" title="Link to this heading">#</a></h1>
+<p>Artificial Intelligence has entered a new era driven by <strong>foundational models</strong> — large-scale, general-purpose systems trained on massive multimodal datasets. These models can perform an extraordinary range of tasks, from reasoning and coding to generating text, images, and sound. They represent a shift from narrow, task-specific AI to universal, flexible architectures capable of adaptation across contexts.</p>
+<p>Foundational models, particularly <strong>Large Language Models (LLMs)</strong>, are now the backbone of the modern AI ecosystem. Understanding their design, strengths, and limitations is essential for anyone engaging with AI critically and creatively. This module explores six of today’s most influential general-purpose AI systems — <strong>ChatGPT, Claude, Copilot, Gemini, <a class="reference external" href="http://Meta.ai">Meta.ai</a>, and Grok</strong> — comparing their capabilities, ecosystems, and implications for human-centered use.</p>
+<blockquote>
+<div><p><strong>Guiding Question:</strong> How have foundational models changed what it means for a machine to “know”, “create”, and “collaborate”?</p>
+</div></blockquote>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>By the end of this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Define what foundational models and general-purpose LLMs are and explain their significance.</p></li>
+<li><p>Identify the key features, capabilities, and ecosystems of ChatGPT, Claude, Copilot, Gemini, <a class="reference external" href="http://Meta.ai">Meta.ai</a>, and Grok.</p></li>
+<li><p>Compare models across dimensions such as reasoning, creativity, openness, and ethical alignment.</p></li>
+<li><p>Critically evaluate the trade-offs between open and proprietary AI systems.</p></li>
+<li><p>Reflect on responsible and transparent use of general-purpose AI tools in academic, professional, and creative contexts.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="the-big-six-overview-of-leading-foundational-ai-tools">
+<h2>The Big Six: Overview of Leading Foundational AI Tools<a class="headerlink" href="#the-big-six-overview-of-leading-foundational-ai-tools" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Developer</p></th>
+<th class="head"><p>Key Strengths</p></th>
+<th class="head"><p>Primary Capabilities</p></th>
+<th class="head"><p>Example Use Cases</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ChatGPT (GPT‑4/5)</strong></p></td>
+<td><p>OpenAI</p></td>
+<td><p>Conversational fluency, multimodal input (text, image, audio), plugin and API ecosystem</p></td>
+<td><p>Text generation, coding, tutoring, analysis</p></td>
+<td><p>Education, productivity, software development</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Claude</strong></p></td>
+<td><p>Anthropic</p></td>
+<td><p>Long context windows, ethical alignment, artifact creation, document reasoning</p></td>
+<td><p>Deep reading, structured writing, policy analysis</p></td>
+<td><p>Research synthesis, education, enterprise use</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Copilot (Microsoft)</strong></p></td>
+<td><p>Microsoft + OpenAI</p></td>
+<td><p>Integration with Microsoft 365 and GitHub</p></td>
+<td><p>Writing, summarizing, automating workflows</p></td>
+<td><p>Business productivity, programming support</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gemini</strong></p></td>
+<td><p>Google DeepMind</p></td>
+<td><p>Multimodal reasoning (text, image, video, audio), Google integration</p></td>
+<td><p>Search, analysis, retrieval‑augmented generation</p></td>
+<td><p>Data analytics, creative content, education</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><a class="reference external" href="http://Meta.ai">Meta.ai</a> (LLaMA)</strong></p></td>
+<td><p>Meta Platforms</p></td>
+<td><p>Open‑source, customizable, local deployment</p></td>
+<td><p>Language generation, chatbot integration</p></td>
+<td><p>Research, privacy‑preserving AI, app development</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Grok</strong></p></td>
+<td><p>xAI (Elon Musk)</p></td>
+<td><p>Real‑time reasoning, humor, X platform integration</p></td>
+<td><p>Conversational analysis, summarization, trend detection</p></td>
+<td><p>Social media insights, public data monitoring</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="comparative-dimensions">
+<h2>Comparative Dimensions<a class="headerlink" href="#comparative-dimensions" title="Link to this heading">#</a></h2>
+<p>To understand how these systems differ, we analyze them through five key lenses:</p>
+<ol class="arabic simple">
+<li><p><strong>Knowledge Base &amp; Architecture</strong></p>
+<ul class="simple">
+<li><p>Model scale, multimodal capacity, and update frequency.</p></li>
+<li><p>How training data and architecture affect reasoning and creativity.</p></li>
+</ul>
+</li>
+<li><p><strong>Interface &amp; User Experience</strong></p>
+<ul class="simple">
+<li><p>Accessibility, collaboration tools, context length, and integration into daily workflows.</p></li>
+</ul>
+</li>
+<li><p><strong>Ethical Alignment &amp; Safety Mechanisms</strong></p>
+<ul class="simple">
+<li><p>Transparency, interpretability, bias mitigation, and alignment with human values.</p></li>
+</ul>
+</li>
+<li><p><strong>Customization &amp; Ecosystem</strong></p>
+<ul class="simple">
+<li><p>Plugin systems, fine‑tuning options, APIs, and open vs. closed models.</p></li>
+</ul>
+</li>
+<li><p><strong>Performance &amp; Use Contexts</strong></p>
+<ul class="simple">
+<li><p>When each model excels: logic, language, creativity, or data connectivity.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="ethical-and-societal-dimensions">
+<h2>Ethical and Societal Dimensions<a class="headerlink" href="#ethical-and-societal-dimensions" title="Link to this heading">#</a></h2>
+<p>The growing dominance of foundational models raises important societal questions:</p>
+<ul class="simple">
+<li><p>Who controls access to these systems and their data?</p></li>
+<li><p>How can transparency, fairness, and accessibility be ensured?</p></li>
+<li><p>What responsibilities do developers and users share in shaping AI behavior?</p></li>
+</ul>
+<p>The discussion of <strong>AI sovereignty</strong> — balancing innovation with independence — is now central to digital ethics. Open models such as <strong>LLaMA</strong> and community-driven alternatives highlight the importance of democratizing AI infrastructure.</p>
+<blockquote>
+<div><p><strong>Reflection Prompt:</strong> What trade‑offs exist between convenience and control when choosing between open and proprietary AI systems?</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="handson-exploration-suggested-activity">
+<h2>Hands‑On Exploration (Suggested Activity)<a class="headerlink" href="#handson-exploration-suggested-activity" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Choose <strong>two or more models</strong> (e.g., ChatGPT vs. Claude).</p></li>
+<li><p>Ask them to perform the same task — summarize an article, generate a policy brief, or create an image prompt.</p></li>
+<li><p>Compare their tone, reasoning depth, factual consistency, and bias.</p></li>
+<li><p>Reflect on how model design and ecosystem shape their output.</p></li>
+</ol>
+<p>The goal is not to decide which is “best,” but to <strong>develop AI literacy</strong> — understanding how different systems think, create, and collaborate.</p>
+</section>
+<hr class="docutils" />
+<section id="key-takeaways">
+<h2>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Foundational models act as <strong>infrastructure for intelligence</strong> — adaptable across domains and modalities.</p></li>
+<li><p>Each model embodies the <strong>values and priorities</strong> of its developer ecosystem.</p></li>
+<li><p><strong>Critical literacy and human oversight</strong> remain essential for all AI interactions.</p></li>
+<li><p>The future lies in <strong>interoperable and multimodal AI</strong>, where systems collaborate across tools and contexts.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="suggested-visuals">
+<h2>Suggested Visuals<a class="headerlink" href="#suggested-visuals" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Radar Chart:</strong> Compare reasoning, creativity, openness, and safety across the six models.</p></li>
+<li><p><strong>Ecosystem Map:</strong> Show relationships among the main corporate ecosystems (OpenAI‑Microsoft, Anthropic‑Amazon, Google, Meta, xAI).</p></li>
+<li><p><strong>Timeline:</strong> Evolution of foundational models from GPT‑3 (2020) to multimodal LLMs (2025).</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Prepared by Dr. Leandro Nunes de Castro, FGCU Dendritic Institute for Human‑Centered AI &amp; Data Science (2025).</em></p>
+</section>
+<section id="further-reading-vendorneutral">
+<h2>📘 Further Reading (vendor‑neutral)<a class="headerlink" href="#further-reading-vendorneutral" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Foundation models: opportunities &amp; risks; alignment and safety overviews.</p></li>
+<li><p>Concept primers on <strong>RAG</strong>, <strong>instruction‑tuning</strong>, and <strong>tool use</strong>.</p></li>
+<li><p>Practical guides on disclosure, privacy, and basic evaluation rubrics.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-you-should-leave-with">
+<h2>✅ What you should leave with<a class="headerlink" href="#what-you-should-leave-with" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A mental model of <strong>which tool/model to use when</strong>.</p></li>
+<li><p>Confidence to <strong>ground</strong> outputs in your own materials.</p></li>
+<li><p>A reusable <strong>workflow template</strong> (Projects/Custom GPT) to carry into Module 8.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_6_Context_Engineering.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 6 - Context Engineering: Advanced AI Communication</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_8_Sample_Case_Studies.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 8 — Sample Case Studies and Applications of AI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-six-overview-of-leading-foundational-ai-tools">The Big Six: Overview of Leading Foundational AI Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-dimensions">Comparative Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-and-societal-dimensions">Ethical and Societal Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handson-exploration-suggested-activity">Hands‑On Exploration (Suggested Activity)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-visuals">Suggested Visuals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-vendorneutral">📘 Further Reading (vendor‑neutral)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-should-leave-with">✅ What you should leave with</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

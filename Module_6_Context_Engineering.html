@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 6 - Context Engineering: Advanced AI Communication &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_6_Context_Engineering';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 7 – Foundational Models and General-Purpose LLMs" href="Module_7_Foundational_Models.html" />
+    <link rel="prev" title="Module 5 — Fundamentals of Prompt Engineering" href="Module_5_Prompt_Engineering.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 6: Context Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_7_Foundational_Models.html">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/docs/Module_6_Context_Engineering.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_6_Context_Engineering.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 6 - Context Engineering: Advanced AI Communication</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-context-matters">6.1 Why Context Matters?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-techniques-in-context-engineering">6.2 Key Techniques in Context Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-vs-context-engineering">6.3 Prompt vs Context Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-in-education-and-learning">6.4 Example in Education and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-in-healthcare">6.5 Example in Healthcare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-from-prompt-engineering-to-context-engineering">Exercise 1: From Prompt Engineering to Context Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#personalized-assistants-and-projects-extending-the-genai-toolkit">6.6 Personalized Assistants and Projects: Extending the GenAI Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personalized-assistants">6.6.1 Personalized Assistants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projects">6.6.2 Projects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personalized-assistants-vs-projects">6.6.3 Personalized Assistants vs. Projects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each">When to Use Each</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-resources-across-platforms">6.6.4 Similar Resources Across Platforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-our-course">6.6.5 Connecting to Our Course</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-personalized-assistants-and-projects">Exercise 2: Personalized Assistants and Projects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-considerations-and-wrap-up-reflections">6.7 Ethical Considerations and Wrap-Up Reflections</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-6-context-engineering-advanced-ai-communication">
+<h1>Module 6 - Context Engineering: Advanced AI Communication<a class="headerlink" href="#module-6-context-engineering-advanced-ai-communication" title="Link to this heading">#</a></h1>
+<p>Context engineering is the practice of <strong>designing, structuring, and managing the broader environment</strong> in which a large language model (LLM) processes information, not just the direct prompt.
+While prompt engineering focuses on <em>how you phrase the instruction</em>, context engineering focuses on <em>what additional information surrounds and informs that instruction</em>.
+It is sometimes called <em>“prompt engineering on steroids”</em> because it moves beyond single instructions into <strong>systematic control of the model’s cognitive environment</strong>.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Define <strong>Context Engineering</strong> and explain its importance in guiding AI behavior and output quality.</p></li>
+<li><p>Identify key components that shape AI context, including <strong>role</strong>, <strong>audience</strong>, <strong>purpose</strong>, <strong>tone</strong>, and <strong>constraints</strong>.</p></li>
+<li><p>Design prompts that embed clear contextual cues to improve relevance, coherence, and ethical alignment.</p></li>
+<li><p>Distinguish between <strong>explicit</strong> and <strong>implicit</strong> context in human–AI interaction.</p></li>
+<li><p>Apply context engineering techniques to achieve desired outcomes across different domains and use cases.</p></li>
+<li><p>Reflect on how context influences meaning, interpretation, and responsibility in AI-generated content.</p></li>
+</ul>
+</section>
+<section id="why-context-matters">
+<h2>6.1 Why Context Matters?<a class="headerlink" href="#why-context-matters" title="Link to this heading">#</a></h2>
+<p>LLMs generate answers based purely on the <strong>input context window</strong>: the prompt plus any surrounding data you provide.<br />
+By carefully shaping this context, you can:</p>
+<ul class="simple">
+<li><p><strong>Bias the model toward desired outcomes</strong></p></li>
+<li><p><strong>Reduce hallucination</strong> by grounding responses in authoritative sources</p></li>
+<li><p><strong>Adapt the model to specific roles</strong></p></li>
+<li><p><strong>Create repeatable workflows</strong> for consistency</p></li>
+</ul>
+</section>
+<section id="key-techniques-in-context-engineering">
+<h2>6.2 Key Techniques in Context Engineering<a class="headerlink" href="#key-techniques-in-context-engineering" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>System Role Design</strong> – Define the AI’s persona or purpose.</p></li>
+<li><p><strong>Instruction Layering</strong> – Combine multiple prompt patterns.</p></li>
+<li><p><strong>Contextual Priming</strong> – Provide reference materials or examples.</p></li>
+<li><p><strong>Retrieval-Augmented Generation (RAG)</strong> – Dynamically inject external data.</p></li>
+<li><p><strong>Chained Prompts</strong> – Break complex tasks into stages.</p></li>
+<li><p><strong>Output Shaping</strong> – Specify desired tone, style, or format.</p></li>
+<li><p><strong>Negative Context Engineering</strong> – Explicitly define what should be avoided or excluded.</p></li>
+<li><p><strong>Multi-Modal Context Orchestration</strong> – Combine text, structured data, and other input types when available.</p></li>
+</ol>
+</section>
+<section id="prompt-vs-context-engineering">
+<h2>6.3 Prompt vs Context Engineering<a class="headerlink" href="#prompt-vs-context-engineering" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Prompt Engineering</p></th>
+<th class="head"><p>Context Engineering</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Focus</p></td>
+<td><p>Wording of instruction</p></td>
+<td><p>Full environment around the instruction</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scope</p></td>
+<td><p>Single prompt</p></td>
+<td><p>Multi-layered input, documents, workflows</p></td>
+</tr>
+<tr class="row-even"><td><p>Goal</p></td>
+<td><p>Better single response</p></td>
+<td><p>Consistent, domain-specific high-quality outputs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Analogy</p></td>
+<td><p>Writing a recipe</p></td>
+<td><p>Designing the entire kitchen and pantry setup</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="example-in-education-and-learning">
+<h2>6.4 Example in Education and Learning<a class="headerlink" href="#example-in-education-and-learning" title="Link to this heading">#</a></h2>
+<p><strong>Prompt Engineering Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Summarize</span> <span class="n">this</span> <span class="n">lesson</span> <span class="n">plan</span> <span class="ow">in</span> <span class="n">three</span> <span class="n">bullet</span> <span class="n">points</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Context Engineering Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span> <span class="n">Role</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">an</span> <span class="n">instructional</span> <span class="n">designer</span> <span class="n">specializing</span> <span class="ow">in</span> <span class="n">technology</span><span class="o">-</span><span class="n">enhanced</span> <span class="n">learning</span><span class="o">.</span>
+
+<span class="n">Reference</span> <span class="n">Context</span><span class="p">:</span> <span class="n">Here</span> <span class="n">are</span> <span class="n">three</span> <span class="n">sample</span> <span class="n">lesson</span> <span class="n">plans</span> <span class="kn">from</span><span class="w"> </span><span class="nn">previous</span> <span class="n">AI</span> <span class="n">Literacy</span> <span class="n">workshops</span> <span class="p">[</span><span class="n">INSERT</span> <span class="n">OR</span> <span class="n">UPLOAD</span> <span class="n">CONTENT</span><span class="p">]</span><span class="o">.</span>
+
+<span class="n">Task</span><span class="p">:</span> <span class="n">Evaluate</span> <span class="n">the</span> <span class="n">following</span> <span class="n">lesson</span> <span class="n">plan</span><span class="o">.</span> <span class="n">Compare</span> <span class="n">it</span> <span class="n">to</span> <span class="n">the</span> <span class="n">reference</span> <span class="n">cases</span> <span class="ow">and</span> <span class="n">summarize</span> <span class="ow">in</span> <span class="n">three</span> <span class="n">bullet</span> <span class="n">points</span><span class="o">.</span>
+
+<span class="n">Output</span><span class="p">:</span> <span class="n">Provide</span> <span class="n">a</span> <span class="n">structured</span> <span class="n">table</span> <span class="k">with</span> <span class="n">Strengths</span><span class="p">,</span> <span class="n">Weaknesses</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Improvement</span> <span class="n">Suggestions</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>By embedding <strong>role, reference materials, task, and output format</strong>, the model produces more reliable and actionable results.</p>
+</section>
+<section id="example-in-healthcare">
+<h2>6.5 Example in Healthcare<a class="headerlink" href="#example-in-healthcare" title="Link to this heading">#</a></h2>
+<p><strong>Prompt Engineering Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Summarize</span> <span class="n">this</span> <span class="n">patient</span> <span class="n">case</span> <span class="ow">in</span> <span class="n">three</span> <span class="n">bullet</span> <span class="n">points</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Context Engineering Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>System Role: You are a clinical data analyst supporting a hospital’s quality-improvement team.
+
+Reference Context and Task: Review the following anonymized patient summary and compare it to current treatment guidelines provided in the reference file.
+
+Output: Present your response in three bullet points organized under: Key Findings, Potential Risks, and Recommended Next Steps.
+</pre></div>
+</div>
+<p>This demonstrates how adding context transforms a basic summarization task into a guided, responsible, and domain-specific analysis—producing output aligned with medical standards and professional use.</p>
+</section>
+<section id="exercise-1-from-prompt-engineering-to-context-engineering">
+<h2>Exercise 1: From Prompt Engineering to Context Engineering<a class="headerlink" href="#exercise-1-from-prompt-engineering-to-context-engineering" title="Link to this heading">#</a></h2>
+<p><strong>Part A – Prompt Engineering (Baseline)</strong><br />
+Use a simple prompt to complete the task below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Summarize</span> <span class="n">the</span> <span class="n">following</span> <span class="n">startup</span> <span class="n">idea</span> <span class="ow">in</span> <span class="n">three</span> <span class="n">bullet</span> <span class="n">points</span><span class="p">:</span>
+
+<span class="n">Startup</span> <span class="n">Idea</span><span class="p">:</span> <span class="n">An</span> <span class="n">AI</span><span class="o">-</span><span class="n">powered</span> <span class="n">platform</span> <span class="n">that</span> <span class="n">helps</span> <span class="n">local</span> <span class="n">farmers</span> <span class="n">predict</span> <span class="n">crop</span> <span class="n">diseases</span> <span class="n">using</span> <span class="n">satellite</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">weather</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Part B – Context Engineering (Enhanced)</strong><br />
+Expand the same task into a <strong>context-engineered input</strong> by adding:</p>
+<ol class="arabic simple">
+<li><p><strong>System Role</strong></p></li>
+<li><p><strong>Reference Material</strong></p></li>
+<li><p><strong>Instruction Layering</strong></p></li>
+<li><p><strong>Output Shaping</strong></p></li>
+</ol>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span> <span class="n">Role</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">venture</span> <span class="n">capital</span> <span class="n">analyst</span> <span class="n">specializing</span> <span class="ow">in</span> <span class="n">AgriTech</span> <span class="n">startups</span><span class="o">.</span>
+
+<span class="n">Reference</span> <span class="n">Context</span><span class="p">:</span> <span class="n">Farmers</span> <span class="n">face</span> <span class="n">billions</span> <span class="ow">in</span> <span class="n">losses</span> <span class="n">annually</span> <span class="n">due</span> <span class="n">to</span> <span class="n">crop</span> <span class="n">diseases</span><span class="o">.</span> <span class="n">Satellite</span><span class="o">-</span><span class="n">based</span> <span class="n">solutions</span> <span class="n">are</span> <span class="n">an</span> <span class="n">emerging</span> <span class="n">trend</span> <span class="ow">in</span> <span class="n">precision</span> <span class="n">agriculture</span><span class="o">.</span>
+
+<span class="n">Task</span><span class="p">:</span> <span class="n">Summarize</span> <span class="n">the</span> <span class="n">following</span> <span class="n">startup</span> <span class="n">idea</span><span class="o">.</span> <span class="n">Compare</span> <span class="n">it</span> <span class="n">to</span> <span class="n">typical</span> <span class="n">AgriTech</span> <span class="n">innovations</span> <span class="ow">and</span> <span class="n">highlight</span> <span class="n">market</span> <span class="n">potential</span><span class="o">.</span>
+
+<span class="n">Startup</span> <span class="n">Idea</span><span class="p">:</span> <span class="n">An</span> <span class="n">AI</span><span class="o">-</span><span class="n">powered</span> <span class="n">platform</span> <span class="n">that</span> <span class="n">helps</span> <span class="n">local</span> <span class="n">farmers</span> <span class="n">predict</span> <span class="n">crop</span> <span class="n">diseases</span> <span class="n">using</span> <span class="n">satellite</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">weather</span> <span class="n">data</span><span class="o">.</span>
+
+<span class="n">Output</span><span class="p">:</span> <span class="n">Provide</span> <span class="n">three</span> <span class="n">bullet</span> <span class="n">points</span> <span class="n">under</span> <span class="n">the</span> <span class="n">headings</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Value</span> <span class="n">Proposition</span>
+<span class="o">-</span> <span class="n">Market</span> <span class="n">Fit</span>
+<span class="o">-</span> <span class="n">Investment</span> <span class="n">Potential</span>
+</pre></div>
+</div>
+<p><strong>Your Task:</strong></p>
+<ol class="arabic simple">
+<li><p>Write your own <strong>context-engineered version</strong> of the baseline prompt.</p></li>
+<li><p>Compare the two outputs (baseline vs. context-engineered).</p></li>
+<li><p>Reflect: <em>What improvements did context engineering bring to the AI’s response?</em></p></li>
+</ol>
+</section>
+<section id="personalized-assistants-and-projects-extending-the-genai-toolkit">
+<h2>6.6 Personalized Assistants and Projects: Extending the GenAI Toolkit<a class="headerlink" href="#personalized-assistants-and-projects-extending-the-genai-toolkit" title="Link to this heading">#</a></h2>
+<p>Generative AI tools like ChatGPT, Perplexity and Claude provide powerful <strong>general-purpose intelligence</strong>, but professionals often need <strong>domain-specific capabilities</strong>.
+Two recent innovations — <strong>Personalized Assistants</strong> and <strong>Projects</strong> — enable you to move beyond using AI <em>as-is</em> and start <strong>building tailored AI solutions</strong>.</p>
+<section id="personalized-assistants">
+<h3>6.6.1 Personalized Assistants<a class="headerlink" href="#personalized-assistants" title="Link to this heading">#</a></h3>
+<p><strong>What are they?</strong><br />
+Personalized assistants, such as <em>Custom GPTs</em> are personalized versions of foundational models (like GPT-4/5) that you configure with <strong>specific instructions, data, and tools</strong>.
+Think of them as your own AI partner that understands the context of your business.</p>
+<p><strong>When to use them?</strong></p>
+<ul class="simple">
+<li><p>Automating repetitive interactions (e.g., customer support, investor FAQs).</p></li>
+<li><p>Acting as a <em>single-purpose agent</em> — a specialized helper for a narrow domain.</p></li>
+<li><p>Rapid prototyping of ideas that require direct user interaction.</p></li>
+</ul>
+<p><strong>How to create one:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Define the role</strong>: What is your model supposed to do (e.g., answer customer questions, analyze investor reports, explain a certain content)?</p></li>
+<li><p><strong>Set instructions</strong>: Craft clear system messages and prompt templates.</p></li>
+<li><p><strong>Add knowledge</strong>: Upload files, FAQs, or curated datasets to ground the model in your domain.</p></li>
+<li><p><strong>Integrate tools</strong>: Connect APIs, code interpreters, or plugins when needed.</p></li>
+</ol>
+<p><strong>Strengths</strong>: Always available, consistent tone/persona, easy to scale to many users.</p>
+<p><strong>Limitations</strong>: Narrow focus, less suitable for managing complex or evolving datasets.</p>
+<p><strong>Sample Applications:</strong></p>
+<ul class="simple">
+<li><p>Customer support assistant tailored to your product.</p></li>
+<li><p>Investor relations bot answering FAQs about your startup.</p></li>
+<li><p>Market research assistant for competitor and trend analysis.</p></li>
+<li><p>Internal knowledge base for onboarding new team members.</p></li>
+<li><p>AI Teaching Assistant that explains topics at multiple difficulty levels.</p></li>
+<li><p>Lesson Plan Generator aligned with curriculum standards.</p></li>
+<li><p>Academic Writing Coach that reviews clarity, tone, and citation style.</p></li>
+<li><p>Student Support GPT that answers course-related FAQs using syllabus materials.</p></li>
+<li><p>Patient Education Assistant that explains diagnoses and procedures in plain language.</p></li>
+<li><p>Wellness Companion offering lifestyle guidance based on verified sources.</p></li>
+</ul>
+</section>
+<section id="projects">
+<h3>6.6.2 Projects<a class="headerlink" href="#projects" title="Link to this heading">#</a></h3>
+<p><strong>What are they?</strong><br />
+Projects are collaborative <strong>AI workspaces</strong> that allow teams to combine <strong>LLM interactions, files, data, and notes</strong> into one structured environment.
+Instead of isolated chats, a Project acts as a <strong>hub of AI-augmented workflows</strong>.</p>
+<p><strong>When to use them?</strong></p>
+<ul class="simple">
+<li><p>Organizing and curating research (market analysis, regulations, competitor benchmarking).</p></li>
+<li><p>Managing multi-step workflows (e.g., lean canvas, due diligence, product roadmap).</p></li>
+<li><p>Supporting team collaboration where everyone contributes and refines knowledge.</p></li>
+</ul>
+<p><strong>Core Components:</strong></p>
+<ul class="simple">
+<li><p><strong>Knowledge base</strong>: Upload business plans, reports, datasets.</p></li>
+<li><p><strong>Model interactions</strong>: Ask questions, generate summaries, or perform analysis on the shared material.</p></li>
+<li><p><strong>Collaboration</strong>: Teams can contribute, track, and refine insights in one place.</p></li>
+</ul>
+<p><strong>Strengths</strong>: Structured, persistent, collaborative, source-grounded.</p>
+<p><strong>Limitations</strong>: Less dynamic for real-time interaction with external users; requires careful data curation.</p>
+<p><strong>Sample Applications:</strong></p>
+<ul class="simple">
+<li><p>Organizing all research for a business idea (e.g. market trends, competitors, regulations).</p></li>
+<li><p>Running due diligence or compliance reviews.</p></li>
+<li><p>Coordinating product roadmaps and investor pitch material.</p></li>
+<li><p>Managing an MVP’s iterative development with AI assistance.</p></li>
+<li><p>Course companion to store syllabus, readings, and assignments to answer student questions and generate study guides.</p></li>
+<li><p>Lesson plan designer that uses uploaded standards or rubrics to create structured lessons and activities.</p></li>
+<li><p>Assessment builder to generate quizzes, rubrics, and feedback forms for instructors.</p></li>
+<li><p>Research grant assistant that uses previous proposals to draft new ones aligned with specific funding calls.</p></li>
+</ul>
+</section>
+<section id="personalized-assistants-vs-projects">
+<h3>6.6.3 Personalized Assistants vs. Projects<a class="headerlink" href="#personalized-assistants-vs-projects" title="Link to this heading">#</a></h3>
+<p>Both <strong>personalized assistants</strong> (like Custom GPTs, Personas, or Copilots) and <strong>projects</strong> (structured workspaces such as OpenAI Projects, Claude Projects, or Perplexity Spaces) extend the power of foundational models.
+They serve different but complementary purposes.</p>
+<section id="when-to-use-each">
+<h4>When to Use Each<a class="headerlink" href="#when-to-use-each" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Use a <strong>Personalized Assistant</strong></p></th>
+<th class="head"><p>Use a <strong>Project</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Customer-facing task</strong> (answering FAQs, onboarding new users)</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>❌ No</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Internal research &amp; knowledge management</strong></p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Rapid prototyping</strong> (chatbot, idea validator)</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>❌ No</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Team collaboration</strong> (shared notes, multi-doc analysis)</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Automating repetitive workflows</strong></p></td>
+<td><p>✅ Yes</p></td>
+<td><p>❌ No</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Organizing documentation</strong> (business model canvas, pitch prep, compliance files)</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scaling a specific role</strong> (legal assistant, marketing copywriter, technical explainer)</p></td>
+<td><p>✅ Yes</p></td>
+<td><p>❌ No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="discussion">
+<h3>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use <strong>Personalized Assistants</strong> when your goal is to <strong>simulate a role or automate a conversation</strong>. They are like <em>agents you can design</em>: a customer service rep, an analyst, or even a coach.</p></li>
+<li><p>Use <strong>Projects</strong> when your goal is to <strong>structure knowledge, organize complexity, or collaborate as a team</strong>. They are like a <em>digital office space</em> where people and AI work together on shared artifacts.</p></li>
+<li><p>In practice, more sophisticated applications often combine both:</p>
+<ul>
+<li><p>A <strong>Project</strong> to organize market research and design the product.</p></li>
+<li><p>A <strong>Custom GPT</strong> as the product itself (e.g., a customer-facing assistant powered by that research).</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Key Insight:</strong> Assistants help you <strong>execute tasks</strong>, while Projects help you <strong>organize work</strong>. Together, they form the backbone of a GenAI-enabled workflow.</p>
+</section>
+<section id="similar-resources-across-platforms">
+<h3>6.6.4 Similar Resources Across Platforms<a class="headerlink" href="#similar-resources-across-platforms" title="Link to this heading">#</a></h3>
+<p>The idea of customizing and structuring generative AI is spreading across different ecosystems.
+Below is a <strong>comparative table</strong> (as of October 2025) of how major platforms implement features equivalent to <strong>Personalzied Assistants</strong> and <strong>Projects</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Platform / Model</p></th>
+<th class="head"><p>Equivalent to <strong>Personalized Assistants</strong></p></th>
+<th class="head"><p>Equivalent to <strong>Projects</strong> (persistent workspaces)</p></th>
+<th class="head"><p>Entrepreneurial Use Cases</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>OpenAI (ChatGPT)</strong></p></td>
+<td><p>Custom GPTs</p></td>
+<td><p>Projects – organize chats, files, notes in one hub</p></td>
+<td><p>MVP prototyping, research collaboration</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><a class="reference external" href="http://Claude.ai">Claude.ai</a> (Anthropic)</strong></p></td>
+<td><p>Artifacts</p></td>
+<td><p>Projects – persistent context with files + notes</p></td>
+<td><p>Team-based document analysis, compliance reviews</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><a class="reference external" href="http://Perplexity.ai">Perplexity.ai</a></strong></p></td>
+<td><p>No direct equivalent</p></td>
+<td><p>Spaces – save, organize, and share research threads</p></td>
+<td><p>Market/competitor intelligence, curated knowledge bases</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>xAI Grok</strong></p></td>
+<td><p>No direct equivalent</p></td>
+<td><p>Projects – thematic workspaces for structured tasks</p></td>
+<td><p>Community engagement, startup branding assistants</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Google Gemini</strong></p></td>
+<td><p>Gems</p></td>
+<td><p>Via NotebookLM</p></td>
+<td><p>Research + planning inside Google ecosystem</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microsoft Copilot</strong></p></td>
+<td><p>Copilot GPT</p></td>
+<td><p>Copilot Pages is a similar feature</p></td>
+<td><p>Enterprise workflows, sales/pitch preparation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Meta LLaMA</strong></p></td>
+<td><p>No direct equivalent</p></td>
+<td><p>No direct equivalent</p></td>
+<td><p>Not applicable</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="connecting-to-our-course">
+<h3>6.6.5 Connecting to Our Course<a class="headerlink" href="#connecting-to-our-course" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>In <strong>Prompt Engineering</strong>, we explored generative AI as a tool for creativity and analysis.</p></li>
+<li><p>With <strong>Custom GPTs</strong>, you learn how to <strong>design your own AI-powered assistants</strong>.</p></li>
+<li><p>With <strong>Projects</strong> and their equivalents, you experience how AI can become a <strong>shared workspace</strong>, helping you manage complexity while building your solution.</p></li>
+<li><p>Both features let you test assumptions, gather feedback, and iterate quickly with minimal cost.</p></li>
+</ul>
+</section>
+<section id="exercise-2-personalized-assistants-and-projects">
+<h3>Exercise 2: Personalized Assistants and Projects<a class="headerlink" href="#exercise-2-personalized-assistants-and-projects" title="Link to this heading">#</a></h3>
+<p><strong>Team Exercise</strong>:</p>
+<ol class="arabic simple">
+<li><p>Create a <strong>Personalized Assistant</strong> that supports your startup idea (e.g., a customer FAQ bot or investor Q&amp;A assistant).</p></li>
+<li><p>Set up a <strong>Project</strong> (or equivalent) to organize your startup’s research and MVP documents.</p></li>
+<li><p>Compare across platforms: What worked best? What were the limitations?</p></li>
+</ol>
+<p>By mastering these extensions of the GenAI toolkit, you will learn not just to use AI, but to <strong>engineer AI-powered solutions</strong> — a critical step in building innovative startups.</p>
+</section>
+</section>
+<section id="ethical-considerations-and-wrap-up-reflections">
+<h2>6.7 Ethical Considerations and Wrap-Up Reflections<a class="headerlink" href="#ethical-considerations-and-wrap-up-reflections" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Responsible use: data privacy, bias, hallucinations, transparency</p></li>
+<li><p>Examples of misuse and how to avoid them</p></li>
+<li><p>When <em>not</em> to use AI or when to rely on human judgment</p></li>
+<li><p>What did you learn about AI tools that surprised you?</p></li>
+<li><p>Which AI tasks are you most comfortable with?</p></li>
+<li><p>What task in your work would you most like to streamline with AI?</p></li>
+<li><p>What did you learn about prompt engineering?</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_5_Prompt_Engineering.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 5 — Fundamentals of Prompt Engineering</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_7_Foundational_Models.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 7 – Foundational Models and General-Purpose LLMs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-context-matters">6.1 Why Context Matters?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-techniques-in-context-engineering">6.2 Key Techniques in Context Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-vs-context-engineering">6.3 Prompt vs Context Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-in-education-and-learning">6.4 Example in Education and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-in-healthcare">6.5 Example in Healthcare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-from-prompt-engineering-to-context-engineering">Exercise 1: From Prompt Engineering to Context Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#personalized-assistants-and-projects-extending-the-genai-toolkit">6.6 Personalized Assistants and Projects: Extending the GenAI Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personalized-assistants">6.6.1 Personalized Assistants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projects">6.6.2 Projects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personalized-assistants-vs-projects">6.6.3 Personalized Assistants vs. Projects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each">When to Use Each</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similar-resources-across-platforms">6.6.4 Similar Resources Across Platforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-our-course">6.6.5 Connecting to Our Course</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-personalized-assistants-and-projects">Exercise 2: Personalized Assistants and Projects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-considerations-and-wrap-up-reflections">6.7 Ethical Considerations and Wrap-Up Reflections</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
