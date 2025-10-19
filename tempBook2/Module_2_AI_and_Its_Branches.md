@@ -27,7 +27,7 @@ AI began as a **broad field** seeking to replicate human reasoning, but graduall
 - Instead of being explicitly programmed, ML models discover **patterns and relationships** that allow them to make predictions or classifications.  
 - Examples: spam filtering, fraud detection, recommendation systems.
 
-**AI learns from data; traditional programming follows rules.**
+> AI learns from data; traditional programming follows rules.
 
 ### 1.3 Neural Networks (NN)
 
