@@ -90,6 +90,8 @@ Transfer learning reduces data requirements and training costs, accelerating mod
 - Natural language processing (GPT, BERT, T5 fine-tuning)  
 - Domain adaptation (general → specific context)
 
+> Transfer learning captures the idea: “Don’t start from zero — reuse what you’ve already learned to master something new.”
+
 ### 2.2 Federated Learning
 
 - **Federated Learning** allows multiple devices or organizations to **train a shared model collaboratively** without centralizing their data.  
@@ -113,6 +115,8 @@ Transfer learning reduces data requirements and training costs, accelerating mod
   - Feature sets and rule bases
 
 Evolutionary learning explores populations of solutions, not just single models, enabling creative, adaptive problem-solving.
+
+> Evolutionary learning follows nature’s blueprint: “Evolve by selecting, mutating, and recombining the fittest solutions over time.”
 
 ### 2.4 Hybrid Learning
 
