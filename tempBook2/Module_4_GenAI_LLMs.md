@@ -66,7 +66,7 @@ LLMs do not “know” language, they **model** it.
 
 ### 2.2 The Transformer Revolution
 
-Introduced in 2017 (*Vaswani et al., “Attention Is All You Need”,  Advances in neural information processing systems, 30*), the **Transformer** architecture replaced recurrence with attention.  
+Introduced in 2017 (*Vaswani et al., “Attention Is All You Need”,  Advances in neural information processing systems, 30*), the **transformer** architecture replaced recurrence with attention.  
 It allowed models to:
 - Understand relationships across long text sequences.  
 - Train efficiently in parallel on large datasets.  
@@ -85,12 +85,12 @@ LLMs are **general-purpose language engines** — capable of performing multiple
 
 ### 3.1 Core Capabilities
 
-- **Text generation and summarization**  
-- **Question answering and tutoring**  
-- **Translation and language understanding**  
-- **Coding and data analysis**  
-- **Creative writing and ideation**  
-- **Dialogue and conversation (chatbots, assistants)**  
+- Text generation and summarization 
+- Question answering and tutoring
+- Translation and language understanding 
+- Coding and data analysis
+- Creative writing and ideation 
+- Dialogue and conversation (chatbots, assistants)  
 
 ### 3.2 Cross-Modal Generative AI
 
