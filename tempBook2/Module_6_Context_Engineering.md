@@ -16,8 +16,7 @@ After completing this module, you will be able to:
 
 ## 6.1 Why Context Matters?
 
-LLMs generate answers based purely on the **input context window**: the prompt plus any surrounding data you provide.  
-By carefully shaping this context, you can:
+LLMs generate answers based purely on the **input context window**: the prompt plus any surrounding data you provide. By carefully shaping this context, you can:
 - **Bias the model toward desired outcomes**  
 - **Reduce hallucination** by grounding responses in authoritative sources  
 - **Adapt the model to specific roles**  
@@ -25,14 +24,59 @@ By carefully shaping this context, you can:
 
 ## 6.2 Key Techniques in Context Engineering
 
+Context engineering integrates multiple techniques to shape how AI systems interpret inputs, maintain coherence, and generate relevant, high-quality outputs. Each technique contributes to a structured interaction framework that transforms a simple prompt into a rich, goal-oriented exchange.
+
 1. **System Role Design** – Define the AI’s persona or purpose.  
-2. **Instruction Layering** – Combine multiple prompt patterns.  
-3. **Contextual Priming** – Provide reference materials or examples.  
-4. **Retrieval-Augmented Generation (RAG)** – Dynamically inject external data.  
-5. **Chained Prompts** – Break complex tasks into stages.  
-6. **Output Shaping** – Specify desired tone, style, or format.
-7. **Negative Context Engineering** – Explicitly define what should be avoided or excluded.
-8. **Multi-Modal Context Orchestration** – Combine text, structured data, and other input types when available. 
+   *Example:*  
+   ```
+   You are an experienced data storyteller helping a university explain research findings to a general audience. Use clear, engaging language and avoid technical jargon.
+   ```
+
+2. **Instruction Layering** – Combine multiple prompt patterns (e.g., role + format + goal).  
+   *Example:*  
+   ```
+   Act as a policy analyst. Summarize this report in bullet points, then draft a 100-word executive summary emphasizing environmental impact.
+   ```
+
+3. **Contextual Priming** – Provide reference materials or examples to shape the model’s reasoning.  
+   *Example:*  
+   ```
+   Here is an example of a strong abstract for a research paper. Use the same structure and tone to rewrite the following abstract.
+   ```
+
+4. **Retrieval-Augmented Generation (RAG)** – Dynamically inject external data into the prompt to enhance factual grounding.  
+   *Example:*  
+   ```
+   Using the following retrieved text from a 2024 WHO report, summarize the three main health challenges related to AI in diagnostics.
+   (Paste retrieved content or database snippet below.)
+   ```
+
+5. **Chained Prompts** – Break complex tasks into sequential, interdependent stages.  
+   *Example:*  
+   ```
+   Step 1: List key challenges in AI ethics in higher education.
+   Step 2: For each challenge, propose one institutional policy response.
+   Step 3: Summarize the recommendations in a 150-word brief.
+   ```
+
+6. **Output Shaping** – Specify the desired tone, style, or format of the response.  
+   *Example:*  
+   ```
+   Write the introduction as if for a university newsletter — friendly, professional, and limited to 120 words.
+   ```
+
+7. **Negative Context Engineering** – Explicitly define what should be avoided or excluded.  
+   *Example:*  
+   ```
+   Summarize the benefits of generative AI in healthcare, but do not include examples related to patient data privacy or regulation.
+   ```
+
+8. **Multi-Modal Context Orchestration** – Combine multiple input types (e.g., text, image, or structured data).  
+   *Example:*  
+   ```
+   Analyze the chart below showing AI model accuracy over time and write a paragraph explaining the trend. Reference the image in your response.
+   (Insert chart or figure here.)
+   ```
 
 ## 6.3 Prompt vs Context Engineering
 
