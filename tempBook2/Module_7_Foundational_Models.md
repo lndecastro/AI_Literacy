@@ -116,7 +116,7 @@ The discussion of **AI sovereignty** — balancing innovation with independence 
 
 ## 7.5 Hands‑On Exploration (Suggested Activity)
 
-### Assignment 1 – Compare Two LLMs
+### Exercise 1 – Compare Two LLMs
 **Goal:** Develop critical literacy by contrasting how models interpret and respond to the same task.
 **Instructions:**
 1. Choose **two models** (e.g., ChatGPT vs Claude or Gemini vs Copilot).
@@ -128,7 +128,7 @@ Summarize a recent AI policy report in 200 words and list three implications for
 5. Write a short (300-word) reflection: *What do these differences reveal about each model’s design and training?*
 **Deliverable:** Reflection document or discussion post with screenshots or transcripts.
 
-### Assignment 2 – Prompt Engineering Across Platforms
+### Exercise 2 – Prompt Engineering Across Platforms
 **Goal:** Explore how prompt structure affects creativity and precision in different ecosystems.
 **Instructions:**
 1. Create a **base prompt**, e.g.:
@@ -152,7 +152,7 @@ Write in a motivational style
 4. Record and analyze how output changes with each variation.
 **Deliverable:** Prompt table + 250-word analysis of prompt-response patterns.
 
-### Assignment 3 – Build or Customize a Mini-Agent
+### Exercise 3 – Build or Customize a Mini-Agent
 **Goal:** Experience model customization and contextual persistence.
 **Options:**
 - In **ChatGPT**, create a **Custom GPT** with a defined role, e.g.:
@@ -163,7 +163,7 @@ AI Writing Coach for Environmental Science.
 - In **Gemini**, design a **Gem** that assists with a research or creative task.
 **Deliverable:** Short demo or written description of your assistant’s purpose, instructions used, and sample output.
 
-### Assignment 4 – Ethical Audit: Transparency & Bias
+### Exercise 4 – Ethical Audit: Transparency & Bias
 **Goal:** Strengthen ethical reasoning and critical evaluation skills.
 **Instructions:**
 1. Choose one platform (ChatGPT, Claude, or Gemini).
@@ -178,7 +178,7 @@ List where its training data may introduce cultural or regional imbalance
 4. Discuss potential societal impacts and propose one mitigation strategy.
 **Deliverable:** 400-word analytical brief with evidence excerpts.
 
-### Assignment 5 – AI Tool Showcase (Collaborative Project)
+### Exercise 5 – AI Tool Showcase (Collaborative Project)
 **Goal:** Apply comparative insights to a real-world scenario.
 **Instructions:**
 1. Form small groups. Each group is assigned or selects **one of the six models**.
