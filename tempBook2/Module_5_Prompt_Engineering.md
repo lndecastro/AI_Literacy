@@ -3,6 +3,7 @@
 Generative Artificial Intelligence (GenAI) has become one of the most transformative technological advancements of recent years, enabling systems to generate text, images, code, and even entire business solutions. To make the most of these tools, it is essential to understand not only what GenAI can do, but also how to interact with it effectively. This topic introduces the fundamentals of GenAI with a focus on **Prompt Engineering**—the art and science of crafting inputs that guide AI models toward accurate, creative, and useful outputs. By mastering prompt engineering, students will gain practical skills to explore the capabilities and limitations of GenAI, preparing them to apply these tools strategically in entrepreneurial and problem-solving contexts.  
 
 ## 5.1 Learning Objectives
+After completing this module, you will be able to:
 - Understand the purpose and scope of prompt engineering.
 - Identify the components that make up an effective prompt.
 - Identify and apply different types of prompt design patterns.
@@ -60,27 +61,27 @@ Prompt patterns are reusable structures that help you get consistent, high-quali
 
 ## 5.7 Common Prompt Types
 
-1. **Instructional Prompts**
+1. **Instructional Prompts** <p>
 Directly ask the model to perform a task, e.g.:
 ```
 Summarize the following article in three sentences. [Input article]
 ```
-2. **Role-Based Prompts**
+2. **Role-Based Prompts** <p>
 Assign the model a specific identity or role to guide tone and knowledge.
 ```
 You are a career coach. Give me advice on how to negotiate a salary raise.
 ```
-3. **Chain-of-Thought Prompts**
+3. **Chain-of-Thought Prompts** <p>
 Encourage step-by-step reasoning or breakdown of complex tasks.
 ```
 What is the square root of 144? Explain the steps before giving the answer.
 ```
-4. **Zero-Shot Prompts**
+4. **Zero-Shot Prompts** <p>
 Provide only the instruction and input — no examples.
 ```
 Translate the following sentence into Portuguese: "How are you?"
 ```
-5. **Few-Shot Prompts**
+5. **Few-Shot Prompts** <p>
 Include examples of input/output pairs to guide the model.
 ```
 Translate the following:
@@ -216,7 +217,7 @@ This shows how reverse prompting can help:
 - **Learn effective prompt patterns** (e.g., phrasing requests around “three key steps” often yields structured, actionable advice).  
 - **Apply to your projects** by practicing both sides: writing prompts and analyzing outputs to refine your own strategy.  
 
-### Exercise 5: Reverse Prompting
+## Exercise 5: Reverse Prompting
 
 Below is an AI-generated output. Your task is to **work backwards** and write the possible prompt(s) that might have generated it, and then **use a reverse prompt method** to do the same and compare with your proposed prompts.  
 
@@ -278,7 +279,8 @@ Five criteria to judge the effectiveness of a prompt-output pair:
 
 Reflect on how **intentional interaction** with AI changes your role from passive user to *active collaborator*.  
 Each prompt you craft is a design decision — shaping not just what the AI produces, but how you think about inquiry, evidence, and creativity.  
-Remember that the goal of prompt engineering is not perfection, but **partnership**: using language to co-create meaning and insight.
+
+> Remember that the goal of prompt engineering is not perfection, but **partnership**: using language to co-create meaning and insight.
 
 ## 📘 Further Reading
 
