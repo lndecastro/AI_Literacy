@@ -114,7 +114,7 @@ The discussion of **AI sovereignty** — balancing innovation with independence 
 
 > **Reflection Prompt:** What trade‑offs exist between convenience and control when choosing between open and proprietary AI systems?
 
-## 7.5 Hands‑On Exploration (Suggested Activity)
+## 7.5 Hands‑On Exploration
 
 ### Exercise 1 – Compare Two LLMs
 **Goal:** Develop critical literacy by contrasting how models interpret and respond to the same task.
