@@ -280,7 +280,7 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 - With **Projects** and their equivalents, you experience how AI can become a **shared workspace**, helping you manage complexity while building your solution.  
 - Both features let you test assumptions, gather feedback, and iterate quickly with minimal cost.  
 
-### Exercise 2: Personalized Assistants and Projects 
+## Exercise 2: Personalized Assistants and Projects 
 
 **Team Exercise**:  
   1. Create a **Personalized Assistant** that supports your startup idea (e.g., a customer FAQ bot or investor Q&A assistant).  
@@ -289,7 +289,7 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 
 By mastering these extensions of the GenAI toolkit, you will learn not just to use AI, but to **engineer AI-powered solutions** — a critical step in building innovative startups.
 
-## 6.7 Ethical Considerations and Wrap-Up Reflections
+## Reflections
 
 - Responsible use: data privacy, bias, hallucinations, transparency
 - Examples of misuse and how to avoid them
@@ -298,3 +298,13 @@ By mastering these extensions of the GenAI toolkit, you will learn not just to u
 - Which AI tasks are you most comfortable with?
 - What task in your work would you most like to streamline with AI?
 - What did you learn about prompt engineering?
+
+## 📘 Further Reading
+
+- *Context Engineering Guide*. https://www.promptingguide.ai/guides/context-engineering-guide
+- LangChain (2025). *The rise of "context engineering"*. https://blog.langchain.com/the-rise-of-context-engineering/
+- Lewis, P. et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (RAG).* arXiv:2005.11401 https://arxiv.org/abs/2005.11401  
+- Wei, J. et al. (2022). *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.* arXiv:2201.11903 https://arxiv.org/abs/2201.11903  
+- Anthropic (2025). *Effective context engineering for AI agents*. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+- Dendritic Institute (2025). *AI Literacy Series – Module 6: Context Engineering.* (Slides & video lecture)
+
