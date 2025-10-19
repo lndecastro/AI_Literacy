@@ -27,7 +27,7 @@ By completing this program, you will be able to:
 
 ## Our Journey
 
-AI Literacy is structured as a **progressive learning pathway**, blending history, concepts, and practice.  
+AI Literacy is structured as a **sequential learning pathway**, blending history, concepts, and practice.  
 Each module builds on the previous one — guiding you from “What is AI?” to “How can I work with it responsibly?”
 
 | Module | Theme | Focus |
@@ -43,12 +43,12 @@ Each module builds on the previous one — guiding you from “What is AI?” to
 
 ![Our Journey](Data/AILiteracyJourney.png)
 
-## How to Use This Book
+## How to Use This Jupyter Book
 
 - Navigate the modules using the left-hand sidebar or the **Next/Previous** buttons at the bottom of each page.  
 - Download pages as `.md` or `.pdf` for your notes.  
-- Look for **💡 Examples**, **⚙️ Try It**, and **📘 Further Reading** sections to deepen your understanding.  
-- Many pages include **interactive code cells** you can launch in most LLM models, such as ChatGPT, Claude, Gemini, Co-Pilot, etc.  
+- Look for **💡 Examples**, **⚙️ Exercises**, and **📘 Further Reading** sections to deepen your understanding.  
+- Many pages include **interactive code cells** you can copy and launch in most LLM models, such as ChatGPT, Claude, Gemini, Co-Pilot, etc.  
 - Use this book alongside the Canvas course, masterclasses, videos, and AI tool demonstrations offered by the **FGCU AI Academy**.  
 
 ## Human-Centered AI
@@ -70,10 +70,9 @@ As you advance through these modules, keep reflecting on:
 
 ## 🧾 Acknowledgements
 
-Developed by **Dr. Leandro Nunes de Castro** and the **Dendritic Institute for Human-Centered AI & Data Science**,  
-within the **U.A. Whitaker College of Engineering at Florida Gulf Coast University**.
+Developed by **Dr. Leandro Nunes de Castro** and the **Dendritic Institute for Human-Centered AI & Data Science**, within the **U.A. Whitaker College of Engineering at Florida Gulf Coast University**.
 
-Content curated and authored by the team, with support from large language models such as ChatGPT, Claude, Gemini, Perplexity, Gamma.ai, Napkin, and CoPilot, following ethical and pedagogical review.
+Content curated by the team, with support from large language models such as ChatGPT, Claude, Gemini, Perplexity, Gamma.ai, Napkin, and CoPilot, following ethical and pedagogical review.
 
 <!-- Optional: insert institutional logos or video welcome message here -->
 
