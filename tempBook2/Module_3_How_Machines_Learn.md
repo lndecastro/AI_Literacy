@@ -1,4 +1,4 @@
-# Module 3 — How Machines Learn
+# Module 3: How Machines Learn
 
 Artificial Intelligence becomes truly intelligent when machines can **learn from experience**.  
 This module explores how computers acquire knowledge, adapt to data, and improve their performance over time.  
