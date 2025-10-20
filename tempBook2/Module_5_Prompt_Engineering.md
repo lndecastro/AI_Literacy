@@ -2,7 +2,7 @@
 
 Generative Artificial Intelligence (GenAI) has become one of the most transformative technological advancements of recent years, enabling systems to generate text, images, code, and even entire business solutions. To make the most of these tools, it is essential to understand not only what GenAI can do, but also how to interact with it effectively. This topic introduces the fundamentals of GenAI with a focus on **Prompt Engineering**—the art and science of crafting inputs that guide AI models toward accurate, creative, and useful outputs. By mastering prompt engineering, students will gain practical skills to explore the capabilities and limitations of GenAI, preparing them to apply these tools strategically in entrepreneurial and problem-solving contexts.  
 
-## 5.1 Learning Objectives
+## Learning Objectives
 After completing this module, you will be able to:
 - Understand the purpose and scope of prompt engineering.
 - Identify the components that make up an effective prompt.
@@ -10,13 +10,13 @@ After completing this module, you will be able to:
 - Compare how prompt structures influence AI outputs.
 - Practice prompt improvement through iteration.
 
-## 5.2 What is Prompt Engineering?
+## 5.1 What is Prompt Engineering?
 
 Prompt engineering is the practice of crafting effective inputs (prompts) for large language models (LLMs) to produce accurate, relevant, and useful outputs.
 
 Unlike traditional programming, where you write rigid code, prompt engineering is about **communicating naturally** with an AI system — and doing so **strategically**.
 
-## 5.3 Anatomy of a Prompt
+## 5.2 Anatomy of a Prompt
 
 A good prompt typically includes:
 
@@ -31,13 +31,13 @@ A good prompt typically includes:
 
 ![Prompt Anatomy](Data/PromptAnatomy.png)
 
-## 5.4 Why Prompt Engineering Matters
+## 5.3 Why Prompt Engineering Matters
 
 - It **boosts model performance** without changing the model itself.
 - It helps tailor responses to specific **tasks and audiences**.
 - It allows you to guide the model toward **more reliable, interpretable results**.
 
-## 5.5 Example Prompt
+## 5.4 Example Prompt
 ```
 You are a scientific editor. Summarize the text below into 3 bullet points for a general audience.
 
@@ -55,11 +55,11 @@ Message:
 I was evicted without notice on June 3rd even though I paid rent until July...
 ```
 
-## 5.6 Why Prompt Patterns Matter
+## 5.5 Why Prompt Patterns Matter
 
 Prompt patterns are reusable structures that help you get consistent, high-quality results from language models. Understanding them empowers you to choose the right style for your goal.
 
-## 5.7 Common Prompt Types
+## 5.6 Common Prompt Types
 
 1. **Instructional Prompts** <p>
 Directly ask the model to perform a task, e.g.:
@@ -93,7 +93,7 @@ English: I’m hungry → Portuguese:
 
 ![Prompt Types](Data/PromptTypes.png)
 
-## 5.8 Prompt Comparison
+## 5.7 Prompt Comparison
 
 | Pattern           | Use Case                               | Example Role/Task                              |
 |------------------|----------------------------------------|------------------------------------------------|
@@ -109,7 +109,7 @@ Use the following task and try prompting it in three different styles.
 
 **Task**: Recommend three books for someone interested in artificial intelligence.
 
-## 5.9 Why Iteration Matters
+## 5.8 Why Iteration Matters
 
 Prompting is often **not a one-shot process**. Even good prompts may return incomplete, vague, or misleading results. The key is to **test, analyze, and refine**.
 
@@ -119,7 +119,7 @@ Iteration helps you:
 - Adjust tone or output format
 - Explore different framing approaches
 
-## 5.10 The Iterative Prompting Process
+## 5.9 The Iterative Prompting Process
 
 1. **Draft the initial prompt**  
    _Write a basic version of your request._
@@ -170,7 +170,7 @@ Step 3 – Prediction:
 Based on findings, advise whether Contoso should continue, adjust, or halt this Discount Band.
 ```
 
-## 5.11 Reverse Prompting: A Prompt Analysis Technique
+## 5.10 Reverse Prompting: A Prompt Analysis Technique
 
 Beyond writing prompts, there are methods to **analyze and understand** how prompts work. These techniques help you learn, debug, and improve your prompting skills.
 Reverse prompting means starting from an **output** and asking: 
@@ -243,7 +243,7 @@ Reverse prompt this output: propose at least two different prompts that might ha
 For each proposed prompt, explain why it would likely generate this output and how changing its phrasing might alter the answer.
 ```
 
-## 5.12 Tips for Troubleshooting and Improving Prompts
+## 5.11 Tips for Troubleshooting and Improving Prompts
 
 - If output is **too generic**: Add specific instructions or examples.
 - If output **hallucinates**: Ask the model to “only use provided information” or to look for verifiable sources. You can also ask the model to cite the sources.
@@ -254,7 +254,7 @@ For each proposed prompt, explain why it would likely generate this output and h
 
 > Note: Once you understand how the LLM generates its output, hallucinations become a natural outcome and our role as moderators becomes evident.
   
-## 5.13 Assessing Prompt Quality
+## 5.12 Assessing Prompt Quality
 
 Five criteria to judge the effectiveness of a prompt-output pair:
 
