@@ -1,4 +1,4 @@
-# Module 7 – Foundational Models and General-Purpose LLMs
+# Module 7: Foundational Models and General-Purpose LLMs
 
 Artificial Intelligence has entered a new era driven by **foundational models** — large-scale, general-purpose systems trained on massive multimodal datasets. These models can perform an extraordinary range of tasks, from reasoning and coding to generating text, images, and sound. They represent a shift from narrow, task-specific AI to universal, flexible architectures capable of adaptation across contexts.
 
