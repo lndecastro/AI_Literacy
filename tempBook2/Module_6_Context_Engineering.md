@@ -1,4 +1,4 @@
-# Module 6 - Context Engineering: Advanced AI Communication
+# Module 6: Context Engineering - Advanced AI Communication
 
 Context engineering is the practice of **designing, structuring, and managing the broader environment** in which a large language model (LLM) processes information, not just the direct prompt.
 While prompt engineering focuses on *how you phrase the instruction*, context engineering focuses on *what additional information surrounds and informs that instruction*.
