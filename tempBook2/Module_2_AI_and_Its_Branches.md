@@ -1,4 +1,4 @@
-# Module 2 — What Is AI and Its Many Branches
+# Module 2: What Is AI and Its Many Branches
 
 Artificial Intelligence is not a single technology but a **collection of ideas, methods, and paradigms** aimed at making machines capable of perception, reasoning, learning, and action.  
 This module expands the question *“What is AI?”* into a broader exploration of its **many branches**, from early rule-based systems to modern deep learning and data-driven intelligence.
