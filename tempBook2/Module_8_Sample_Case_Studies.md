@@ -1,4 +1,4 @@
-# Module 8 — Sample Case Studies and Applications of AI
+# Module 8: Sample Case Studies and Applications of AI
 
 Artificial Intelligence is transforming every sector of society — from education and healthcare to environmental management, business, and the arts.
 This module provides **hands-on, ready-to-run case studies** where you can explore data, run code, and design prompts to experience AI-assisted analysis and creation in action.
