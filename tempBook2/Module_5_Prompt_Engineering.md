@@ -109,6 +109,25 @@ Use the following task and try prompting it in three different styles.
 
 **Task**: Recommend three books for someone interested in artificial intelligence.
 
+### Prompt Style 1: The Expert Consultant (Focus on Audience/Purpose)
+This prompt is direct, specifies the audience's intent, and requires the model to justify its selection.
+```
+I need a recommendation for a three-book reading list on Artificial Intelligence. Please select one book that introduces the core technical concepts, one that explores the societal and ethical implications, and one that focuses on a specific, popular application like Deep Learning. Format the response as a bulleted list, including a brief justification for each choice.
+```
+
+### Prompt Style 2: The Creative Marketer (Focus on Tone/Engagement)
+This prompt asks the model to adopt a specific persona and language style, emphasizing accessibility and excitement for a broad audience.
+```
+Act as a bookstore curator crafting a display titled 'Start Your AI Journey'. Recommend three must-read books on AI. Write a punchy, one-sentence tagline for each book that highlights why a curious layperson should pick it up, making sure the recommendations cover technical, ethical, and futuristic perspectives.
+```
+
+### Prompt Style 3: The Structured Analyst (Focus on Data/Format)
+This prompt imposes strict constraints on the output format, ensuring a concise and easily scannable result, similar to a reference table.
+
+```
+Provide a table with three recommended books for an Artificial Intelligence enthusiast. The table must have four columns: Book Title, Author, Category (select from: Foundational, Applied, or Philosophical), and a 10-word maximum summary of the book's content.
+```
+
 ## 5.8 Why Iteration Matters
 
 Prompting is often **not a one-shot process**. Even good prompts may return incomplete, vague, or misleading results. The key is to **test, analyze, and refine**.
