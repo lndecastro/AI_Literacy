@@ -296,9 +296,9 @@ Five criteria to judge the effectiveness of a prompt-output pair:
 
 ## Reflection
 
-> How does communicating with an AI model differ from communicating with another person?  
-> Which prompt pattern felt most intuitive to you, and which required the most experimentation?  
-> How might prompt engineering change the way you research, write, or solve problems?
+1. How does communicating with an AI model differ from communicating with another person? <p>
+2. Which prompt pattern felt most intuitive to you, and which required the most experimentation? <p>
+3. How might prompt engineering change the way you research, write, or solve problems? <p>
 
 Reflect on how **intentional interaction** with AI changes your role from passive user to *active collaborator*.  
 Each prompt you craft is a design decision — shaping not just what the AI produces, but how you think about inquiry, evidence, and creativity.  
