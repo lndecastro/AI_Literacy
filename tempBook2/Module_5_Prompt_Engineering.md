@@ -171,6 +171,10 @@ Explain the stock market in simple terms for a high school student. Use 3 bullet
 
 ## Exercise 4: Prompt Experiment Classwork
 
+[Spreadsheet download](./Data/FinancialSample.xlsx) Available at: [https://learn.microsoft.com/en-us/power-bi/create-reports/sample-financial-download]
+
+For the Microsoft Financial Sample, attach the workbook available in the link above in your LLM and run the prompt below:
+
 ```
 You support retail sales analysis at Contoso. The VP of Regional Sales needs an assessment to guide monthly discount strategies.
 Task: Compare net ‘ Sales’ for this observation to average for all ‘Product’ sold under this ‘Discount Band’, and ‘ Sales’ for this ‘Product’ in this ‘Month’.
