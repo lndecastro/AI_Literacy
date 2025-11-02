@@ -12,6 +12,7 @@ chapters:
     title: "Module 3: How Machines Learn"
   - file: Module_4_GenAI_LLMs.md
     title: "Module 4: Generative AI (GenAI) and Large Language Models (LLMs)"
+<!-- 
   - file: Module_5_Prompt_Engineering.md
     title: "Module 5: Fundamentals of Prompt Engineering"
   - file: Module_6_Context_Engineering.md
@@ -20,3 +21,4 @@ chapters:
     title: "Module 7: Foundational Models and Tools"
   - file: Module_8_Sample_Case_Studies.md
     title: "Module 8: Case Studies"
+-->
