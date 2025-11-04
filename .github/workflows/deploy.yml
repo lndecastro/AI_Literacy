@@ -26,8 +26,8 @@ jobs:
       - name: Build Jupyter Book # Change this to new repo name
         run: |
           cd tempBook2
-          jupyter-book build .
+          jupyter-book build AI_Literacy
 
       - name: Deploy to GitHub Pages # Change this to new repo name
         run: |
-          ghp-import -n -p -f tempBook2/_build/html
+          ghp-import -n -p -f AI_Literacy/_build/html
