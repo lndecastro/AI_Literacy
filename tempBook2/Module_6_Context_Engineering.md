@@ -94,6 +94,9 @@ Context engineering integrates multiple techniques to shape how AI systems inter
 Summarize this lesson plan in three bullet points.
 ```
 
+[Sample lesson plans](./Data/SampleLessonPlans.pdf) 
+
+
 **Context Engineering Example:**  
 ```
 System Role: You are an instructional designer specializing in technology-enhanced learning.
