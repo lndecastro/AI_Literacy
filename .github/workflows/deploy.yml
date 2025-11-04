@@ -26,6 +26,10 @@ jobs:
       - name: Clean previous builds
         run: |
           jupyter-book clean tempBook2 --all || true
+          
+      - name: List book files
+        run: |
+          ls -R tempBook2
 
       - name: Build Jupyter Book
         run: |
