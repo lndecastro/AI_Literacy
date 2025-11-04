@@ -94,8 +94,7 @@ Context engineering integrates multiple techniques to shape how AI systems inter
 Summarize this lesson plan in three bullet points.
 ```
 
-[Sample lesson plans](./Data/SampleLessonPlans.pdf) 
-
+Download the [Sample lesson plans](./Data/SampleLessonPlans.pdf). 
 
 **Context Engineering Example:**  
 ```
@@ -203,6 +202,32 @@ Think of them as your own AI partner that understands the context of your busine
 - Student Support GPT that answers course-related FAQs using syllabus materials.
 - Patient Education Assistant that explains diagnoses and procedures in plain language.  
 - Wellness Companion offering lifestyle guidance based on verified sources.
+
+## Exercise 2: Create Your Own Personalized Assistant
+
+**Objective:** Apply the concepts of **Context Engineering** and **Personalized Assistants** by creating a specialized AI assistant trained on a specific dataset.
+**Task:** Use the dataset provided below for the **AI Literacy Program Assistant** to create your own personalized assistant.
+
+Download the [Personalized_Assistant_Example](./Data/Personalized_Assistant_Example.pdf). 
+
+Your assistant should be able to answer questions, summarize modules, and guide learners about the AI Literacy Program using the uploaded knowledge base.
+
+**Steps**
+1. **Define the Role**
+   - Example: “You are a program support assistant for the FGCU AI Literacy course.”
+2. **Upload the Knowledge Base**
+   - Use the provided dataset titled *AI Literacy Program Assistant Knowledge Base*.
+3. **Set Instructions**
+   - Describe the assistant’s behavior, tone, and purpose.
+   - Example: “Be friendly, informative, and professional. Always connect responses to learning goals.”
+4. **Test Your Assistant**
+   - Try prompts like:
+     - “Summarize what students learn in Module 4.”
+     - “Who developed the AI Literacy program?”
+     - “What is the difference between Modules 5 and 6?”
+5. **Evaluate Context Quality**
+   - How does the assistant’s role, tone, and knowledge data affect output accuracy?
+   - What improvements would you make to the system message or dataset?
 
 ### 6.6.2 Projects
 
