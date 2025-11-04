@@ -68,7 +68,7 @@ At the turn of the century, AI entered a new era — one driven by **data**, **c
 
 > We are witnessing AI’s shift from tools that _analyze_ to tools that _create_.
 
-![Modern Developments](Data/2006_2025.png)
+![Modern Developments](../Data/2006_2025.png)
 
 ## Part III — The Future Horizon
 

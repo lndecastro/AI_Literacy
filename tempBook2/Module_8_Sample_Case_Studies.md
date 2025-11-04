@@ -5,11 +5,12 @@ This module provides **hands-on, ready-to-run case studies** where you can explo
 
 > All datasets are **synthetic/anonymized** and for **educational use** only.
 
-[⬇️ Download all case-study data (ZIP)](Data/ai_literacy_case_studies.zip)
+[⬇️ Download all case-study data (ZIP)](../Data/ai_literacy_case_studies.zip)
 
 ## Learning Objectives
 
 After completing this module, you will be able to:
+
 - Apply AI tools and prompt engineering techniques to real-world case studies.
 - Run data analyses using the provided datasets for education, healthcare, environment, business, and arts.
 - Evaluate how prompt design and context affect AI performance.
@@ -18,11 +19,13 @@ After completing this module, you will be able to:
 ## 🧑‍🏫 Case Study 1 — Education: Course Companion & Lesson Plan Review
 
 **Files (in the ZIP):**
+
 - education/syllabus.txt
 - education/rubric.txt
 - education/lesson_plan.md
 
 ### A) Prompt
+
 ```
 System role: You are an instructional designer for higher education.
 
@@ -47,24 +50,27 @@ This activity demonstrates how context-aware prompting enables AI to act as an i
 #### Optional Extension Prompts
 
 1. **Role Variation**
+
    ```
-   Now act as a teaching assistant preparing for this class. 
+   Now act as a teaching assistant preparing for this class.
    What materials should be ready, and what questions might students ask?
    ```
 
 2. **Iterative Refinement**
+
    ```
-   Based on your analysis, rewrite the lesson objectives so they align more clearly 
+   Based on your analysis, rewrite the lesson objectives so they align more clearly
    with the syllabus goals and rubric criteria.
    ```
 
 3. **Reverse Prompting**
    ```
-   Analyze the output you just created. What kind of prompt would have generated it? 
+   Analyze the output you just created. What kind of prompt would have generated it?
    Suggest how changing the phrasing might alter the response.
    ```
 
 #### Reflection
+
 > How did the AI’s interpretation of rubric alignment compare to your own?  
 > Which contextual elements (role, tone, or format) most affected the usefulness of the response?
 
@@ -73,17 +79,19 @@ This activity demonstrates how context-aware prompting enables AI to act as an i
 ## 🩺 Case Study 2 — Healthcare: Clinical Summary (Educational Only)
 
 **Files:**
+
 - healthcare/patient_records.csv
 - healthcare/guideline.txt
 
 > ⚠️ Educational disclaimer: synthetic data; **not** medical advice; always require **human expert review**.
 
 ### A) Prompt
+
 ```
 System role: You are a clinical data analyst supporting a hospital quality-improvement team.
 Ethical boundary: Educational exercise only; do not provide medical advice.
 
-Reference: Clinical Guideline (simplified): 
+Reference: Clinical Guideline (simplified):
 [Paste the text from guideline.txt]
 
 Task:
@@ -94,29 +102,33 @@ Task:
 ```
 
 ### B) LLM Analysis — Clinical Data Summary
+
 Use an LLM to simulate the analytical reasoning of a healthcare analyst.
 
 #### Optional Extension Prompts
 
 1. **Comparative Reasoning**
+
    ```
-   Compare cases 1–3 and identify shared risk factors. 
+   Compare cases 1–3 and identify shared risk factors.
    Which follow-up steps appear most urgent according to the guideline?
    ```
 
 2. **Format Variation**
+
    ```
-   Rewrite your findings as a short clinical summary note for internal reporting. 
+   Rewrite your findings as a short clinical summary note for internal reporting.
    Use headers: Chief Complaint, Assessment Summary, Recommendations.
    ```
 
 3. **Bias Awareness**
    ```
-   Identify potential sources of bias or misinterpretation when using AI to analyze clinical data. 
+   Identify potential sources of bias or misinterpretation when using AI to analyze clinical data.
    How can these be mitigated in practice?
    ```
 
 #### Reflection
+
 > How did contextualizing the task with the “clinical analyst” role affect the tone and precision of the response?  
 > What limitations must remain explicit when using AI in healthcare communication?
 
@@ -125,9 +137,11 @@ Use an LLM to simulate the analytical reasoning of a healthcare analyst.
 ## 🌿 Case Study 3 — Environment: Water Quality Early Warning
 
 **Files:**
+
 - environment/water_quality.csv
 
 ### A) Prompt
+
 ```
 System role: You are an environmental data analyst.
 Goal: Detect anomalies suggestive of potential algal bloom risk.
@@ -140,17 +154,20 @@ Task:
 ```
 
 ### B) LLM Analysis — Environmental Data Review
+
 Let the LLM interpret and describe the data qualitatively.
 
 #### Optional Extension Prompts
 
 1. **Policy Translation**
+
    ```
    Rewrite your management report for a non-technical audience, such as community stakeholders.
    Emphasize environmental impact and recommended preventive actions.
    ```
 
 2. **Predictive Reasoning**
+
    ```
    Based on observed patterns, hypothesize environmental factors that might explain chlorophyll spikes.
    ```
@@ -161,6 +178,7 @@ Let the LLM interpret and describe the data qualitatively.
    ```
 
 #### Reflection
+
 > What did the AI emphasize as the main risk indicators?  
 > How can human experts validate and contextualize these findings before action?
 
@@ -169,9 +187,11 @@ Let the LLM interpret and describe the data qualitatively.
 ## 💼 Case Study 4 — Business: Customer Feedback Insights
 
 **Files:**
+
 - business/customer_feedback.csv
 
 ### A) Prompt
+
 ```
 System role: You are a customer insights analyst.
 
@@ -189,14 +209,16 @@ Use the LLM to generate structured market insights and practice clarity in summa
 #### Optional Extension Prompts
 
 1. **Sentiment Analysis**
+
    ```
-   Classify each feedback item as Positive, Neutral, or Negative. 
+   Classify each feedback item as Positive, Neutral, or Negative.
    Provide a summary table showing distribution by product.
    ```
 
 2. **Persona Creation**
+
    ```
-   Based on the themes identified, draft short user personas (e.g., "Budget-Conscious Buyer", "Tech Enthusiast") 
+   Based on the themes identified, draft short user personas (e.g., "Budget-Conscious Buyer", "Tech Enthusiast")
    that reflect these segments.
    ```
 
@@ -206,6 +228,7 @@ Use the LLM to generate structured market insights and practice clarity in summa
    ```
 
 #### Reflection
+
 > How did the AI’s clustering compare with your intuition as a human analyst?  
 > What elements of the prompt (role, structure, or examples) improved the clarity of the output?
 
@@ -214,9 +237,11 @@ Use the LLM to generate structured market insights and practice clarity in summa
 ## 🎨 Case Study 5 — Arts: Story Seeds to Short Scene
 
 **Files:**
+
 - arts/story_seeds.csv
 
 ### A) Prompt
+
 ```
 System role: You are a creative writing coach.
 
@@ -234,11 +259,13 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
 #### Optional Extension Prompts
 
 1. **Perspective Shift**
+
    ```
    Rewrite the same scene from a different character’s point of view.
    ```
 
 2. **Style Transfer**
+
    ```
    Adapt the scene to a new literary style (e.g., mystery, sci-fi, historical fiction).
    ```
@@ -249,6 +276,7 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
    ```
 
 #### Reflection
+
 > How did prompt specificity affect the creativity and coherence of the AI’s output?  
 > What aspects of authorship remain uniquely human in AI-assisted storytelling?
 
@@ -256,8 +284,8 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
 
 ## Submission & Reflection
 
-- Submit your **prompts**, **AI outputs**, and a **short reflection (150–200 words)** for one or more case studies.  
-- Discuss how **prompt and context** shaped your results, and where **human judgment** was most critical.  
+- Submit your **prompts**, **AI outputs**, and a **short reflection (150–200 words)** for one or more case studies.
+- Discuss how **prompt and context** shaped your results, and where **human judgment** was most critical.
 - Highlight ethical and practical insights from using LLMs in each domain.
 
 ## Reflection
@@ -272,9 +300,9 @@ Reflect on how the lessons from these cases — transparency, context, and colla
 
 ## 📘 Further Reading
 
-- World Economic Forum (2024). *Shaping the future of artificial intelligence: Reflections from the AI Governance Alliance.*, https://www.weforum.org/stories/2024/06/ai-governance-alliance-future-of-ai/  
-- UNESCO (2023). *Guidelines for AI in Education and Research.*, https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research  
-- European University Association (2023). *Artificial Intelligence in Science. Challenges, Opportunities and the Future of Research.*, https://www.eua.eu/news/member-and-partner-news/artificial-intelligence-in-science-challenges-opportunities-and-the-future-of-research.html  
-- Mollick, E. & Mollick, L. R. (2024). *Co-Intelligence: Living and Working with AI.*, Portfolio. 
-- European Commission (2019). *Ethics Guidelines for Trustworthy AI.*, https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai  
-- Dendritic Institute (2025). *AI Literacy Series – Module 8: Sample Case Studies and Applications of AI.* (Slides & video lecture)
+- World Economic Forum (2024). _Shaping the future of artificial intelligence: Reflections from the AI Governance Alliance._, https://www.weforum.org/stories/2024/06/ai-governance-alliance-future-of-ai/
+- UNESCO (2023). _Guidelines for AI in Education and Research._, https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research
+- European University Association (2023). _Artificial Intelligence in Science. Challenges, Opportunities and the Future of Research._, https://www.eua.eu/news/member-and-partner-news/artificial-intelligence-in-science-challenges-opportunities-and-the-future-of-research.html
+- Mollick, E. & Mollick, L. R. (2024). _Co-Intelligence: Living and Working with AI._, Portfolio.
+- European Commission (2019). _Ethics Guidelines for Trustworthy AI._, https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai
+- Dendritic Institute (2025). _AI Literacy Series – Module 8: Sample Case Studies and Applications of AI._ (Slides & video lecture)
