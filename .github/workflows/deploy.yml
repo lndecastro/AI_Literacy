@@ -25,8 +25,7 @@ jobs:
 
       - name: Build Jupyter Book # Change this to new repo name
         run: |
-          cd tempBook2
-          jupyter-book build AI_Literacy
+          jupyter-book build tempBook2
 
       - name: Deploy to GitHub Pages # Change this to new repo name
         run: |
