@@ -27,7 +27,7 @@ exclude_patterns:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/lndecastro/AI_Literacy # Online location of your book ( Change this to new repo name )
-  path_to_book: intro.md # Optional path to your book, relative to the repository root
+  path_to_book: tempBook2 # Optional path to your book, relative to the repository root
   branch: main # Which branch of the repository should be used when creating links (optional)
 
 html:
