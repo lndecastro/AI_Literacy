@@ -30,14 +30,8 @@ jobs:
       - name: Build Jupyter Book
         run: |
           jupyter-book build tempBook2 --debug
-          echo "Build output:"
-          ls -R tempBook2/_build || echo "Build folder missing!"
+          ls -R tempBook2/_build/html
 
       - name: Deploy to GitHub Pages
         run: |
-          if [ -d "tempBook2/_build/html" ]; then
-            ghp-import -n -p -f tempBook2/_build/html
-          else
-            echo "_build/html not found, aborting."
-            exit 1
-          fi
+          ghp-import -n -p -f tempBook2/_build/html
