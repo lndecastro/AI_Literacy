@@ -26,7 +26,7 @@ jobs:
       - name: Clean previous builds
         run: |
           cd tempBook2
-          yes | jupyter-book clean . --all
+          jupyter-book clean . --all || true
 
       - name: Build Jupyter Book
         run: |
@@ -39,5 +39,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          cd tempBook2
-          ghp-import -n -p -f _build/html
+          ghp-import -n -p -f tempBook2/_build/html
