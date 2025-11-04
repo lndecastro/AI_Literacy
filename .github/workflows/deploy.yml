@@ -31,7 +31,7 @@ jobs:
       - name: Build Jupyter Book
         run: |
           cd tempBook2
-          jupyter-book build .
+          jupyter-book build tempBook2
           
       - name: Debug build output
         run: |
@@ -39,5 +39,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          cd tempBook2
-          ghp-import -n -p -f _build/html
+          ghp-import -n -p -f tempBook2/_build/html
