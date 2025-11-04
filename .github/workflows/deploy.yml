@@ -29,4 +29,4 @@ jobs:
 
       - name: Deploy to GitHub Pages # Change this to new repo name
         run: |
-          ghp-import -n -p -f tempBook2/_build
+          ghp-import -n -p -f tempBook2/_build/html
