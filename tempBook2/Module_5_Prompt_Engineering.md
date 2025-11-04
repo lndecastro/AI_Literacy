@@ -103,29 +103,56 @@ English: I’m hungry → Portuguese:
 | Zero-Shot         | Fast and generic tasks                  | “Translate to Spanish…”                       |
 | Few-Shot          | Custom structure or format              | “English → French examples…”                  |
 
-## Exercise 2: Prompt Comparison Activity
+## Example: Prompt Pattern Comparison 
 
-Use the following task and try prompting it in three different styles.
+**Task**: Recommend three books for someone interested in artificial intelligence. The goal is to compare how different prompt formulations influence the quality, depth, and tone of the AI’s responses.
 
-**Task**: Recommend three books for someone interested in artificial intelligence.
+### 1️⃣ Instructional Pattern
+**Structure:** Clearly instruct the AI to perform a task or deliver information in a specific way.
 
-### Prompt Style 1: The Expert Consultant (Focus on Audience/Purpose)
-This prompt is direct, specifies the audience's intent, and requires the model to justify its selection.
+**Example Prompt:**
 ```
-I need a recommendation for a three-book reading list on Artificial Intelligence. Please select one book that introduces the core technical concepts, one that explores the societal and ethical implications, and one that focuses on a specific, popular application like Deep Learning. Format the response as a bulleted list, including a brief justification for each choice.
-```
-
-### Prompt Style 2: The Creative Marketer (Focus on Tone/Engagement)
-This prompt asks the model to adopt a specific persona and language style, emphasizing accessibility and excitement for a broad audience.
-```
-Act as a bookstore curator crafting a display titled 'Start Your AI Journey'. Recommend three must-read books on AI. Write a punchy, one-sentence tagline for each book that highlights why a curious layperson should pick it up, making sure the recommendations cover technical, ethical, and futuristic perspectives.
+List and briefly describe three essential books for beginners who want to learn about artificial intelligence.
 ```
 
-### Prompt Style 3: The Structured Analyst (Focus on Data/Format)
-This prompt imposes strict constraints on the output format, ensuring a concise and easily scannable result, similar to a reference table.
+### 2️⃣ Role-Based Pattern
+**Structure:** Ask the AI to *take on a persona* or *expert role* before performing the task.
 
+**Example Prompt:**
 ```
-Provide a table with three recommended books for an Artificial Intelligence enthusiast. The table must have four columns: Book Title, Author, Category (select from: Foundational, Applied, or Philosophical), and a 10-word maximum summary of the book's content.
+You are a university professor teaching an AI Literacy course. Recommend three foundational books that would help your students understand artificial intelligence.
+```
+
+### 3️⃣ Chain-of-Thought Pattern
+**Structure:** Instruct the AI to *show its reasoning* step-by-step before providing the final answer.
+
+**Example Prompt:**
+```
+Think step by step. First explain what qualities make a good introductory book on artificial intelligence, then recommend three that meet those criteria.
+```
+
+### 4️⃣ Zero-Shot Pattern
+**Structure:** Provide the task *with no examples or additional guidance.*
+
+**Example Prompt:**
+```
+Recommend three books for someone interested in artificial intelligence.
+```
+
+### 5️⃣ Few-Shot Pattern
+**Structure:** Provide *examples* before giving the task, so the AI can mimic the style or format.
+
+**Example Prompt:**
+```
+Example 1:
+Topic: Data Science
+Books:
+1. "Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking" by Provost & Fawcett, O'Reilly Media
+2. "Python for Data Analysis: Data Wrangling with pandas, NumPy, and Jupyter" by Wes McKinney, O'Reilly Media
+3. "Naked Statistics: Stripping the Dread from the Data" by Charles Wheelan, W. W. Norton & Company
+
+Now follow the same format for this topic:
+Topic: Artificial Intelligence
 ```
 
 ## 5.8 Why Iteration Matters
