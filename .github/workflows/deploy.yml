@@ -24,16 +24,20 @@ jobs:
           pip install jupyter-book ghp-import
 
       - name: Clean previous builds
-        working-directory: tempBook2
         run: |
+          cd tempBook2
           yes | jupyter-book clean . --all
 
       - name: Build Jupyter Book
-        working-directory: tempBook2
         run: |
+          cd tempBook2
           jupyter-book build .
+          
+      - name: Debug build output
+        run: |
+          ls -R tempBook2/_build || echo "Build folder missing!"
 
       - name: Deploy to GitHub Pages
         run: |
-          cd tempbook2
+          cd tempBook2
           ghp-import -n -p -f _build/html
