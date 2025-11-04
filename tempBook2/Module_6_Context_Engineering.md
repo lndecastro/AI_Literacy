@@ -308,7 +308,7 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 - With **Projects** and their equivalents, you experience how AI can become a **shared workspace**, helping you manage complexity while building your solution.  
 - Both features let you test assumptions, gather feedback, and iterate quickly with minimal cost.  
 
-## Exercise 2: Personalized Assistants and Projects 
+## Exercise 3: Personalized Assistants and Projects 
 
 **Team Exercise**:  
   1. Create a **Personalized Assistant** that supports your startup idea (e.g., a customer FAQ bot or investor Q&A assistant).  
