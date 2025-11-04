@@ -39,4 +39,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          ghp-import -n -p -f tempBook2/_build/html
+          ghp-import -n -p -f _build/html
