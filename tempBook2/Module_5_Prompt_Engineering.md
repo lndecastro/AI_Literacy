@@ -103,7 +103,7 @@ English: I’m hungry → Portuguese:
 | Zero-Shot         | Fast and generic tasks                  | “Translate to Spanish…”                       |
 | Few-Shot          | Custom structure or format              | “English → French examples…”                  |
 
-## Example: Prompt Pattern Comparison 
+## Prompt Pattern Comparison Example
 
 **Task**: Recommend three books for someone interested in artificial intelligence. The goal is to compare how different prompt formulations influence the quality, depth, and tone of the AI’s responses.
 
@@ -181,7 +181,7 @@ Iteration helps you:
 
 ![Iterative Prompting](Data/IterativePrompt.png)
 
-## Exercise 3: Prompt Iteration and Debugging Examples
+## Exercise 2: Prompt Iteration and Debugging Examples
 
 **Poor Prompt:**
 ```
@@ -196,7 +196,7 @@ Explain the stock market in simple terms for a high school student, using 3 key 
 Explain the stock market in simple terms for a high school student. Use 3 bullet points and include one analogy related to daily life.
 ```
 
-## Exercise 4: Prompt Experiment Classwork
+## Exercise 3: Prompt Experiment Classwork
 
 [Spreadsheet download](./Data/FinancialSample.xlsx) Available at: [https://learn.microsoft.com/en-us/power-bi/create-reports/sample-financial-download]
 
@@ -267,7 +267,7 @@ This shows how reverse prompting can help:
 - **Learn effective prompt patterns** (e.g., phrasing requests around “three key steps” often yields structured, actionable advice).  
 - **Apply to your projects** by practicing both sides: writing prompts and analyzing outputs to refine your own strategy.  
 
-## Exercise 5: Reverse Prompting
+## Exercise 4: Reverse Prompting
 
 Below is an AI-generated output. Your task is to **work backwards** and write the possible prompt(s) that might have generated it, and then **use a reverse prompt method** to do the same and compare with your proposed prompts.  
 
@@ -302,7 +302,7 @@ For each proposed prompt, explain why it would likely generate this output and h
 
 **Hallucination** is when a model (confidently) outputs incorrect or invented information.
 
-> Note: Once you understand how the LLM generates its output, hallucinations become a natural outcome and our role as moderators becomes evident.
+> Note: Once you understand how the LLM generates its output, hallucinations become a natural outcome and our role as moderators becomes evident. It is also important to acknowledge that the GenAI models can create statistics to provide data and results, and these statistics are not always directly available in the sources.
   
 ## 5.12 Assessing Prompt Quality
 
@@ -320,6 +320,7 @@ Five criteria to judge the effectiveness of a prompt-output pair:
 - Ask the model to **cite its sources** or say "Only use the provided text/file."
 - Clarify that the model should say **“I don't know”** if unsure.
 - Specify that the answer should be based **only on the uploaded file** or context.
+- Ask the model to **explain data and generalizations** presented.
 
 ## Reflection
 
