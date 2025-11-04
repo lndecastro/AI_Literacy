@@ -3,7 +3,7 @@ name: Deploy Jupyter Book to GitHub Pages
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   build-deploy:
@@ -25,11 +25,13 @@ jobs:
 
       - name: Clean previous builds
         working-directory: tempBook2
-        run: jupyter-book clean . --all
+        run: |
+          yes | jupyter-book clean . --all
 
       - name: Build Jupyter Book
         working-directory: tempBook2
-        run: jupyter-book build .
+        run: |
+          jupyter-book build .
 
       - name: Deploy to GitHub Pages
         run: |
