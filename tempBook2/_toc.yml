@@ -2,21 +2,21 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro.md
+root: intro
 chapters:
-  - file: Module_1_AI_History.md
+  - file: Module_1_AI_History
     title: "Module 1: A Brief History of AI"
-  - file: Module_2_AI_and_Its_Branches.md
+  - file: Module_2_AI_and_Its_Branches
     title: "Module 2: AI and Its Many Branches"
-  - file: Module_3_How_Machines_Learn.md
+  - file: Module_3_How_Machines_Learn
     title: "Module 3: How Machines Learn"
-  - file: Module_4_GenAI_LLMs.md
+  - file: Module_4_GenAI_LLMs
     title: "Module 4: Generative AI (GenAI) and Large Language Models (LLMs)"
-  - file: Module_5_Prompt_Engineering.md
+  - file: Module_5_Prompt_Engineering
     title: "Module 5: Fundamentals of Prompt Engineering"
-  - file: Module_6_Context_Engineering.md
+  - file: Module_6_Context_Engineering
     title: "Module 6: Context Engineering"
-  - file: Module_7_Foundational_Models.md
+  - file: Module_7_Foundational_Models
     title: "Module 7: Foundational Models and Tools"
-  - file: Module_8_Sample_Case_Studies.md
+  - file: Module_8_Sample_Case_Studies
     title: "Module 8: Case Studies"
