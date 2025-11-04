@@ -22,7 +22,7 @@ bibtex_bibfiles:
 
 # Tells Jupyter Book to ignore these .md files
 exclude_patterns:
-  - Data/**
+  - 'Data/**'
 
 # Information about where the book exists on the web
 repository:
