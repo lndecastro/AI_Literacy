@@ -25,18 +25,19 @@ jobs:
 
       - name: Clean previous builds
         run: |
-          cd tempBook2
-          jupyter-book clean . --all || true
+          jupyter-book clean tempBook2 --all || true
 
       - name: Build Jupyter Book
         run: |
-          cd tempBook2
-          jupyter-book build tempBook2
-          
-      - name: Debug build output
-        run: |
+          jupyter-book build tempBook2 --debug
+          echo "Build output:"
           ls -R tempBook2/_build || echo "Build folder missing!"
 
       - name: Deploy to GitHub Pages
         run: |
-          ghp-import -n -p -f tempBook2/_build/html
+          if [ -d "tempBook2/_build/html" ]; then
+            ghp-import -n -p -f tempBook2/_build/html
+          else
+            echo "_build/html not found, aborting."
+            exit 1
+          fi
