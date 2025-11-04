@@ -20,6 +20,10 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
+# Tells Jupyter Book to Ignore these md files
+exclude_patterns:
+  - Data/temp.md
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/lndecastro/AI_Literacy # Online location of your book ( Change this to new repo name )
