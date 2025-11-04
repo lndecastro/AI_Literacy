@@ -3,7 +3,7 @@ name: Deploy Jupyter Book to GitHub Pages
 on:
   push:
     branches:
-      - main # Change if your default branch is different
+      - main  # or your default branch
 
 jobs:
   build-deploy:
@@ -23,11 +23,14 @@ jobs:
           pip install --upgrade pip
           pip install jupyter-book ghp-import
 
-      - name: Build Jupyter Book # Change this to new repo name
-        run: |
-          cd tempBook2
-          jupyter-book build .
+      - name: Clean previous builds
+        working-directory: tempBook2
+        run: jupyter-book clean . --all
 
-      - name: Deploy to GitHub Pages # Change this to new repo name
+      - name: Build Jupyter Book
+        working-directory: tempBook2
+        run: jupyter-book build .
+
+      - name: Deploy to GitHub Pages
         run: |
           ghp-import -n -p -f tempBook2/_build/html
