@@ -31,7 +31,7 @@ A good prompt typically includes:
 4. **Output Format** (optional): Desired structure or style.
    - _e.g., "Respond in JSON format with sentiment and category."_
 
-![Prompt Anatomy](../.Data/PromptAnatomy.png)
+![Prompt Anatomy](../Data/PromptAnatomy.png)
 
 ## 5.3 Why Prompt Engineering Matters
 
