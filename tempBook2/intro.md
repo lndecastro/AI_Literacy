@@ -43,7 +43,7 @@ Each module builds on the previous one — guiding you from “What is AI?” to
 
 ![Our Journey](../Data/AILiteracyJourney.png)
 
-## How to Use This Jupyter Book
+## How to Use This Jupyter Book 
 
 - Navigate the modules using the left-hand sidebar or the **Next/Previous** buttons at the bottom of each page.  
 - Download pages as `.md` or `.pdf` for your notes.  
