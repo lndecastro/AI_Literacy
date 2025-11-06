@@ -30,9 +30,9 @@ A good prompt typically includes:
    - _e.g., "Customer review: The product broke in 2 days..."_
 4. **Output Format** (optional): Desired structure or style.
    - _e.g., "Respond in JSON format with sentiment and category."_
-<!--
+
 ![Prompt Anatomy](../Data/PromptAnatomy.png)
--->
+
 ## 5.3 Why Prompt Engineering Matters
 
 - It **boosts model performance** without changing the model itself.
@@ -104,9 +104,9 @@ English: I’m hungry → Portuguese:
 ```
 
 > Note: a prompt can be of more than one type simultaneously, e.g. Prompt 1 above is also a zero-shot prompt.
-<!--
+
 ![Prompt Types](../Data/PromptTypes.png)
--->
+
 ## 5.7 Prompt Comparison
 
 | Pattern          | Use Case                               | Example Role/Task                             |
@@ -173,7 +173,7 @@ Topic: Data Science
 Books:
 1. "Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking" by Provost & Fawcett, O'Reilly Media
 2. "Python for Data Analysis: Data Wrangling with pandas, NumPy, and Jupyter" by Wes McKinney, O'Reilly Media
-3. "Naked Statistics: Stripping the Dread from the Data" by Charles Wheelan, W. W. Norton & Company
+3. "Exploratory Data Analysis: Descriptive Analysis, Visualization, and Dashboard Design" by Leandro de Castro, CRC Press
 
 Now follow the same format for this topic:
 Topic: Artificial Intelligence
@@ -203,9 +203,9 @@ Iteration helps you:
 
 4. **Test again**  
    _Compare outputs, note improvements, and repeat if needed._
-<!--
+
 ![Iterative Prompting](../Data/IterativePrompt.png)
--->
+
 ## Exercise 2: Prompt Iteration and Debugging Examples
 
 **Poor Prompt:**
