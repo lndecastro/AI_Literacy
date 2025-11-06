@@ -31,7 +31,7 @@ A good prompt typically includes:
 4. **Output Format** (optional): Desired structure or style.
    - _e.g., "Respond in JSON format with sentiment and category."_
 
-![Prompt Anatomy](./Data/PromptAnatomy.png)
+![Prompt Anatomy](../Data/PromptAnatomy.png)
 
 ## 5.3 Why Prompt Engineering Matters
 
@@ -105,7 +105,7 @@ English: I’m hungry → Portuguese:
 
 > Note: a prompt can be of more than one type simultaneously, e.g. Prompt 1 above is also a zero-shot prompt.
 
-![Prompt Types](./Data/PromptTypes.png)
+![Prompt Types](../Data/PromptTypes.png)
 
 ## 5.7 Prompt Comparison
 
@@ -204,7 +204,7 @@ Iteration helps you:
 4. **Test again**  
    _Compare outputs, note improvements, and repeat if needed._
 
-![Iterative Prompting](./Data/IterativePrompt.png)
+![Iterative Prompting](../Data/IterativePrompt.png)
 
 ## Exercise 2: Prompt Iteration and Debugging Examples
 
@@ -228,7 +228,7 @@ Explain the stock market in simple terms for a high school student. Use 3 bullet
 
 ## Exercise 3: Prompt Experiment Classwork
 
-[Spreadsheet download](./Data/FinancialSample.xlsx) Available at: [https://learn.microsoft.com/en-us/power-bi/create-reports/sample-financial-download]
+[Spreadsheet download](../Data/FinancialSample.xlsx) Available at: [https://learn.microsoft.com/en-us/power-bi/create-reports/sample-financial-download]
 
 For the Microsoft Financial Sample, attach the workbook available in the link above in your LLM and run the prompt below:
 
