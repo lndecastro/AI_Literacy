@@ -20,9 +20,7 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# Tells Jupyter Book to ignore these .md files
-exclude_patterns:
-  - 'Data/**'
+
 
 # Information about where the book exists on the web
 repository:
