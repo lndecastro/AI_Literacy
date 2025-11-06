@@ -34,7 +34,7 @@ jobs:
       - name: Build Jupyter Book
         run: |
           jupyter-book clean tempBook2 --all || true
-          jupyter-book build tempBook2 --debug
+          jupyter-book build tempBook2
           ls -R tempBook2/_build/html
           
       - name: Deploy to GitHub Pages
