@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: "AI Literacy" 
+title: "AI Literacy"
 author: Leandro Nunes de Castro, Ph.D.
 logo: dendritic_logo.png
 copyright: "2025"
@@ -20,8 +20,6 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-
-
 # Information about where the book exists on the web
 repository:
   url: https://github.com/lndecastro/AI_Literacy # Online location of your book ( Change this to new repo name )
@@ -34,6 +32,4 @@ html:
   use_issues_button: false
   static_path:
     - images
-
-  
-
+    - ../Data
