@@ -21,7 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install jupyter-book ghp-import
+          pip install jupyter-book<=2.0
+          pip install ghp-import
 
       - name: Clean previous builds
         run: |
