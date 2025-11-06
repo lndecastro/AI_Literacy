@@ -42,6 +42,7 @@ Each module builds on the previous one — guiding you from “What is AI?” to
 | **7**  | _Foundational Models and Tools_         | Surveying some key AI frameworks, platforms, and copilots.                                                  |
 | **8**  | _Sample Use Cases_                      | Examining practical applications across domains.                                                            |
 
+![](AILiteracyJourney.png)
 
 ## How to Use This Jupyter Book
 
