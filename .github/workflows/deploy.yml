@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requirements.txt
-          
+          pip install -r requirements.txt
+
       - name: Clean previous builds
         run: |
           jupyter-book clean tempBook2 --all || true
