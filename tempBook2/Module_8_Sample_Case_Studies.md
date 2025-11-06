@@ -5,7 +5,7 @@ This module provides **hands-on, ready-to-run case studies** where you can explo
 
 > All datasets are **synthetic/anonymized** and for **educational use** only.
 
-[⬇️ Download all case-study data (ZIP)](../Data/ai_literacy_case_studies.zip)
+[⬇️ Download all case-study data (ZIP)](./Data/ai_literacy_case_studies.zip)
 
 ## Learning Objectives
 

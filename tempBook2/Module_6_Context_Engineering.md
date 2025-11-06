@@ -104,7 +104,7 @@ Context engineering integrates multiple techniques to shape how AI systems inter
 Summarize this lesson plan in three bullet points.
 ```
 
-Download the [Sample lesson plans](../Data/SampleLessonPlans.pdf).
+Download the [Sample lesson plans](./Data/SampleLessonPlans.pdf).
 
 **Context Engineering Example:**
 
@@ -228,7 +228,7 @@ Think of them as your own AI partner that understands the context of your busine
 **Objective:** Apply the concepts of **Context Engineering** and **Personalized Assistants** by creating a specialized AI assistant trained on a specific dataset.
 **Task:** Use the dataset provided below for the **AI Literacy Program Assistant** to create your own personalized assistant.
 
-Download the [Personalized_Assistant_Example](../Data/Personalized_Assistant_Example.pdf).
+Download the [Personalized_Assistant_Example](./Data/Personalized_Assistant_Example.pdf).
 
 Your assistant should be able to answer questions, summarize modules, and guide learners about the AI Literacy Program using the uploaded knowledge base.
 

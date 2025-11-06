@@ -71,7 +71,7 @@ Machine Learning can be categorized into four main paradigms: supervised, unsupe
 
 > Reinforcement learning mirrors how humans and animals learn: by doing, failing, and improving.
 
-![Learning_Paradigms](../Data/LearningParadigms.png)
+![Learning_Paradigms](./Data/LearningParadigms.png)
 
 ## Part II — Learning Strategies
 
@@ -161,7 +161,7 @@ The modern AI learning landscape is **distributed, adaptive, and collaborative**
 | **Hybrid Learning**       | Combine multiple paradigms into one system         | Interpretability + flexibility           | Neuro-fuzzy control, neuro-symbolic AI |
 | **Multimodal Learning**   | Integrate multiple data types (text, image, sound) | Human-like perception                    | Vision-language models, AI assistants  |
 
-![Learning_Strategies](../Data/LearningStrategies.png)
+![Learning_Strategies](./Data/LearningStrategies.png)
 
 ---
 
@@ -176,7 +176,7 @@ The learning process in AI can be visualized as a **cycle of intelligence**:
 5. **Deployment** → integrating models into applications
 6. **Feedback Loop** → monitoring, retraining, and improving
 
-![AI_Learning_Cycle](../Data/LearningCycle.png)
+![AI_Learning_Cycle](./Data/LearningCycle.png)
 
 ## Reflection
 
