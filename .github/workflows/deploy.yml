@@ -22,7 +22,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install jupyter-book ghp-import
-
+<!--
       - name: Clean previous builds
         run: |
           jupyter-book clean tempBook2 --all || true
@@ -36,7 +36,12 @@ jobs:
           jupyter-book clean tempBook2 --all || true
           jupyter-book build tempBook2 --debug
           ls -R tempBook2/_build/html
-
+-->
+      - name: Build Jupyter Book # Change this to new repo name
+        run: |
+          cd tempBook2  
+          jupyter-book build .
+          
       - name: Deploy to GitHub Pages
         run: |
           ghp-import -n -p -f tempBook2/_build/html
