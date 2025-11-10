@@ -228,27 +228,61 @@ Explain the stock market in simple terms for a high school student. Use 3 bullet
 
 ## Exercise 3: Prompt Experiment Classwork
 
+**Goal:** Learn how prompt structure changes the quality, depth, and usefulness of AI-generated insights. Use the file **FinancialSample.xlsx** (provided below). It contains sales data by product, country, segment, and month — perfect for analytical prompts.
+
+**Activity Instructions:** You will interact with the same dataset using **four prompt patterns**. Paste each prompt into any LLM of your preference and record how the response changes.
+
 [Spreadsheet download](../Data/FinancialSample.xlsx) Available at: [https://learn.microsoft.com/en-us/power-bi/create-reports/sample-financial-download]
 
-For the Microsoft Financial Sample, attach the workbook available in the link above in your LLM and run the prompt below:
-
+**1. Instructional Prompt**
 ```
-You support retail sales analysis at Contoso. The VP of Regional Sales needs an assessment to guide monthly discount strategies.
-Task: Compare net ‘ Sales’ for this observation to average for all ‘Product’ sold under this ‘Discount Band’, and ‘ Sales’ for this ‘Product’ in this ‘Month’.
-| Segment | Country | Product | Discount Band | Sales | Month | Year |
-| Government | United States of America | Montana | Medium | 178500.35 | October | 2014 |
-
-Step 1 – Chain-of-Thought (show your work):
-1. Compare Averages: Current vs average Sales with this Product and Discount Band, and vs average Sales with this Product and Month.
-2. Compare Segment: Calculate and compare this point to performance of this Product in each other Segment in this Country.
-3. Compare Country: Calculate and compare this point to all performance in the Country, and performance in all Countries.
-4. Compare Product: Calculate and compare this point to all performance of this Product, and performance of all Products.
-5. Compare and Discuss: Review this point in comparison to historical, country, and product performance, and infer overall performance.
-Step 2 – Analysis:
-Write a concise paragraph identifying trends and discussing likely drivers behind any variance.
-Step 3 – Prediction:
-Based on findings, advise whether Contoso should continue, adjust, or halt this Discount Band.
+Analyze the dataset FinancialSample.xlsx and list the three countries with the highest total sales.
 ```
+
+**2. Role-Based Prompt**
+```
+You are a financial analyst preparing a short executive summary.
+
+Using the dataset FinancialSample.xlsx, identify the three countries with the highest total sales,
+and explain what may be driving these results (e.g., product mix, segment, or profit margin).
+Write your answer in bullet points suitable for a management report.
+```
+**3. Chain-of-Thought Prompt**
+```
+Think step-by-step.
+
+1. Load the dataset FinancialSample.xlsx.
+2. Determine total sales per country.
+3. Rank the countries in descending order of total sales.
+4. Discuss one possible business implication from the pattern you observe.
+Provide your reasoning before the final answer.
+```
+**4. Few-Shot Prompt**
+```
+Example:
+When analyzing regional sales data, the analyst should:
+- Summarize the top-performing region
+- Identify key product contributors
+- Highlight one actionable insight
+
+Now apply the same structure to the dataset FinancialSample.xlsx.
+```
+
+### Reflection and Comparison
+
+Create a short table comparing the outputs:
+
+| Prompt Type | Clarity of Output | Depth of Insight | Alignment with Task | Notable Difference |
+|--------------|------------------|------------------|---------------------|--------------------|
+| Instructional |                  |                  |                     |                    |
+| Role-Based |                  |                  |                     |                    |
+| Chain-of-Thought |                  |                  |                     |                    |
+| Few-Shot |                  |                  |                     |                    |
+
+### Discussion Questions
+1. Which prompt produced the most accurate or useful result? Why?  
+2. How did adding *role* or *examples* change the AI’s tone or structure?  
+3. How might bias or ambiguity in your wording affect the output?  
 
 ## 5.10 Reverse Prompting: A Prompt Analysis Technique
 
