@@ -83,7 +83,7 @@ Context engineering integrates multiple techniques to shape how AI systems inter
    **Generated Summary:**  
    (text that uses that retrieved information to answer the question)
 
-   Briefly explain the RAG process you implemented here, including the sources of information you used to create the short and factual snippet. Also, explain why this is different from simply adding the context in the prompt.
+   Briefly explain the RAG process you implemented here, including the sources of information you used to create the short and factual snippet. Also, explain why this is different from simply adding the context in the prompt (contextual priming).
    ```
 
 5. **Chained Prompts** – Break complex tasks into sequential, interdependent stages.  
@@ -110,12 +110,11 @@ Context engineering integrates multiple techniques to shape how AI systems inter
    ```
 
 8. **Multi-Modal Context Orchestration** – Combine multiple input types (e.g., text, image, or structured data). <p>
-   Download the [Bubble charts](../Data/Figure_5_7_Bubble_Chart.jpg) and attach them to your prompt.
+   Download the [Bubble charts](../Data/Figure_5_7_Bubble_Chart.jpg) and attach them to your prompt. Source: "Exploratory Data Analysis: Descriptive Analysis, Visualization, and Dashboard Design", by L. N. de Castro, CRC Press, 2026.
    
    _Example:_
    ```
    Analyze the bubble charts attached showing different data for the Gapminder and Auto MPG datasets and write a paragraph explaining what can be observed in each one of them. Reference the images in your response.
-   (Insert chart or figure here.)
    ```
 
 ![Key Techniques](../Data/ContextEngineering.png)
@@ -131,22 +130,23 @@ Context engineering integrates multiple techniques to shape how AI systems inter
 
 ## 6.4 Example in Education and Learning
 
-**Prompt Engineering Example:**
+Download the [Sample lesson plans](../Data/SampleLessonPlans.pdf).
+Download the [Task lesson plan](../Data/TaskLessonPlan.pdf).
+
+**Prompt Engineering Example:** Upload the task lesson plan to your prompt.
 
 ```
 Summarize this lesson plan in three bullet points.
 ```
 
-Download the [Sample lesson plans](../Data/SampleLessonPlans.pdf).
-
-**Context Engineering Example:**
+**Context Engineering Example:** Upload both files to your prompt.
 
 ```
 System Role: You are an instructional designer specializing in technology-enhanced learning.
 
-Reference Context: Here are three sample lesson plans from previous AI Literacy workshops [INSERT OR UPLOAD CONTENT].
+Reference Context: The attached file SampleLessonPlans.pdf contains three sample lesson plans from previous AI Literacy workshops.
 
-Task: Evaluate the following lesson plan. Compare it to the reference cases and summarize in three bullet points.
+Task: Evaluate the lesson plan attached on file TaskLessonPlan.pdf. Compare it to the reference cases and summarize in three bullet points.
 
 Output: Provide a structured table with Strengths, Weaknesses, and Improvement Suggestions.
 ```
@@ -155,18 +155,21 @@ By embedding **role, reference materials, task, and output format**, the model p
 
 ## 6.5 Example in Healthcare
 
-**Prompt Engineering Example:**
+Download the [Anonimized patient case](../Data/AnonymizedPatientCase.pdf).
+Download the [Reference file](../Data/ReferenceFile.pdf)
+
+**Prompt Engineering Example:** Upload the anonymized patient case.
 
 ```
-Summarize this patient case in three bullet points.
+Summarize the patient case attached in three bullet points.
 ```
 
-**Context Engineering Example:**
+**Context Engineering Example:** Upload the anonymized patient case and the reference file.
 
 ```
 System Role: You are a clinical data analyst supporting a hospital’s quality-improvement team.
 
-Reference Context and Task: Review the following anonymized patient summary and compare it to current treatment guidelines provided in the reference file.
+Reference Context and Task: Review the anonymized patient summary attached and compare it to current treatment guidelines provided in the reference file.
 
 Output: Present your response in three bullet points organized under: Key Findings, Potential Risks, and Recommended Next Steps.
 ```
