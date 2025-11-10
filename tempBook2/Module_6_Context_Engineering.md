@@ -30,31 +30,60 @@ Context engineering integrates multiple techniques to shape how AI systems inter
 
 1. **System Role Design** – Define the AI’s persona or purpose.  
    _Example:_
-
    ```
    You are an experienced data storyteller helping a university explain research findings to a general audience. Use clear, engaging language and avoid technical jargon.
    ```
 
 2. **Instruction Layering** – Combine multiple prompt patterns (e.g., role + format + goal).  
+   Download the report [Generative AI Use and Management at Federal Agencies](../Data/gao_25_107653.pdf)
+
    _Example:_
 
    ```
-   Act as a policy analyst. Summarize this report in bullet points, then draft a 100-word executive summary emphasizing environmental impact.
+   Act as a policy analyst. Summarize the report attached in bullet points, then draft a 100-word executive summary emphasizing environmental impact.
    ```
 
 3. **Contextual Priming** – Provide reference materials or examples to shape the model’s reasoning.  
    _Example:_
 
    ```
-   Here is an example of a strong abstract for a research paper. Use the same structure and tone to rewrite the following abstract.
+   Below there is an example of a strong abstract for a research paper (Abstract 1). Use the same structure and tone to rewrite Abstract 2.
+
+   Abstract 1: Natural computing is a terminology introduced to encompass three classes of methods: (1) those that take inspiration from nature for the development of novel problem-solving techniques; (2) those that are based on the use of computers to synthesize natural phenomena; and (3) those that employ natural materials (e.g., molecules) to compute. The main fields of research that compose these three branches are the artificial neural networks, evolutionary algorithms, swarm intelligence, artificial immune systems, fractal geometry, artificial life, DNA computing, and quantum computing, among others. This paper provides an overview of the fundamentals of natural computing, particularly the fields listed above, emphasising the biological motivation, some design principles, their scope of applications, current research trends and open problems. The presentation is concluded with a discussion about natural computing, and when it should be used.
+
+   Abstract 2: Context engineering is a new thing people are doing to get better results from AI models. It’s about giving the AI enough background and examples so it understands what you want. You can do this by stacking instructions, using roles, or adding examples and other text that helps the AI figure out how to answer. People use it in education, creative writing, and research to make prompts more effective. The idea is that the more the AI knows about your context, the better its response. This paper explains some methods and shows cases where it works well. It also talks about why it matters for learning how to work with AI.
    ```
 
 4. **Retrieval-Augmented Generation (RAG)** – Dynamically inject external data into the prompt to enhance factual grounding.  
+  Retrieval-Augmented Generation enhances the model’s reasoning by **automatically fetching supporting information** from external sources before responding. This allows the model to generate answers grounded in **real-time evidence** rather than static training data.
+
+  In practice, RAG is implemented as a two-step pipeline:  
+  1️⃣ **Retrieve** relevant documents or passages based on the user’s query.  
+  2️⃣ **Augment and Generate** the final answer using both the retrieved data and the model’s reasoning.
+
    _Example:_
 
    ```
-   Using the following retrieved text from a 2024 WHO report, summarize the three main health challenges related to AI in diagnostics.
-   (Paste retrieved content or database snippet below.)
+   You are demonstrating Retrieval-Augmented Generation (RAG) for a classroom lesson.
+
+   Step 1 – Retrieve:
+   Search any reliable sources you know for factual information about **governance challenges in the use of AI for healthcare diagnostics**. Simulate this as if you retrieved content from an external WHO 2024 report.
+
+   Step 2 – Augment:
+   Insert a short, factual snippet (3–5 sentences) that could plausibly come from that report.
+   Label it clearly as "Retrieved Content."
+
+   Step 3 – Generate:
+   Based on the retrieved content, produce a concise, evidence-based summary (3 sentences)
+   explaining the main governance challenges of AI in diagnostics.
+
+   Clearly separate the output into two sections:
+   **Retrieved Content:**  
+   (text that simulates what the retrieval system found)
+   **Generated Summary:**  
+   (text that uses that retrieved information to answer the question)
+
+   Briefly explain the RAG process you implemented here, including the sources of information you used to create the short and factual snippet. Also, explain why this is different from simply adding the context in the prompt.
    ```
 
 5. **Chained Prompts** – Break complex tasks into sequential, interdependent stages.  
@@ -80,12 +109,16 @@ Context engineering integrates multiple techniques to shape how AI systems inter
    Summarize the benefits of generative AI in healthcare, but do not include examples related to patient data privacy or regulation.
    ```
 
-8. **Multi-Modal Context Orchestration** – Combine multiple input types (e.g., text, image, or structured data).  
+8. **Multi-Modal Context Orchestration** – Combine multiple input types (e.g., text, image, or structured data). <p>
+   Download the [Bubble charts](../Data/Figure_5_7_Bubble_Chart.jpg) and attach them to your prompt.
+   
    _Example:_
    ```
-   Analyze the chart below showing AI model accuracy over time and write a paragraph explaining the trend. Reference the image in your response.
+   Analyze the bubble charts attached showing different data for the Gapminder and Auto MPG datasets and write a paragraph explaining what can be observed in each one of them. Reference the images in your response.
    (Insert chart or figure here.)
    ```
+
+![Key Techniques](../Data/ContextEngineering.png)
 
 ## 6.3 Prompt vs Context Engineering
 
