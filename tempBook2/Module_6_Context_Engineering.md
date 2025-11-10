@@ -227,11 +227,11 @@ Two recent innovations — **Personalized Assistants** and **Projects** — enab
 
 **What are they?**  
 Personalized assistants, such as _Custom GPTs_ are personalized versions of foundational models (like GPT-4/5) that you configure with **specific instructions, data, and tools**.
-Think of them as your own AI partner that understands the context of your business.
+Think of them as your own AI partner that understands your context.
 
 **When to use them?**
 
-- Automating repetitive interactions (e.g., customer support, investor FAQs).
+- Automating repetitive interactions (e.g., customer support, FAQs, personal tutor/assistant).
 - Acting as a _single-purpose agent_ — a specialized helper for a narrow domain.
 - Rapid prototyping of ideas that require direct user interaction.
 
@@ -273,7 +273,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
 1. **Define the Role**
    - Example: “You are a program support assistant for the FGCU AI Literacy course.”
 2. **Upload the Knowledge Base**
-   - Use the provided dataset titled _AI Literacy Program Assistant Knowledge Base_.
+   - Use the provided dataset titled _Personalized_Assistant_Example_.
 3. **Set Instructions**
    - Describe the assistant’s behavior, tone, and purpose.
    - Example: “Be friendly, informative, and professional. Always connect responses to learning goals.”
@@ -282,26 +282,27 @@ Your assistant should be able to answer questions, summarize modules, and guide 
      - “Summarize what students learn in Module 4.”
      - “Who developed the AI Literacy program?”
      - “What is the difference between Modules 5 and 6?”
-5. **Evaluate Context Quality**
+5. **Evaluate Quality**
    - How does the assistant’s role, tone, and knowledge data affect output accuracy?
    - What improvements would you make to the system message or dataset?
+   - Analyze the difference in responses when allowing the PA to reply by using Web Search and otherwise.
 
 ### 6.6.2 Projects
 
 **What are they?**  
-Projects are collaborative **AI workspaces** that allow teams to combine **LLM interactions, files, data, and notes** into one structured environment.
+Projects are collaborative **AI workspaces** that allow teams to combine **LLM interactions, files, data, personalized assistants, and notes** into one structured environment.
 Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**.
 
 **When to use them?**
 
-- Organizing and curating research (market analysis, regulations, competitor benchmarking).
-- Managing multi-step workflows (e.g., lean canvas, due diligence, product roadmap).
-- Supporting team collaboration where everyone contributes and refines knowledge.
+- Organizing and curating research (e.g. market analysis, scientific works, courses, regulations, competitor benchmarking).
+- Managing multi-step workflows (e.g. data science pipelines, lean canvas, course design, due diligence, project development, product roadmap).
+- Supporting team collaboration where everyone contributes and refines knowledge (e.g. work area initiatives, sports team prep, construction management).
 
 **Core Components:**
 
-- **Knowledge base**: Upload business plans, reports, datasets.
-- **Model interactions**: Ask questions, generate summaries, or perform analysis on the shared material.
+- **Knowledge base (files)**: Upload business plans, reports, datasets.
+- **Model instructions**: Direct the behavior and responses of the model.
 - **Collaboration**: Teams can contribute, track, and refine insights in one place.
 
 **Strengths**: Structured, persistent, collaborative, source-grounded.
@@ -321,7 +322,7 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 
 ### 6.6.3 Personalized Assistants vs. Projects
 
-Both **personalized assistants** (like Custom GPTs, Personas, or Copilots) and **projects** (structured workspaces such as OpenAI Projects, Claude Projects, or Perplexity Spaces) extend the power of foundational models.
+Both **personalized assistants** (like Custom GPTs, Personas, or Gems) and **projects** (structured workspaces such as OpenAI Projects, Claude Projects, or Perplexity Spaces) extend the power of foundational models.
 They serve different but complementary purposes.
 
 #### When to Use Each
@@ -372,11 +373,11 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 
 **Team Exercise**:
 
-1. Create a **Personalized Assistant** that supports your startup idea (e.g., a customer FAQ bot or investor Q&A assistant).
-2. Set up a **Project** (or equivalent) to organize your startup’s research and MVP documents.
+1. Create a **Personalized Assistant** that supports your startup idea (e.g. a customer FAQ bot or investor Q&A assistant), your discipline (e.g. a personalized tutor) or your area within the company (e.g. a support bot).
+2. Set up a **Project** (or equivalent) to organize your startup/discipline/area research and documents.
 3. Compare across platforms: What worked best? What were the limitations?
 
-By mastering these extensions of the GenAI toolkit, you will learn not just to use AI, but to **engineer AI-powered solutions** — a critical step in building innovative startups.
+By mastering these extensions of the GenAI toolkit, you will learn not just to use AI, but to **engineer AI-powered solutions** — a critical step in building innovative solutions.
 
 ## Reflections
 
