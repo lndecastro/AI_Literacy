@@ -226,7 +226,7 @@ Two recent innovations — **Personalized Assistants** and **Projects** — enab
 ### 6.6.1 Personalized Assistants
 
 **What are they?**  
-Personalized assistants, such as _Custom GPTs_ are personalized versions of foundational models (like GPT-4/5) that you configure with **specific instructions, data, and tools**.
+Personalized assistants, such as _Custom GPTs_, are personalized versions of general-purpose models (like GPT-4/5) that you configure with **specific instructions, data, and tools**.
 Think of them as your own AI partner that understands your context.
 
 **When to use them?**
@@ -318,10 +318,9 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 - Assessment builder to generate quizzes, rubrics, and feedback forms for instructors.
 - Research grant assistant that uses previous proposals to draft new ones aligned with specific funding calls.
 
-### Exercise 3: "AI History and Future Horizons" Project
+### Exercise 3: "AI Literacy Program" Project
 
-**Goal:** Create a collaborative workspace that organizes all resources, prompts, and analyses from the *AI Literacy Program* into one structured environment.  
-The team works together to generate study guides, glossaries, and interactive assignments with AI assistance.
+**Goal:** Create a collaborative workspace that organizes all resources, prompts, and analyses from the *AI Literacy Program* into one structured environment. The team works together to generate study guides, glossaries, and interactive assignments with AI assistance.
 
 **Why It’s a Project** <p>
 Unlike a single chat, this space integrates:
@@ -331,7 +330,7 @@ Unlike a single chat, this space integrates:
 - **Collaboration:** Instructors, fellows, and students can all refine prompts, add materials, and build knowledge together.  
 - **Persistence:** All conversations, uploads, and generated outputs remain in one place—turning AI dialogue into a reusable asset.
 
-**Why It’s _Not_ a Personalized Assistant**
+**Why It’s _Not_ a Personalized Assistant** <p>
 
 - **Scope:** A Project contains *multiple assistants, files, and workflows*, instead of a single AI persona with fixed behavior.  
 - **Purpose:** It focuses on *collaborative tasks* and shared outputs, while a Personalized Assistant is designed for *personalized interactions* with one user.  
