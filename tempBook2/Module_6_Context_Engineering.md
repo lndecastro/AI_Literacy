@@ -55,8 +55,8 @@ Context engineering integrates multiple techniques to shape how AI systems inter
    ```
 
 4. **Retrieval-Augmented Generation (RAG)** – Dynamically inject external data into the prompt to enhance factual grounding.  
-  Retrieval-Augmented Generation enhances the model’s reasoning by **automatically fetching supporting information** from external sources before responding. This allows the model to generate answers grounded in **real-time evidence** rather than static training data.
-
+  Retrieval-Augmented Generation enhances the model’s reasoning by **automatically fetching supporting information** from external sources before responding.
+  This allows the model to generate answers grounded in **real-time evidence** rather than static training data. <p>
   In practice, RAG is implemented as a two-step pipeline:  
   1️⃣ **Retrieve** relevant documents or passages based on the user’s query.  
   2️⃣ **Augment and Generate** the final answer using both the retrieved data and the model’s reasoning.
@@ -86,7 +86,7 @@ Context engineering integrates multiple techniques to shape how AI systems inter
    Briefly explain the RAG process you implemented here, including the sources of information you used to create the short and factual snippet. Also, explain why this is different from simply adding the context in the prompt (contextual priming).
    ```
 
-5. **Chained Prompts** – Break complex tasks into sequential, interdependent stages.  
+6. **Chained Prompts** – Break complex tasks into sequential, interdependent stages.  
    _Example:_
 
    ```
@@ -95,21 +95,21 @@ Context engineering integrates multiple techniques to shape how AI systems inter
    Step 3: Summarize the recommendations in a 150-word brief.
    ```
 
-6. **Output Shaping** – Specify the desired tone, style, or format of the response.  
+7. **Output Shaping** – Specify the desired tone, style, or format of the response.  
    _Example:_
 
    ```
    Write the introduction as if for a university newsletter — friendly, professional, and limited to 120 words.
    ```
 
-7. **Negative Context Engineering** – Explicitly define what should be avoided or excluded.  
+8. **Negative Context Engineering** – Explicitly define what should be avoided or excluded.  
    _Example:_
 
    ```
    Summarize the benefits of generative AI in healthcare, but do not include examples related to patient data privacy or regulation.
    ```
 
-8. **Multi-Modal Context Orchestration** – Combine multiple input types (e.g., text, image, or structured data). <p>
+9. **Multi-Modal Context Orchestration** – Combine multiple input types (e.g., text, image, or structured data). <p>
    Download the [Bubble charts](../Data/Figure_5_7_Bubble_Chart.jpg) and attach them to your prompt. Source: "Exploratory Data Analysis: Descriptive Analysis, Visualization, and Dashboard Design", by L. N. de Castro, CRC Press, 2026.
    
    _Example:_
@@ -176,7 +176,7 @@ Output: Present your response in three bullet points organized under: Key Findin
 
 This demonstrates how adding context transforms a basic summarization task into a guided, responsible, and domain-specific analysis—producing output aligned with medical standards and professional use.
 
-## Exercise 1: From Prompt Engineering to Context Engineering
+### Exercise 1: From Prompt Engineering to Context Engineering
 
 **Part A – Prompt Engineering (Baseline)**  
 Use a simple prompt to complete the task below:
@@ -259,7 +259,7 @@ Think of them as your own AI partner that understands your context.
 - Patient Education Assistant that explains diagnoses and procedures in plain language.
 - Wellness Companion offering lifestyle guidance based on verified sources.
 
-## Exercise 2: Create Your Own Personalized Assistant
+### Exercise 2: Create Your Own Personalized Assistant
 
 **Objective:** Apply the concepts of **Context Engineering** and **Personalized Assistants** by creating a specialized AI assistant trained on a specific dataset.
 **Task:** Use the dataset provided below for the **AI Literacy Program Assistant** to create your own personalized assistant.
@@ -320,9 +320,42 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 - Assessment builder to generate quizzes, rubrics, and feedback forms for instructors.
 - Research grant assistant that uses previous proposals to draft new ones aligned with specific funding calls.
 
+### Exercise 3: "AI History and Future Horizons" Project
+
+**Goal:** Create a collaborative workspace that organizes all resources, prompts, and analyses from the *AI Literacy Program* into one structured environment.  
+The team works together to generate study guides, glossaries, and interactive assignments with AI assistance.
+
+**Why It’s a Project**
+Unlike a single chat, this space integrates:
+
+- **Files:** Upload the eight course slide decks and Jupyter Book chapters (like *AI History* and *Generative AI & LLMs*).  
+- **Custom instructions:** Guide the model to act as a *Course Assistant*—helping summarize lectures, quiz students, and explain historical milestones.  
+- **Collaboration:** Instructors, fellows, and students can all refine prompts, add materials, and build knowledge together.  
+- **Persistence:** All conversations, uploads, and generated outputs remain in one place—turning AI dialogue into a reusable asset.
+
+**Why It’s _Not_ a Personalized Assistant**
+
+- **Scope:** A Project contains *multiple assistants, files, and workflows*, instead of a single AI persona with fixed behavior.  
+- **Purpose:** It focuses on *collaborative tasks* and shared outputs, while a Personalized Assistant is designed for *personalized interactions* with one user.  
+- **Structure:** Projects integrate diverse materials and dynamic contexts; PAs operate from a *static instruction set*.  
+- **Ownership:** Projects can be co-managed by a *team or class*; PAs are *owned and edited by one creator*.  
+- **Adaptability:** Projects allow real-time exploration and iteration across topics; PAs are pre-configured for consistency.  
+
+Together, these differences show that Projects serve as **collaborative workspaces**.
+
+**Structure Example**
+
+| Component | Description | Example |
+|------------|-------------|----------|
+| **Knowledge Base** | Course slide decks and readings | Modules 1–4 (Conceptual Foundations) and 5–8 (Practical Skills) |
+| **Instructions** | “Act as a course tutor. Summarize any uploaded file, create 5 quiz questions per lesson, and relate historical milestones to modern GenAI tools.” | |
+| **Tasks** | Multi-step workflows for the class | 1. Summarize each module → 2. Generate quizzes → 3. Build AI timeline → 4. Create glossary |
+| **Collaborators** | Team members | Test prompts; Curates best results |
+| **Artifacts** | Persistent AI outputs | Flashcards, reflection essays, timeline visuals, AI-generated glossary |
+
 ### 6.6.3 Personalized Assistants vs. Projects
 
-Both **personalized assistants** (like Custom GPTs, Personas, or Gems) and **projects** (structured workspaces such as OpenAI Projects, Claude Projects, or Perplexity Spaces) extend the power of foundational models.
+Both **personalized assistants** (like Custom GPTs or Gems) and **projects** (structured workspaces such as OpenAI Projects, Claude Projects, Grok Projects, or Perplexity Spaces) extend the power of foundational models.
 They serve different but complementary purposes.
 
 #### When to Use Each
@@ -343,7 +376,7 @@ They serve different but complementary purposes.
 - Use **Projects** when your goal is to **structure knowledge, organize complexity, or collaborate as a team**. They are like a _digital office space_ where people and AI work together on shared artifacts.
 - In practice, more sophisticated applications often combine both:
   - A **Project** to organize market research and design the product.
-  - A **Custom GPT** as the product itself (e.g., a customer-facing assistant powered by that research).
+  - A **Personalized Assistant** as the product itself (e.g., a customer-facing assistant powered by that research).
 
 **Key Insight:** Assistants help you **execute tasks**, while Projects help you **organize work**. Together, they form the backbone of a GenAI-enabled workflow.
 
@@ -352,7 +385,7 @@ They serve different but complementary purposes.
 The idea of customizing and structuring generative AI is spreading across different ecosystems.
 Below is a **comparative table** (as of October 2025) of how major platforms implement features equivalent to **Personalzied Assistants** and **Projects**:
 
-| Platform / Model          | Equivalent to **Personalized Assistants** | Equivalent to **Projects** (persistent workspaces)  | Entrepreneurial Use Cases                               |
+| Platform / Model          | Equivalent to **Personalized Assistants** | Equivalent to **Projects** (persistent workspaces)  | Sample Use Cases                               |
 | ------------------------- | ----------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- |
 | **OpenAI (ChatGPT)**      | Custom GPTs                               | Projects – organize chats, files, notes in one hub  | MVP prototyping, research collaboration                 |
 | **Claude.ai (Anthropic)** | Artifacts                                 | Projects – persistent context with files + notes    | Team-based document analysis, compliance reviews        |
@@ -369,7 +402,7 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 - With **Projects** and their equivalents, you experience how AI can become a **shared workspace**, helping you manage complexity while building your solution.
 - Both features let you test assumptions, gather feedback, and iterate quickly with minimal cost.
 
-## Exercise 3: Personalized Assistants and Projects
+### Exercise 4: Personalized Assistants and Projects
 
 **Team Exercise**:
 
