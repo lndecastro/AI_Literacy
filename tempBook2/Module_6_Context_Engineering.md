@@ -317,9 +317,52 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 - Assessment builder to generate quizzes, rubrics, and feedback forms for instructors.
 - Research grant assistant that uses previous proposals to draft new ones aligned with specific funding calls.
 
-### Exercise 3: "AI Literacy Program" Project
+### Exercise 3: Create Your "AI Literacy Program" Project
 
-**Goal:** Create a collaborative workspace that organizes all resources, prompts, and analyses from the *AI Literacy Program* into one structured environment. The team works together to generate study guides, glossaries, and interactive assignments with AI assistance.
+**Objective:** Apply the concepts of **Context Engineering** and **Project Design** by creating an AI-supported workspace that serves as your _Cognitive Workspace_ for the **AI Literacy Program**. This project will help you organize materials, analyze learning flow, track revisions, and prototype curriculum improvements over time.
+
+**Task:** Build a structured environment—your own “AI Literacy Program Project”—that integrates all program files, module PDFs, and supporting materials. This workspace will act as both a repository and a co-development environment for evolving the curriculum collaboratively.
+
+**Steps**
+
+1. **Define the Role**
+   - Example: “You are the *AI Literacy Instructor Environment*, designed to support program leadership, content development, and long-term evolution of the FGCU AI Literacy curriculum.”
+   - Clarify that its purpose is to help organize, map, and improve the course structure.
+
+2. **Upload the Knowledge Base**
+   - Include all current program materials such as module PDFs, slides, case studies, and datasets.
+   - As new files are created, upload updated versions to maintain continuity.
+
+3. **Set Instructions**
+   - Establish the model’s role and behavior using a system message such as:
+     ```
+     Core Role: You are the AI Literacy Instructor Environment.
+     Primary Functions:
+     1. Structure, map, and summarize the content of all modules.
+     2. Maintain conceptual and pedagogical consistency across modules.
+     3. Track changes, updates, and future versions.
+     4. Support the creation of derivative materials (slides, cases, rubrics, etc.).
+     5. Recommend improvements or integrations between modules.
+     6. Serve as an intelligent index for the program.
+     ```
+   - Tone: professional, organized, and forward-looking.
+
+4. **Test Your Project**
+   - Try prompts like:
+     - “Summarize the connections between Modules 3 and 4.”
+     - “List the updates needed for the next edition of the curriculum.”
+     - “Generate a concept map linking key ideas across all modules.”
+     - “Create a draft update memo summarizing improvements for Module 5.”
+
+5. **Evaluate Quality**
+   - Does the project help you maintain coherence across modules?
+   - Are the summaries accurate and reflective of the program’s goals?
+   - How effectively does the workspace track changes and suggest improvements?
+   - What adjustments could improve its organization, clarity, or analytical depth?
+
+6. **Collaborate**
+   - Invite other instructors, teaching assistants, or curriculum designers to contribute.
+   - Encourage shared editing, annotation, and feedback to refine insights collaboratively.
 
 **Why It’s a Project** <p>
 Unlike a single chat, this space integrates:
@@ -338,16 +381,6 @@ Unlike a single chat, this space integrates:
 - **Adaptability:** Projects allow real-time exploration and iteration across topics; PAs are pre-configured for consistency.  
 
 Together, these differences show that Projects serve as **collaborative workspaces**.
-
-**Structure Example**
-
-| Component | Description | Example |
-|------------|-------------|----------|
-| **Knowledge Base** | Course slide decks and readings | Modules 1–4 (Conceptual Foundations) and 5–8 (Practical Skills) |
-| **Instructions** | “Act as a course tutor. Summarize any uploaded file, create 5 quiz questions per lesson, and relate historical milestones to modern GenAI tools.” | |
-| **Tasks** | Multi-step workflows for the class | 1. Summarize each module → 2. Generate quizzes → 3. Build AI timeline → 4. Create glossary |
-| **Collaborators** | Team members | Test prompts; Curates best results |
-| **Artifacts** | Persistent AI outputs | Flashcards, reflection essays, timeline visuals, AI-generated glossary |
 
 ### 6.6.3 Personalized Assistants vs. Projects
 
