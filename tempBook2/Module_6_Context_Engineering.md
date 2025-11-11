@@ -359,7 +359,7 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 | **Perplexity.ai**         | No direct equivalent                      | Spaces – save, organize, and share research threads | Market/competitor intelligence, curated knowledge bases |
 | **xAI Grok**              | No direct equivalent                      | Projects – thematic workspaces for structured tasks | Community engagement, startup branding assistants       |
 | **Google Gemini**         | Gems                                      | Via NotebookLM                                      | Research + planning inside Google ecosystem             |
-| **Microsoft Copilot**     | Copilot GPT                               | Copilot Pages is a similar feature                  | Enterprise workflows, sales/pitch preparation           |
+| **Microsoft Copilot**     | Copilot Agents                            | Copilot Pages is a similar feature                  | Enterprise workflows, sales/pitch preparation           |
 | **Meta LLaMA**            | No direct equivalent                      | No direct equivalent                                | Not applicable                                          |
 
 ### 6.6.5 Connecting to Our Course
