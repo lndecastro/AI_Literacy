@@ -226,8 +226,7 @@ Two recent innovations — **Personalized Assistants** and **Projects** — enab
 ### 6.6.1 Personalized Assistants
 
 **What are they?**  
-Personalized assistants, such as _Custom GPTs_, are personalized versions of general-purpose models (like GPT-4/5) that you configure with **specific instructions, data, and tools**.
-Think of them as your own AI partner that understands your context.
+Personalized assistants, such as _Custom GPTs_, are personalized versions of general-purpose models (like GPT-4/5) that you configure with **specific instructions, knowledge base (data), and potentially integrate with external tools** to perform specialized tasks more effectively than a general model. Think of them as your own AI partner that understands your context.
 
 **When to use them?**
 
