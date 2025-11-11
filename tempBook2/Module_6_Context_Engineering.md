@@ -261,7 +261,7 @@ Think of them as your own AI partner that understands your context.
 
 ### Exercise 2: Create Your Own Personalized Assistant
 
-**Objective:** Apply the concepts of **Context Engineering** and **Personalized Assistants** by creating a specialized AI assistant trained on a specific dataset.
+**Objective:** Apply the concepts of **Context Engineering** and **Personalized Assistants** by creating a specialized AI assistant trained on a specific dataset. <p>
 **Task:** Download the contents associated with the AI Literacy Program to create your own personalized assistant. You can use the PDF generated from each module of the Jupyter book and the slide decks for modules 1 to 4.
 
 Your assistant should be able to answer questions, summarize modules, and guide learners about the AI Literacy Program using the uploaded knowledge base.
@@ -323,7 +323,7 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 **Goal:** Create a collaborative workspace that organizes all resources, prompts, and analyses from the *AI Literacy Program* into one structured environment.  
 The team works together to generate study guides, glossaries, and interactive assignments with AI assistance.
 
-**Why It’s a Project**
+**Why It’s a Project** <p>
 Unlike a single chat, this space integrates:
 
 - **Files:** Upload the eight course slide decks and Jupyter Book chapters (like *AI History* and *Generative AI & LLMs*).  
