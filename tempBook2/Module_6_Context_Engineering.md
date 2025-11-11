@@ -262,9 +262,7 @@ Think of them as your own AI partner that understands your context.
 ### Exercise 2: Create Your Own Personalized Assistant
 
 **Objective:** Apply the concepts of **Context Engineering** and **Personalized Assistants** by creating a specialized AI assistant trained on a specific dataset.
-**Task:** Use the dataset provided below for the **AI Literacy Program Assistant** to create your own personalized assistant.
-
-Download the [Personalized_Assistant_Example](../Data/Personalized_Assistant_Example.pdf).
+**Task:** Download the contents associated with the AI Literacy Program to create your own personalized assistant. You can use the PDF generated from each module of the Jupyter book and the slide decks for modules 1 to 4.
 
 Your assistant should be able to answer questions, summarize modules, and guide learners about the AI Literacy Program using the uploaded knowledge base.
 
@@ -273,7 +271,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
 1. **Define the Role**
    - Example: “You are a program support assistant for the FGCU AI Literacy course.”
 2. **Upload the Knowledge Base**
-   - Use the provided dataset titled _Personalized_Assistant_Example_.
+   - Use the dataset created as explained in the task above.
 3. **Set Instructions**
    - Describe the assistant’s behavior, tone, and purpose.
    - Example: “Be friendly, informative, and professional. Always connect responses to learning goals.”
