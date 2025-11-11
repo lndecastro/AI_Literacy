@@ -326,7 +326,7 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 **Steps**
 
 1. **Define the Role**
-   - Example: “You are the *AI Literacy Instructor Environment*, designed to support program leadership, content development, and long-term evolution of the FGCU AI Literacy curriculum.”
+   - Example: “You are the *AI Literacy Instructor Environment*, designed to support program leadership, content development, and long-term evolution of the AI Literacy curriculum.”
    - Clarify that its purpose is to help organize, map, and improve the course structure.
 
 2. **Upload the Knowledge Base**
