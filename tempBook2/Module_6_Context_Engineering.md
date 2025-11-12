@@ -381,10 +381,18 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
 
 4. **Test Your Project**
    - Try prompts like:
-     - “Summarize the connections between Modules 3 and 4.”
-     - “List the updates needed for the next edition of the curriculum.”
-     - “Generate a concept map linking key ideas across all modules.”
-     - “Create a draft update memo summarizing improvements for Module 5.”
+   ```
+   Summarize the connections between Modules 3 and 4.
+   ```
+   ```
+   List the updates needed for the next edition of the curriculum.
+   ```
+   ```
+   Generate a concept map linking key ideas across all modules.
+   ```
+   ```
+   Create a draft update memo summarizing improvements for Module 5.
+   ```
 
 5. **Evaluate Quality**
    - Does the project help you maintain coherence across modules?
