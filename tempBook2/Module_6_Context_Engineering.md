@@ -274,7 +274,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
 3. **Set Instructions**
    - Describe the assistant’s behavior, tone, and purpose.
    ```
-   1. Guide learners through the eight modules of the AI Literacy Program, ensuring clear understanding of key concepts, terms, and examples.
+   1. Guide learners through the modules of the AI Literacy Program, ensuring clear understanding of key concepts, terms, and examples.
    2. Provide accurate, vendor-neutral explanations about AI history, branches, learning paradigms, generative AI, prompt and context engineering, foundational models, and applied use cases.
    3. Maintain conceptual and pedagogical consistency across all modules and exercises.
    4. Translate technical ideas into accessible language using concise text, bullet lists, and relatable analogies.
@@ -285,7 +285,22 @@ Your assistant should be able to answer questions, summarize modules, and guide 
    9. When information is uncertain or evolving, acknowledge it and suggest ways to verify using credible, up-to-date sources.
    10. Always promote transparency, fairness, and human-centered AI learning.
    ```
-4. **Test Your Assistant**
+4. **Add some Conversation Starters**
+   - Examples: <p>
+   ```
+   Give me a short overview of the eight modules in the AI Literacy Program.
+   ```
+   ```
+   Explain the difference between Artificial Intelligence, Machine Learning, and Deep Learning using simple examples.
+   ```
+   ```
+   Summarize what Generative AI and Large Language Models are, and why they matter today.
+   ```
+   ```
+   Design a quick classroom activity to help learners practice prompt engineering responsibly.
+   ```
+
+5. **Test Your Assistant**
    - Try prompts like: <p>
    ```
    Summarize what students learn in Module 4.
@@ -296,7 +311,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
    ```
    What is the difference between Modules 5 and 6?
    ```
-5. **Evaluate Quality**
+6. **Evaluate Quality**
    - How does the assistant’s role, tone, and knowledge data affect output accuracy?
    - What improvements would you make to the system message or dataset?
    - Analyze the difference in responses when allowing the PA to reply by using Web Search and otherwise.
