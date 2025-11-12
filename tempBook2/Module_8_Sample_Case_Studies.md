@@ -292,9 +292,9 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
 
 ## Reflection
 
-> Which of these case studies feels most relevant to your field or future career?  
-> How might you apply similar principles in your own work or research?  
-> What challenges or safeguards would you need to ensure responsible AI use?
+> 1. Which of these case studies feels most relevant to your field or future career?  
+> 2. How might you apply similar principles in your own work or research?  
+> 3. What challenges or safeguards would you need to ensure responsible AI use?
 
 Reflect on how the lessons from these cases — transparency, context, and collaboration — can guide your personal or organizational approach to AI adoption.
 
