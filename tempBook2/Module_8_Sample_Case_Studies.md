@@ -24,17 +24,19 @@ After completing this module, you will be able to:
 - education/rubric.txt
 - education/lesson_plan.md
 
+> Note: If the model is unable to read one specific file format, then save it in another format, or copy-paste in the prompt.
+
 ### A) Prompt
 
 ```
 System role: You are an instructional designer for higher education.
 
 Context files you can reference:
-- Syllabus (excerpt): [paste the text from syllabus.txt]
-- Writing Rubric (excerpt): [paste the text from rubric.txt]
+- Syllabus (excerpt): [upload file syllabus.txt]
+- Writing Rubric (excerpt): [upload file rubric.txt]
 
 Task:
-1) Review the lesson_plan.md (pasted below) against the syllabus goals and the rubric criteria.
+1) Review the lesson_plan.md attached against the syllabus goals and the rubric criteria.
 2) Summarize the lesson plan in 3 bullet points for students.
 3) Produce a table with columns: Strengths | Weaknesses | Improvement Suggestions.
 4) Write a 60-word student-facing overview.
@@ -71,8 +73,8 @@ This activity demonstrates how context-aware prompting enables AI to act as an i
 
 #### Reflection
 
-> How did the AI’s interpretation of rubric alignment compare to your own?  
-> Which contextual elements (role, tone, or format) most affected the usefulness of the response?
+> 1. How did the AI’s interpretation of rubric alignment compare to your own?  
+> 2. Which contextual elements (role, tone, or format) most affected the usefulness of the response?
 
 ---
 
@@ -92,10 +94,10 @@ System role: You are a clinical data analyst supporting a hospital quality-impro
 Ethical boundary: Educational exercise only; do not provide medical advice.
 
 Reference: Clinical Guideline (simplified):
-[Paste the text from guideline.txt]
+[Upload file guideline.txt]
 
 Task:
-1) Read the following anonymized patient data from patient_records.csv (pasted below).
+1) Read the following anonymized patient data from patient_records.csv (upload file).
 2) For each case, summarize under: Key Findings | Potential Risks | Next Steps (guideline-aligned).
 3) Identify potential red flags for escalation based on the guideline.
 4) End with a brief caveat noting that all recommendations require expert validation.
@@ -129,8 +131,8 @@ Use an LLM to simulate the analytical reasoning of a healthcare analyst.
 
 #### Reflection
 
-> How did contextualizing the task with the “clinical analyst” role affect the tone and precision of the response?  
-> What limitations must remain explicit when using AI in healthcare communication?
+> 1. How did contextualizing the task with the “clinical analyst” role affect the tone and precision of the response?  
+> 2. What limitations must remain explicit when using AI in healthcare communication?
 
 ---
 
@@ -147,7 +149,7 @@ System role: You are an environmental data analyst.
 Goal: Detect anomalies suggestive of potential algal bloom risk.
 
 Task:
-1) Review the sample data pasted from water_quality.csv (site, date, chlorophyll_a, temp_c, nitrate_mgL, phosphate_mgL).
+1) Review the sample data available in the file water_quality.csv (site, date, chlorophyll_a, temp_c, nitrate_mgL, phosphate_mgL).
 2) Identify potential outliers or unusual trends based on chlorophyll_a variation by site.
 3) Describe a simple rule-based approach (e.g., z-scores or thresholds) to flag anomalies.
 4) Draft a concise management report: Summary | Sites of Interest | Recommended Next Checks.
@@ -179,8 +181,8 @@ Let the LLM interpret and describe the data qualitatively.
 
 #### Reflection
 
-> What did the AI emphasize as the main risk indicators?  
-> How can human experts validate and contextualize these findings before action?
+> 1. What did the AI emphasize as the main risk indicators?  
+> 2. How can human experts validate and contextualize these findings before action?
 
 ---
 
@@ -229,8 +231,8 @@ Use the LLM to generate structured market insights and practice clarity in summa
 
 #### Reflection
 
-> How did the AI’s clustering compare with your intuition as a human analyst?  
-> What elements of the prompt (role, structure, or examples) improved the clarity of the output?
+> 1. How did the AI’s clustering compare with your intuition as a human analyst?  
+> 2. What elements of the prompt (role, structure, or examples) improved the clarity of the output?
 
 ---
 
@@ -277,8 +279,8 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
 
 #### Reflection
 
-> How did prompt specificity affect the creativity and coherence of the AI’s output?  
-> What aspects of authorship remain uniquely human in AI-assisted storytelling?
+> 1. How did prompt specificity affect the creativity and coherence of the AI’s output?  
+> 2. What aspects of authorship remain uniquely human in AI-assisted storytelling?
 
 ---
 
