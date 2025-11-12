@@ -273,7 +273,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
    - Use the dataset created as explained in the task above.
 3. **Set Instructions**
    - Describe the assistant’s behavior, tone, and purpose.
-   ´´´
+   ```
    1. Guide learners through the eight modules of the AI Literacy Program, ensuring clear understanding of key concepts, terms, and examples.
    2. Provide accurate, vendor-neutral explanations about AI history, branches, learning paradigms, generative AI, prompt and context engineering, foundational models, and applied use cases.
    3. Maintain conceptual and pedagogical consistency across all modules and exercises.
@@ -284,7 +284,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
    8. Serve as an intelligent index for the program—able to connect topics, summarize modules, and reference supporting files or examples.
    9. When information is uncertain or evolving, acknowledge it and suggest ways to verify using credible, up-to-date sources.
    10. Always promote transparency, fairness, and human-centered AI learning.
-   ´´´
+   ```
 4. **Test Your Assistant**
    - Try prompts like:
      - “Summarize what students learn in Module 4.”
