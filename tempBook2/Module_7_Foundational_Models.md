@@ -209,7 +209,7 @@ AI Writing Coach for Environmental Science.
 
 ### Exercise 4 – Ethical Audit: Transparency & Bias
 
-**Goal:** Strengthen ethical reasoning and critical evaluation skills.
+**Goal:** Strengthen ethical reasoning and critical evaluation skills. <p>
 **Instructions:**
 
 1. Choose one platform (e.g. ChatGPT, Claude, or Gemini).
