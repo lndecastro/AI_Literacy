@@ -286,10 +286,16 @@ Your assistant should be able to answer questions, summarize modules, and guide 
    10. Always promote transparency, fairness, and human-centered AI learning.
    ```
 4. **Test Your Assistant**
-   - Try prompts like:
-     - “Summarize what students learn in Module 4.”
-     - “Who developed the AI Literacy program?”
-     - “What is the difference between Modules 5 and 6?”
+   - Try prompts like: <p>
+   ```
+   Summarize what students learn in Module 4.
+   ```
+   ```
+   Who developed the AI Literacy program?
+   ```
+   ```
+   What is the difference between Modules 5 and 6?
+   ```
 5. **Evaluate Quality**
    - How does the assistant’s role, tone, and knowledge data affect output accuracy?
    - What improvements would you make to the system message or dataset?
