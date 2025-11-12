@@ -2,7 +2,7 @@
 
 Artificial Intelligence has entered a new era driven by **foundational models** — large-scale, general-purpose systems trained on massive multimodal datasets. These models can perform an extraordinary range of tasks, from reasoning and coding to generating text, images, and sound. They represent a shift from narrow, task-specific AI to universal, flexible architectures capable of adaptation across contexts.
 
-Foundational models, particularly **Large Language Models (LLMs)**, are now the backbone of the modern AI ecosystem. Understanding their design, strengths, and limitations is essential for anyone engaging with AI critically and creatively. This module explores some of today’s most influential general-purpose AI systems and applications — **ChatGPT, Claude, Gemini, Meta.ai, Grok, Copilot, and Perplexity** — comparing their capabilities, ecosystems, and implications for human-centered use.
+Foundational models, particularly **Large Language Models (LLMs)**, are now the backbone of the modern AI ecosystem. Understanding their design, strengths, and limitations is essential for anyone engaging with AI critically and creatively. This module explores some of today’s most influential foundational models, general-purpose AI systems and applications — **ChatGPT, Claude, Gemini, Meta.ai, Grok, Copilot, and Perplexity** — comparing their capabilities, ecosystems, and implications for human-centered use.
 
 > **Guiding Question:** How have LLMs changed what it means for a machine to “know”, “create”, and “collaborate”?
 
