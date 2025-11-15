@@ -16,65 +16,86 @@ After completing this module, you will be able to:
 - Evaluate how prompt design and context affect AI performance.
 - Reflect on ethical, social, and environmental implications of AI applications.
 
-## 🧑‍🏫 Case Study 1 — Education: Course Companion & Lesson Plan Review
+## 🧑‍🏫 Case Study 1 — Education: Build an Instructional Design Personalized Assistant
 
-**Files (in the ZIP):**
+### Purpose
+You will **build a Personalized Assistant (PA)** to review and improve lesson plans using the syllabus and rubric.
 
-- education/syllabus.txt
+### Learning Goal
+Apply the principles of **Role Definition**, **Instruction Setting**, **Knowledge Upload**, and **Conversation Starters** to create a domain‑specific assistant.
+
+### Step 1 — Define the PA Name
+
+```
+Instructional Design Teaching Assistant (ID‑TA)
+```
+
+### Step 2 — Provide the PA Description
+
+```
+This is the *Instructional Design Teaching Assistant (ID‑TA)* for the AI Literacy Program. The purpose is to review lesson plans for alignment with syllabi, rubrics, and course outcomes.
+```
+
+### Step 3 — Set Instructions
+
+Use this system message when configuring the PA:
+
+```
+You are the Instructional Design Teaching Assistant (ID-TA).
+Your functions:
+1. Review lesson plans for alignment with syllabus goals and rubric criteria.
+2. Compare new versions of lesson plans with previous ones when available.
+3. Summarize lesson plans clearly for students at different proficiency levels.
+4. Suggest improvements using evidence from the uploaded syllabus and rubric.
+5. Maintain consistent tone, terminology, and conceptual alignment.
+6. Flag potential issues with assessment, sequencing, scaffolding, or workload.
+7. Encourage ethical, transparent, and learner‑centered course design.
+8. When uncertain, request clarification or additional files.
+9. Produce concise, structured outputs using tables, bullets, and short paragraphs.
+```
+
+### Step 4 — Conversation Starters <p>
+```
+Compare this lesson plan with the rubric. What needs refinement?
+```
+```
+Rewrite these objectives using Bloom’s taxonomy.
+```
+```
+Explain this lesson to a first‑year undergraduate.
+```
+```
+Draft a revised lesson plan based on your critique.
+```
+
+### Step 5 — Upload the Knowledge Base
+
+Upload to the PA (files in the ZIP):
+
+- education/syllabus.txt  
 - education/rubric.txt
 - education/lesson_plan.md
 
-> Note: If the model is unable to read one specific file format, then save it in another format, or copy-paste in the prompt.
-
-### A) Prompt
+## Example Prompt to Test the PA
 
 ```
-System role: You are an instructional designer for higher education.
-
-Context files you can reference:
-- Syllabus (excerpt): [upload file syllabus.txt]
-- Writing Rubric (excerpt): [upload file rubric.txt]
+Using the configured personalized assistant (ID-TA):
 
 Task:
-1) Review the lesson_plan.md attached against the syllabus goals and the rubric criteria.
-2) Summarize the lesson plan in 3 bullet points for students.
-3) Produce a table with columns: Strengths | Weaknesses | Improvement Suggestions.
-4) Write a 60-word student-facing overview.
+1) Evaluate the uploaded lesson_plan.md.
+2) Summarize it in 3 bullet points for students.
+3) Produce a table: Strengths | Weaknesses | Improvements.
+4) Rewrite the learning objectives for clarity and alignment.
+5) Write a 60-word student-facing overview.
 
-Lesson Plan:
-[Paste the contents of lesson_plan.md]
+If previous versions are in your knowledge base, compare and highlight changes.
 ```
 
-### B) LLM Analysis — Instructional Design Review
+### Reflection
 
-This activity demonstrates how context-aware prompting enables AI to act as an instructional design assistant.
-
-#### Optional Extension Prompts
-
-1. **Role Variation**
-
-   ```
-   Now act as a teaching assistant preparing for this class.
-   What materials should be ready, and what questions might students ask?
-   ```
-
-2. **Iterative Refinement**
-
-   ```
-   Based on your analysis, rewrite the lesson objectives so they align more clearly
-   with the syllabus goals and rubric criteria.
-   ```
-
-3. **Reverse Prompting**
-   ```
-   Analyze the output you just created. What kind of prompt would have generated it?
-   Suggest how changing the phrasing might alter the response.
-   ```
-
-#### Reflection
-
-> 1. How did the AI’s interpretation of rubric alignment compare to your own?  
-> 2. Which contextual elements (role, tone, or format) most affected the usefulness of the response?
+> 1. Why is a **Personalized Assistant** beneficial for recurring instructional design tasks?
+> 2. How do role, instructions, and knowledge influence the PA’s accuracy?
+> 3. What information should remain human‑judged (e.g., pedagogical intent)?  
 
 ---
 
@@ -136,7 +157,88 @@ Use an LLM to simulate the analytical reasoning of a healthcare analyst.
 
 ---
 
-## 🌿 Case Study 3 — Environment: Water Quality Early Warning
+## 💼 Case Study 3 — Business: Customer Insights Project Workspace
+
+### Purpose
+This case study teaches students how to build a **Project Workspace** for customer feedback analysis.
+
+### Learning Goal
+Create a structured, persistent, collaborative **Project** for analyzing customer sentiment, themes, and insights.
+
+### Step 1 — Define the Project Name
+
+```
+Customer Insights
+```
+
+### Step 2 — Define the Project Role
+
+```
+The *Customer Insights Workspace* helps structure, analyze, and track customer feedback over time to support product and marketing decisions.
+```
+
+### Step 3 — Upload the Knowledge Base
+
+Upload into the Project:
+
+- business/customer_feedback.csv
+- Past reports (if any)
+- Team notes or strategy documents (if any)
+- Competitor benchmarks (if any)
+
+### Step 4 — Set Project Instructions
+
+Use this as the project’s system message:
+
+```
+Core Role: Customer Insights Workspace
+
+Functions:
+1. Organize, summarize, and map customer feedback across datasets.
+2. Cluster feedback into themes with representative evidence.
+3. Track changes across releases or time periods.
+4. Generate personas, sentiment summaries, and strategy recommendations.
+5. Maintain consistency across analyses performed by different collaborators.
+6. Serve as a shared knowledge hub supporting product and marketing teams.
+```
+
+### In‑Project Task Prompt
+
+Paste this prompt inside the Project:
+
+```
+Task:
+1) Load customer_feedback.csv.
+2) Cluster feedback into 3–5 actionable themes.
+3) Create the table: Theme | Representative Quote | Suggested Action.
+4) Draft a 120-word executive summary.
+5) Identify negative sentiment drivers and risk signals.
+6) Save the output as “Insights Report v1” in the Project workspace.
+```
+
+### Testing the Project
+
+Try prompts like:
+```
+Compare v1 and v2 of the Insights Report. What changed?
+```
+```
+Update our personas using the latest feedback.
+```
+```
+Generate a decision‑maker slide for leadership.
+```
+```
+Create a competitive analysis placeholder section.
+```
+
+### Reflection
+
+> 1. Why is a **Project** more suitable than a Personalized Assistant for this task?  
+> 2. Which components (files, system message, collaboration) improved organization?  
+> 3. How can the project evolve as new datasets are added?  
+
+## 🌿 Case Study 3 — Environment: Water Quality Analysis Using a Hybrid PA + Project Approach
 
 **Files:**
 
