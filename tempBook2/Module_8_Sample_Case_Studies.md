@@ -1,7 +1,7 @@
 # Module 8: Sample Case Studies and Applications of AI
 
 Artificial Intelligence is transforming every sector of society — from education and healthcare to environmental management, business, and the arts.
-This module provides **hands-on, ready-to-run case studies** where you can explore data, run code, and design prompts to experience AI-assisted analysis and creation in action.
+This module provides **hands-on, ready-to-run case studies** where you can explore data, run code, and design prompts to experience AI-assisted analysis and creation in action. The focus is going to be on those concepts emphasized in our AI Literacy program, including prompt engineering, context engineering, personalized assistants, projects, and reverse prompting (meta-prompting).
 
 > All datasets are **synthetic/anonymized** and for **educational use** only.
 
