@@ -387,8 +387,7 @@ Your prompt must:
 Ask the model:
 
 ```
-Evaluate this prompt using criteria such as clarity, specificity, 
-narrative potential, constraint quality, and structure.
+Evaluate this prompt using criteria such as relevance, completeness, clarity, factual accuracy, and format.
 Suggest improvements.
 ```
 
@@ -407,7 +406,7 @@ Rewrite this prompt to maximize narrative clarity, improve constraints,
 tighten tone/style guidance, and require a stronger turning point.
 ```
 
-Your refined prompt becomes the “improved version”.
+Your refined prompt becomes the “Scene B”.
 
 ### Step 5 — Generate Scenes Using Both Prompts
 
