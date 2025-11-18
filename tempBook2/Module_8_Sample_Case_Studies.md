@@ -266,7 +266,9 @@ Develop skills in:
 ### Step 1 — Prompt Output
 
 ```
-Across the monitoring period, average chlorophyll-a levels varied substantially by site, with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk—while River B averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L; additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset, suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
+Across the monitoring period, average chlorophyll-a levels varied substantially by site, with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk.
+River B, by contrast, averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L.
+Additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset, suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
 ```
 
 ### Step 2 — Prompt/Context Engineering Analysis
