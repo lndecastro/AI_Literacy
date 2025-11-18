@@ -197,7 +197,7 @@ Upload into the Project:
 
 ### Step 4 — Set Project Instructions
 
-Use this as the project’s system message:
+Use this as the project’s instructions:
 
 ```
 Core Role: Customer Insights Workspace
