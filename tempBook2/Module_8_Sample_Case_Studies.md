@@ -39,7 +39,8 @@ Instructional Design Teaching Assistant (ID‑TA)
 ### Step 2 — Provide the PA Description
 
 ```
-This is the *Instructional Design Teaching Assistant (ID‑TA)* for the AI Literacy Program. The purpose is to review lesson plans for alignment with syllabi, rubrics, and course outcomes.
+This is the *Instructional Design Teaching Assistant (ID‑TA)* for the AI Literacy Program.
+The purpose is to review lesson plans for alignment with syllabi, rubrics, and course outcomes.
 ```
 
 ### Step 3 — Set Instructions
@@ -266,9 +267,11 @@ Develop skills in:
 ### Step 1 — Prompt Output
 
 ```
-Across the monitoring period, average chlorophyll-a levels varied substantially by site, with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk.
+Across the monitoring period, average chlorophyll-a levels varied substantially by site,
+with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk.
 River B, by contrast, averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L.
-Additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset, suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
+Additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset,
+suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
 ```
 
 ### Step 2 — Prompt/Context Engineering Analysis
@@ -285,10 +288,10 @@ Record your observations.
 
 ### Step 3 — Reconstruct the Prompt
 
-Using the structure presented above, reconstruct the prompt:
+Using the structure presented above, reconstruct the prompt.
 Your reconstruction should be explicit and testable.
 
-### Step 4 — Test the Reconstructed Prompt**
+### Step 4 — Test the Reconstructed Prompt
 
 Upload to the LLM (file in the ZIP):
 - environment/water_quality.csv
@@ -324,7 +327,11 @@ Improve accuracy by adding:
 ```
 Here is an AI-generated output for the attached file:
 
-Across the monitoring period, average chlorophyll-a levels varied substantially by site, with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk—while River B averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L; additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset, suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
+Across the monitoring period, average chlorophyll-a levels varied substantially by site,
+with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk.
+River B, by contrast, averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L.
+Additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset,
+suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
 
 Your task is to reverse prompt this output.
 That means: propose one or more possible prompts that could have generated it.
@@ -362,7 +369,7 @@ Use this meta-prompt:
 ```
 Create a high-quality creative-writing prompt based on the following story seed.
 
-Seed: [ENTER THE STORY SEED]
+Seed: [enter the story seed]
 
 Your prompt must:
 
