@@ -114,7 +114,7 @@ If previous versions are in your knowledge base, compare and highlight changes.
 
 > ⚠️ Educational disclaimer: synthetic data; **not** medical advice; always require **human expert review**.
 
-### A) Prompt
+### Step 1 — Chained Prompting
 
 ```
 System role: You are a clinical data analyst supporting a hospital quality-improvement team.
@@ -130,11 +130,9 @@ Task:
 4) End with a brief caveat noting that all recommendations require expert validation.
 ```
 
-### B) LLM Analysis — Clinical Data Summary
+### Step 2 — LLM Analysis: Clinical Data Summary
 
-Use an LLM to simulate the analytical reasoning of a healthcare analyst.
-
-#### Optional Extension Prompts
+Use an LLM to simulate the analytical reasoning of a healthcare analyst. Optional Extension Prompts:
 
 1. **Comparative Reasoning**
 
