@@ -18,6 +18,12 @@ After completing this module, you will be able to:
 
 ## 🧑‍🏫 Case Study 1 — Education: Build an Instructional Design Personalized Assistant
 
+**File:**
+
+- education/syllabus.txt  
+- education/rubric.txt
+- education/lesson_plan.md
+
 ### Purpose
 You will **build a Personalized Assistant (PA)** to review and improve lesson plans using the syllabus and rubric.
 
@@ -85,7 +91,7 @@ Task:
 1) Evaluate the uploaded lesson_plan.md.
 2) Summarize it in 3 bullet points for students.
 3) Produce a table: Strengths | Weaknesses | Improvements.
-4) Rewrite the learning objectives for clarity and alignment.
+4) Write a set of learning objectives for this lesson plan.
 5) Write a 60-word student-facing overview.
 
 If previous versions are in your knowledge base, compare and highlight changes.
@@ -158,6 +164,10 @@ Use an LLM to simulate the analytical reasoning of a healthcare analyst.
 ---
 
 ## 💼 Case Study 3 — Business: Customer Insights Project Workspace
+
+**File:**
+
+- business/customer_feedback.csv
 
 ### Purpose
 This case study teaches students how to build a **Project Workspace** for customer feedback analysis.
