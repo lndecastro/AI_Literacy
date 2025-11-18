@@ -220,9 +220,6 @@ Task:
 
 Try prompts like:
 ```
-Compare v1 and v2 of the Insights Report. What changed?
-```
-```
 Update our personas using the latest feedback.
 ```
 ```
@@ -238,103 +235,94 @@ Create a competitive analysis placeholder section.
 > 2. Which components (files, system message, collaboration) improved organization?  
 > 3. How can the project evolve as new datasets are added?  
 
-## 🌿 Case Study 3 — Environment: Water Quality Analysis Using a Hybrid PA + Project Approach
-
-**Files:**
-
-- environment/water_quality.csv
-
-### A) Prompt
-
-```
-System role: You are an environmental data analyst.
-Goal: Detect anomalies suggestive of potential algal bloom risk.
-
-Task:
-1) Review the sample data available in the file water_quality.csv (site, date, chlorophyll_a, temp_c, nitrate_mgL, phosphate_mgL).
-2) Identify potential outliers or unusual trends based on chlorophyll_a variation by site.
-3) Describe a simple rule-based approach (e.g., z-scores or thresholds) to flag anomalies.
-4) Draft a concise management report: Summary | Sites of Interest | Recommended Next Checks.
-```
-
-### B) LLM Analysis — Environmental Data Review
-
-Let the LLM interpret and describe the data qualitatively.
-
-#### Optional Extension Prompts
-
-1. **Policy Translation**
-
-   ```
-   Rewrite your management report for a non-technical audience, such as community stakeholders.
-   Emphasize environmental impact and recommended preventive actions.
-   ```
-
-2. **Predictive Reasoning**
-
-   ```
-   Based on observed patterns, hypothesize environmental factors that might explain chlorophyll spikes.
-   ```
-
-3. **Visual Design Guidance**
-   ```
-   Suggest three types of visualizations that would best communicate this data to policymakers.
-   ```
-
-#### Reflection
-
-> 1. What did the AI emphasize as the main risk indicators?  
-> 2. How can human experts validate and contextualize these findings before action?
-
 ---
 
-## 💼 Case Study 4 — Business: Customer Feedback Insights
+## 🌿 Case Study 4 — Environment: Reverse Prompt Engineering Lab
 
-**Files:**
+### Purpose
+This case study teaches **Reverse Prompt Engineering**, a key technique to analyze and understand how prompts work.  
+Students will analyze a short pre‑generated AI environmental report, infer the likely prompt behind it, test their reconstruction, and refine it.  
+The focus is on **understanding how prompts shape outputs**.
 
-- business/customer_feedback.csv
+### Learning Goal
+Develop skills in:
+- analyzing LLM outputs for structural and contextual clues  
+- reconstructing implicit prompt components  
+- testing and improving prompts  
+- understanding how to use meta-prompt to reverse prompting 
 
-### A) Prompt
+### Step 1 — Prompt Output
 
 ```
-System role: You are a customer insights analyst.
-
-Task:
-1) I will paste a sample of customer_feedback.csv (product, feedback).
-2) Cluster feedback into 3–5 themes with short labels.
-3) Produce a table: Theme | Representative Quote | Suggested Action.
-4) Write a 100-word executive summary describing key takeaways.
+Across the monitoring period, average chlorophyll-a levels varied substantially by site, with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk—while River B averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L; additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset, suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
 ```
 
-### B) LLM Analysis — Customer Insights Report
+### Step 2 — Prompt/Context Engineering Analysis
 
-Use the LLM to generate structured market insights and practice clarity in summarization.
+Identify what the model seems to have assumed:
+- **Role** (e.g., environmental analyst)
+- **Instruction** (e.g., identify anomalies, summarize risks)
+- **Context** (e.g., multi‑site water quality dataset)
+- **Constraints** (e.g., concise summary, structured findings)
+- **Output Format** (e.g., paragraphs, sections, recommendations)
+- **Tone** (e.g., scientific, cautious, formal)
 
-#### Optional Extension Prompts
+Record your observations.
 
-1. **Sentiment Analysis**
+### Step 3 — Reconstruct the Prompt
 
-   ```
-   Classify each feedback item as Positive, Neutral, or Negative.
-   Provide a summary table showing distribution by product.
-   ```
+Using the structure presented above, reconstruct the prompt:
+Your reconstruction should be explicit and testable.
 
-2. **Persona Creation**
+### Step 4 — Test the Reconstructed Prompt**
 
-   ```
-   Based on the themes identified, draft short user personas (e.g., "Budget-Conscious Buyer", "Tech Enthusiast")
-   that reflect these segments.
-   ```
+Upload to the LLM (file in the ZIP):
+- environment/water_quality.csv
 
-3. **Strategic Recommendation**
-   ```
-   Summarize your insights into three actionable business recommendations.
-   ```
+Run your reconstructed prompt and compare the generated output to the original prompt output presented in Step 1.
 
-#### Reflection
+```
+System role:
+Instruction:
+Context:
+Constraints:
+Output Format:
+Tone: 
+```
 
-> 1. How did the AI’s clustering compare with your intuition as a human analyst?  
-> 2. What elements of the prompt (role, structure, or examples) improved the clarity of the output?
+Questions to analyze:
+- What parts match closely?
+- What is missing or added?
+- What does the model misinterpret or hallucinate?
+
+### Step 5 — Refine the Prompt
+
+Improve accuracy by adding:
+- domain‑specific terminology  
+- clearer instructions  
+- explicit data references  
+- uncertainty/safety statements  
+- required sections (e.g., “Risk Indicators,” “Recommended Actions”)  
+- stylistic constraints  
+
+### Step 6 — Meta-Prompting
+
+```
+Here is an AI-generated output for the attached file:
+
+Across the monitoring period, average chlorophyll-a levels varied substantially by site, with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk—while River B averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L; additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset, suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
+
+Your task is to reverse prompt this output.
+That means: propose one or more possible prompts that could have generated it.
+Explain your reasoning and show how different phrasings might affect the response.
+```
+
+Compare you refined prompt with the reversed prompt generated by the model.
+
+### Reflection
+
+> 1. Which components of the prompt reconstruction were most influential in shaping the output?  
+> 2. How does your engineered prompt compare with the model reverse prompt?  
 
 ---
 
@@ -390,7 +378,6 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
 
 - Submit your **prompts**, **AI outputs**, and a **short reflection (150–200 words)** for one or more case studies.
 - Discuss how **prompt and context** shaped your results, and where **human judgment** was most critical.
-- Highlight ethical and practical insights from using LLMs in each domain.
 
 ## Reflection
 
@@ -400,7 +387,6 @@ Use the LLM to develop a narrative scene and then reflect on tone, emotion, and 
 
 Reflect on how the lessons from these cases — transparency, context, and collaboration — can guide your personal or organizational approach to AI adoption.
 
----
 
 ## 📘 Further Reading
 
