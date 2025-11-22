@@ -60,7 +60,7 @@ As you advance through these modules, keep reflecting on:
 
 > How can AI become a partner in human learning, creativity, critical-thinking, and problem-solving?
 
-## About Your Instructor – Dr. Leandro Nunes de Castro
+## About the Instructor – Dr. Leandro Nunes de Castro
 
 - Professor in the **Department of Computing and Software Engineering**, U.A. Whitaker College of Engineering, FGCU.
 - Ph.D. in Computer Engineering with 30 years of experience in **Artificial Intelligence, Data Science, and Natural Computing**.
@@ -71,7 +71,7 @@ As you advance through these modules, keep reflecting on:
 
 ## 🧾 Acknowledgements
 
-Developed by **Dr. Leandro Nunes de Castro** and the **Dendritic Institute for Human-Centered AI & Data Science**, within the **U.A. Whitaker College of Engineering at Florida Gulf Coast University**.
+Developed by **Dr. Leandro Nunes de Castro**©️ for the **Dendritic Institute for Human-Centered AI & Data Science**, within the **U.A. Whitaker College of Engineering at Florida Gulf Coast University**.
 
 Content curated by the team, with support from large language models such as ChatGPT, Claude, Gemini, Perplexity, Gamma.ai, Napkin, and CoPilot, following ethical and pedagogical review.
 
