@@ -218,10 +218,10 @@ Output: Provide three bullet points under the headings:
 2. Compare the two outputs (baseline vs. context-engineered).
 3. Reflect: _What improvements did context engineering bring to the AI’s response?_
 
-## 6.6 Personalized Assistants and Projects: Extending the GenAI Toolkit
+## 6.6 Personalized Assistants and AI Workspaces: Extending the GenAI Toolkit
 
 Generative AI tools like ChatGPT, Perplexity and Claude provide powerful **general-purpose intelligence**, but professionals often need **domain-specific capabilities**.
-Two recent innovations — **Personalized Assistants** and **Projects** — enable you to move beyond using AI _as-is_ and start **building tailored AI solutions**.
+Two recent innovations — **Personalized Assistants** and **AI Workspaces (Projects)** — enable you to move beyond using AI _as-is_ and start **building tailored AI solutions**.
 
 ### 6.6.1 Personalized Assistants
 
@@ -316,7 +316,7 @@ Your assistant should be able to answer questions, summarize modules, and guide 
    - What improvements would you make to the system message or dataset?
    - Analyze the difference in responses when allowing the PA to reply by using Web Search and otherwise.
 
-### 6.6.2 Projects
+### 6.6.2 AI Workspaces (Projects)
 
 **What are they?**  
 Projects are collaborative **AI workspaces** that allow teams to combine **LLM interactions, files, data, personalized assistants, and notes** into one structured environment.
