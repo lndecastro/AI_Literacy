@@ -404,7 +404,7 @@ Instead of isolated chats, a Project acts as a **hub of AI-augmented workflows**
    - Invite other instructors, teaching assistants, or curriculum designers to contribute.
    - Encourage shared editing, annotation, and feedback to refine insights collaboratively.
 
-**Why It’s a Project** <p>
+**Why It’s an AI Workspace** <p>
 Unlike a single chat, this space integrates:
 
 - **Files:** Upload the eight course slide decks and Jupyter Book chapters (like *AI History* and *Generative AI & LLMs*).  
@@ -422,14 +422,13 @@ Unlike a single chat, this space integrates:
 
 Together, these differences show that Projects serve as **collaborative workspaces**.
 
-### 6.6.3 Personalized Assistants vs. Projects
+### 6.6.3 Personalized Assistants vs. AI WOrkspaces
 
-Both **personalized assistants** (like Custom GPTs or Gems) and **projects** (structured workspaces such as OpenAI Projects, Claude Projects, Grok Projects, or Perplexity Spaces) extend the power of foundational models.
-They serve different but complementary purposes.
+Both **personalized assistants** (like Custom GPTs or Gems) and **AI Workspaces** (structured workspaces such as OpenAI Projects, Claude Projects, Grok Projects, or Perplexity Spaces) extend the power of foundational models. They serve different but complementary purposes.
 
 #### When to Use Each
 
-| Scenario                                                                                 | Use a **Personalized Assistant** | Use a **Project** |
+| Scenario                                                                                 | Use a **Personalized Assistant** | Use an **AI Workspace** |
 | ---------------------------------------------------------------------------------------- | -------------------------------- | ----------------- |
 | **Customer-facing task** (answering FAQs, onboarding new users)                          | ✅ Yes                           | ❌ No             |
 | **Internal research & knowledge management**                                             | ❌ No                            | ✅ Yes            |
@@ -442,19 +441,19 @@ They serve different but complementary purposes.
 ### Discussion
 
 - Use **Personalized Assistants** when your goal is to **simulate a role or automate a conversation**. They are like _agents you can design_: a customer service rep, an analyst, or even a coach.
-- Use **Projects** when your goal is to **structure knowledge, organize complexity, or collaborate as a team**. They are like a _digital office space_ where people and AI work together on shared artifacts.
+- Use **AI Workspaces** when your goal is to **structure knowledge, organize complexity, or collaborate as a team**. They are like a _digital office space_ where people and AI work together on shared artifacts.
 - In practice, more sophisticated applications often combine both:
-  - A **Project** to organize market research and design the product.
+  - An **AI Workspace** to organize market research and design the product.
   - A **Personalized Assistant** as the product itself (e.g., a customer-facing assistant powered by that research).
 
-**Key Insight:** Assistants help you **execute tasks**, while Projects help you **organize work**. Together, they form the backbone of a GenAI-enabled workflow.
+**Key Insight:** Assistants help you **execute tasks**, while Workspaces help you **organize work**. Together, they form the backbone of a GenAI-enabled workflow.
 
 ### 6.6.4 Similar Resources Across Platforms
 
 The idea of customizing and structuring generative AI is spreading across different ecosystems.
 Below is a **comparative table** (as of October 2025) of how major platforms implement features equivalent to **Personalzied Assistants** and **Projects**:
 
-| Platform / Model          | Equivalent to **Personalized Assistants** | Equivalent to **Projects** (persistent workspaces)  | Sample Use Cases                               |
+| Platform / Model          | Equivalent to **Personalized Assistants** | Equivalent to **AI Workspaces**  | Sample Use Cases                               |
 | ------------------------- | ----------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- |
 | **OpenAI (ChatGPT)**      | Custom GPTs                               | Projects – organize chats, files, notes in one hub  | MVP prototyping, research collaboration                 |
 | **Claude.ai (Anthropic)** | Artifacts                                 | Projects – persistent context with files + notes    | Team-based document analysis, compliance reviews        |
@@ -468,15 +467,15 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 
 - In **Prompt Engineering**, we explored generative AI as a tool for creativity and analysis.
 - With **Custom GPTs**, you learn how to **design your own AI-powered assistants**.
-- With **Projects** and their equivalents, you experience how AI can become a **shared workspace**, helping you manage complexity while building your solution.
+- With **AI Workspaces** and their equivalents, you experience how AI can become a **shared workspace**, helping you manage complexity while building your solution.
 - Both features let you test assumptions, gather feedback, and iterate quickly with minimal cost.
 
-### Exercise 4: Personalized Assistants and Projects
+### Exercise 4: Personalized Assistants and AI Workspaces
 
 **Team Exercise**:
 
 1. Create a **Personalized Assistant** that supports your startup idea (e.g. a customer FAQ bot or investor Q&A assistant), your discipline (e.g. a personalized tutor) or your area within the company (e.g. a support bot).
-2. Set up a **Project** (or equivalent) to organize your startup/discipline/area research and documents.
+2. Set up an **AI Workspace** (or equivalent) to organize your startup/discipline/area research and documents.
 3. Compare across platforms: What worked best? What were the limitations?
 
 By mastering these extensions of the GenAI toolkit, you will learn not just to use AI, but to **engineer AI-powered solutions** — a critical step in building innovative solutions.
