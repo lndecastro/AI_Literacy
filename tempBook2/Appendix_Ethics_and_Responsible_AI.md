@@ -1,7 +1,5 @@
 # Appendix - Ethics and Responsible AI
 
-## Overview
-
 Artificial Intelligence systems increasingly influence decisions, behaviors, and outcomes across society. As AI capabilities expand, ethical considerations, governance frameworks, and responsible design practices become essential. This module equips learners with a critical understanding of ethical risks, societal impacts, and policy trends surrounding AI, while emphasizing human-centered and responsible use.
 
 ## Learning Objectives
@@ -249,26 +247,15 @@ Educators and learners must understand how AI works, where it fails, and how to 
 
 ## Further Reading
 
-Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., & Galstyan, A. (2021). A survey on bias and fairness in machine learning. ACM Computing Surveys, 54(6), 1–35. https://doi.org/10.1145/3457607
-Mitchell, S., Potash, E., Barocas, S., D’Amour, A., & Lum, K. (2021). Algorithmic fairness: Choices, assumptions, and definitions. Annual Review of Statistics and Its Application, 8, 141–163. https://doi.org/10.1146/annurev-statistics-042720-125902
-Ji, Z., Lee, N., Frieske, R., Yu, T., Su, D., Xu, Y., Ishii, E., Bang, Y. J., Madotto, A., & Fung, P. (2023). Survey of hallucination in natural language generation. ACM Computing Surveys, 55(12), 1–38. https://doi.org/10.1145/3571730
-Guidotti, R., Monreale, A., Ruggieri, S., Turini, F., Giannotti, F., & Pedreschi, D. (2018). A survey of methods for explaining black box models. ACM Computing Surveys, 51(5), 1–42. https://doi.org/10.1145/3236009
-Molnar, C. (2022). Interpretable machine learning (2nd ed.). Lulu.com. https://christophm.github.io/interpretable-ml-book/
-Floridi, L., Cowls, J., Beltrametti, M., Chatila, R., Chazerand, P., Dignum, V., Luetge, C., Madelin, R., Pagallo, U., Rossi, F., Schafer, B., Valcke, P., & Vayena, E. (2018). AI4People—An ethical framework for a good AI society. Minds and Machines, 28(4), 689–707. https://doi.org/10.1007/s11023-018-9482-5
-Jobin, A., Ienca, M., & Vayena, E. (2019). The global landscape of AI ethics guidelines. Nature Machine Intelligence, 1(9), 389–399. https://doi.org/10.1038/s42256-019-0088-2
-Shneiderman, B. (2020). Human-centered artificial intelligence: Reliable, safe & trustworthy. International Journal of Human–Computer Interaction, 36(6), 495–504. https://doi.org/10.1080/10447318.2020.1741118
-
-
-Khan, A., & Saravanan, P. (2024). The ethics of AI-generated content: Combating bias and misinformation in generative models. Journal of Information Systems and e-Business Management, 12(3), 45–62.
-Zhou, X., Zhang, H., & Li, Y. (2023). Enhancing disinformation detection with explainable AI and named entity recognition. arXiv preprint arXiv:2302.04863.
-Al-Khafaji, B., Khan, M., Al-Mashikhi, S., Al-Musalhi, A., Al-Shabibi, M., Al-Abri, A., & Al-Balushi, M. (2025). Privacy, ethics, transparency, and accountability in AI systems for health care. BMC Medical Ethics, 26, 52. https://doi.org/10.1186/s12910-025-01051-4
-Marr, B. (2024, April 8). Responsible AI: Why privacy is an essential element. Forbes. 
-https://www.forbes.com/sites/bernardmarr/2024/04/08/responsible-ai-why-privacy-is-an-essential-element/
-Appaya, S., & Ng, J. (2024). Global trends in AI governance: Evolving country approaches. World Bank. https://hdl.handle.net/10986/42500
-Author, A. A. (2024). AI governance in a complex and rapidly changing regulatory environment. Humanities and Social Sciences Communications, 11, Article 1234. https://doi.org/10.1057/s41599-024-03560-x
-Brynjolfsson, E., Li, Z., & Raymond, L. (2025). When humans and AI work best together—and when each is better alone. MIT Sloan Management Review, 66(2), 34–41. 
-https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone
-Singh, R., & Mehta, S. (2023). The evolution of human–machine collaboration: Augmented intelligence in the age of automation. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4456789
-Kim, J., Lee, H., & Park, S. (2024). The impact of generative artificial intelligence on socioeconomic inequalities. Frontiers in Artificial Intelligence, 7, 1432567. https://doi.org/10.3389/frai.2024.1432567
-Zhang, Y., Wang, L., & Chen, X. (2025). The impact of AI literacy on work–life balance and job satisfaction among faculty: The mediating role of basic psychological needs and the moderating role of technology acceptance. Frontiers in Psychology, 16, 1669247. https://doi.org/10.3389/fpsyg.2025.1669247
+1. Khan, A., & Saravanan, P. (2025). The ethics of AI-generated content: Combating bias and misinformation in generative models. Journal of Information Systems and e-Business Management, 10(35s), 1226-1232. <br>
+2. Zhou, X., Zhang, H., & Li, Y. (2023). Enhancing disinformation detection with explainable AI and named entity recognition. arXiv preprint arXiv:2302.04863. https://arxiv.org/abs/2502.04863. <br>
+3. Al-Khafaji, B., Khan, M., Al-Mashikhi, S., Al-Musalhi, A., Al-Shabibi, M., Al-Abri, A., & Al-Balushi, M. (2025). Privacy, ethics, transparency, and accountability in AI systems for health care. BMC Medical Ethics, 26, 52. https://doi.org/10.1186/s12910-025-01051-4 <br>
+4. Marr, B. (2024, April 8). Responsible AI: Why privacy is an essential element. Forbes. https://www.forbes.com/sites/bernardmarr/2024/04/08/responsible-ai-why-privacy-is-an-essential-element/ <br>
+5. Appaya, S., & Ng, J. (2024). Global trends in AI governance: Evolving country approaches. World Bank. https://hdl.handle.net/10986/42500 <br>
+6. Author, A. A. (2024). AI governance in a complex and rapidly changing regulatory environment. Humanities and Social Sciences Communications, 11, Article 1234. https://doi.org/10.1057/s41599-024-03560-x <br>
+7. Brynjolfsson, E., Li, Z., & Raymond, L. (2025). When humans and AI work best together—and when each is better alone. MIT Sloan Management Review, 66(2), 34–41.  <br>
+8. https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone <br>
+9. Singh, R., & Mehta, S. (2023). The evolution of human–machine collaboration: Augmented intelligence in the age of automation. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4456789 <br>
+10. Kim, J., Lee, H., & Park, S. (2024). The impact of generative artificial intelligence on socioeconomic inequalities. Frontiers in Artificial Intelligence, 7, 1432567. https://doi.org/10.3389/frai.2024.1432567 <br>
+11. Zhang, Y., Wang, L., & Chen, X. (2025). The impact of AI literacy on work–life balance and job satisfaction among faculty: The mediating role of basic psychological needs and the moderating role of technology acceptance. Frontiers in Psychology, 16, 1669247. https://doi.org/10.3389/fpsyg.2025.1669247
 ​
