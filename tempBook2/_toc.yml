@@ -20,3 +20,5 @@ chapters:
     title: "Module 7: Foundational Models and Tools"
   - file: Module_8_Sample_Case_Studies.md
     title: "Module 8: Case Studies"
+  - file: Appendix_Ethics_and_Responsible_AI.md
+    title: "Appendix: Ethics and Responsible AI"    
