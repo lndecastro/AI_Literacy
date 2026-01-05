@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 8: Sample Case Studies and Applications of AI &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_8_Sample_Case_Studies';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendix - Ethics and Responsible AI" href="Appendix_Ethics_and_Responsible_AI.html" />
+    <link rel="prev" title="Module 7: Foundational Models, General-Purpose LLMs, and Applications" href="Module_7_Foundational_Models.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <script>document.write(`<img src="_static/dendritic_logo.png" class="logo__image only-dark" alt="AI Literacy - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_7_Foundational_Models.html">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 8: Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_Ethics_and_Responsible_AI.html">Appendix: Ethics and Responsible AI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/tempBook2/Module_8_Sample_Case_Studies.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_8_Sample_Case_Studies.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 8: Sample Case Studies and Applications of AI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-1-education-build-an-instructional-design-personalized-assistant">🧑‍🏫 Case Study 1 — Education: Build an Instructional Design Personalized Assistant</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goal">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-the-pa-name">Step 1 — Define the PA Name</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-provide-the-pa-description">Step 2 — Provide the PA Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-instructions">Step 3 — Set Instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-conversation-starters">Step 4 — Conversation Starters <p></p></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-upload-the-knowledge-base">Step 5 — Upload the Knowledge Base</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-prompt-to-test-the-pa">Example Prompt to Test the PA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-2-healthcare-clinical-summary-educational-only">🩺 Case Study 2 — Healthcare: Clinical Summary (Educational Only)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-chained-prompting">Step 1 — Chained Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-llm-analysis-clinical-data-summary">Step 2 — LLM Analysis: Clinical Data Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Reflection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-3-business-customer-insights-project-workspace">💼 Case Study 3 — Business: Customer Insights Project Workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-the-project-name">Step 1 — Define the Project Name</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-the-project-role">Step 2 — Define the Project Role</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-upload-the-knowledge-base">Step 3 — Upload the Knowledge Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-set-project-instructions">Step 4 — Set Project Instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inproject-task-prompt">In‑Project Task Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-project">Testing the Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-4-environment-reverse-prompt-engineering-lab">🌿 Case Study 4 — Environment: Reverse Prompt Engineering Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-prompt-output">Step 1 — Prompt Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-prompt-context-engineering-analysis">Step 2 — Prompt/Context Engineering Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reconstruct-the-prompt">Step 3 — Reconstruct the Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-reconstructed-prompt">Step 4 — Test the Reconstructed Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-refine-the-prompt">Step 5 — Refine the Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-meta-prompting">Step 6 — Meta-Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-5-arts-meta-prompting-for-creative-tasks">🎨 Case Study 5 — Arts: Meta-Prompting for Creative Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-a-story-seed">Step 1 — Choose a Story Seed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-ask-the-model-to-create-a-prompt-for-you">Step 2 — Ask the Model to Create a Prompt for You</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-evaluate-the-ai-generated-prompt">Step 3 — Evaluate the AI-Generated Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-refine-the-prompt">Step 4 — Refine the Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-generate-scenes-using-both-prompts">Step 5 — Generate Scenes Using Both Prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-reflection">Submission &amp; Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-8-sample-case-studies-and-applications-of-ai">
+<h1>Module 8: Sample Case Studies and Applications of AI<a class="headerlink" href="#module-8-sample-case-studies-and-applications-of-ai" title="Link to this heading">#</a></h1>
+<p>Artificial Intelligence is transforming every sector of society — from education and healthcare to environmental management, business, and the arts.
+This module provides <strong>hands-on, ready-to-run case studies</strong> where you can explore data, run code, and design prompts to experience AI-assisted analysis and creation in action. The focus is going to be on those concepts emphasized in our AI Literacy program, including prompt engineering, context engineering, personalized assistants, projects, and reverse prompting (meta-prompting).</p>
+<blockquote>
+<div><p>All datasets are <strong>synthetic/anonymized</strong> and for <strong>educational use</strong> only.</p>
+</div></blockquote>
+<p><a class="reference download internal" download="" href="_downloads/57038331f8a7f9d865dda9e7960fe4f7/ai_literacy_case_studies.zip"><span class="xref download myst">⬇️ Download all case-study data (ZIP)</span></a></p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Apply AI tools and prompt engineering techniques to real-world case studies.</p></li>
+<li><p>Run data analyses using the provided datasets for education, healthcare, environment, business, and arts.</p></li>
+<li><p>Evaluate how prompt design and context affect AI performance.</p></li>
+<li><p>Reflect on ethical, social, and environmental implications of AI applications.</p></li>
+</ul>
+</section>
+<section id="case-study-1-education-build-an-instructional-design-personalized-assistant">
+<h2>🧑‍🏫 Case Study 1 — Education: Build an Instructional Design Personalized Assistant<a class="headerlink" href="#case-study-1-education-build-an-instructional-design-personalized-assistant" title="Link to this heading">#</a></h2>
+<p><strong>Files:</strong></p>
+<ul class="simple">
+<li><p>education/syllabus.txt</p></li>
+<li><p>education/rubric.txt</p></li>
+<li><p>education/lesson_plan.md</p></li>
+</ul>
+<section id="purpose">
+<h3>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h3>
+<p>You will <strong>build a Personalized Assistant (PA)</strong> to review and improve lesson plans using the syllabus and rubric.</p>
+</section>
+<section id="learning-goal">
+<h3>Learning Goal<a class="headerlink" href="#learning-goal" title="Link to this heading">#</a></h3>
+<p>Apply the principles of <strong>Role Definition</strong>, <strong>Instruction Setting</strong>, <strong>Knowledge Upload</strong>, and <strong>Conversation Starters</strong> to create a domain‑specific assistant.</p>
+</section>
+<section id="step-1-define-the-pa-name">
+<h3>Step 1 — Define the PA Name<a class="headerlink" href="#step-1-define-the-pa-name" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Instructional Design Teaching Assistant (ID‑TA)
+</pre></div>
+</div>
+</section>
+<section id="step-2-provide-the-pa-description">
+<h3>Step 2 — Provide the PA Description<a class="headerlink" href="#step-2-provide-the-pa-description" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is the *Instructional Design Teaching Assistant (ID‑TA)* for the AI Literacy Program.
+The purpose is to review lesson plans for alignment with syllabi, rubrics, and course outcomes.
+</pre></div>
+</div>
+</section>
+<section id="step-3-set-instructions">
+<h3>Step 3 — Set Instructions<a class="headerlink" href="#step-3-set-instructions" title="Link to this heading">#</a></h3>
+<p>Use this system message when configuring the PA:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You are the Instructional Design Teaching Assistant (ID-TA).
+Your functions:
+1. Review lesson plans for alignment with syllabus goals and rubric criteria.
+2. Compare new versions of lesson plans with previous ones when available.
+3. Summarize lesson plans clearly for students at different proficiency levels.
+4. Suggest improvements using evidence from the uploaded syllabus and rubric.
+5. Maintain consistent tone, terminology, and conceptual alignment.
+6. Flag potential issues with assessment, sequencing, scaffolding, or workload.
+7. Encourage ethical, transparent, and learner‑centered course design.
+8. When uncertain, request clarification or additional files.
+9. Produce concise, structured outputs using tables, bullets, and short paragraphs.
+</pre></div>
+</div>
+</section>
+<section id="step-4-conversation-starters">
+<h3>Step 4 — Conversation Starters <p><a class="headerlink" href="#step-4-conversation-starters" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Compare this lesson plan with the rubric. What needs refinement?
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Rewrite these objectives using Bloom’s taxonomy.
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Explain this lesson to a first‑year undergraduate.
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Draft</span> <span class="n">a</span> <span class="n">revised</span> <span class="n">lesson</span> <span class="n">plan</span> <span class="n">based</span> <span class="n">on</span> <span class="n">your</span> <span class="n">critique</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-upload-the-knowledge-base">
+<h3>Step 5 — Upload the Knowledge Base<a class="headerlink" href="#step-5-upload-the-knowledge-base" title="Link to this heading">#</a></h3>
+<p>Upload to the PA (files in the ZIP):</p>
+<ul class="simple">
+<li><p>education/syllabus.txt</p></li>
+<li><p>education/rubric.txt</p></li>
+<li><p>education/lesson_plan.md</p></li>
+</ul>
+</section>
+</section>
+<section id="example-prompt-to-test-the-pa">
+<h2>Example Prompt to Test the PA<a class="headerlink" href="#example-prompt-to-test-the-pa" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Using</span> <span class="n">the</span> <span class="n">configured</span> <span class="n">personalized</span> <span class="n">assistant</span> <span class="p">(</span><span class="n">ID</span><span class="o">-</span><span class="n">TA</span><span class="p">):</span>
+
+<span class="n">Task</span><span class="p">:</span>
+<span class="mi">1</span><span class="p">)</span> <span class="n">Evaluate</span> <span class="n">the</span> <span class="n">uploaded</span> <span class="n">lesson_plan</span><span class="o">.</span><span class="n">md</span><span class="o">.</span>
+<span class="mi">2</span><span class="p">)</span> <span class="n">Summarize</span> <span class="n">it</span> <span class="ow">in</span> <span class="mi">3</span> <span class="n">bullet</span> <span class="n">points</span> <span class="k">for</span> <span class="n">students</span><span class="o">.</span>
+<span class="mi">3</span><span class="p">)</span> <span class="n">Produce</span> <span class="n">a</span> <span class="n">table</span><span class="p">:</span> <span class="n">Strengths</span> <span class="o">|</span> <span class="n">Weaknesses</span> <span class="o">|</span> <span class="n">Improvements</span><span class="o">.</span>
+<span class="mi">4</span><span class="p">)</span> <span class="n">Write</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">learning</span> <span class="n">objectives</span> <span class="k">for</span> <span class="n">this</span> <span class="n">lesson</span> <span class="n">plan</span><span class="o">.</span>
+<span class="mi">5</span><span class="p">)</span> <span class="n">Write</span> <span class="n">a</span> <span class="mi">60</span><span class="o">-</span><span class="n">word</span> <span class="n">student</span><span class="o">-</span><span class="n">facing</span> <span class="n">overview</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">previous</span> <span class="n">versions</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">knowledge</span> <span class="n">base</span><span class="p">,</span> <span class="n">compare</span> <span class="ow">and</span> <span class="n">highlight</span> <span class="n">changes</span><span class="o">.</span>
+</pre></div>
+</div>
+<section id="reflection">
+<h3>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Why is a <strong>Personalized Assistant</strong> beneficial for recurring instructional design tasks?</p></li>
+<li><p>How do role, instructions, and knowledge influence the PA’s accuracy?</p></li>
+<li><p>What information should remain human‑judged (e.g., pedagogical intent)?</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="case-study-2-healthcare-clinical-summary-educational-only">
+<h2>🩺 Case Study 2 — Healthcare: Clinical Summary (Educational Only)<a class="headerlink" href="#case-study-2-healthcare-clinical-summary-educational-only" title="Link to this heading">#</a></h2>
+<p><strong>Files:</strong></p>
+<ul class="simple">
+<li><p>healthcare/patient_records.csv</p></li>
+<li><p>healthcare/guideline.txt</p></li>
+</ul>
+<blockquote>
+<div><p>⚠️ Educational disclaimer: synthetic data; <strong>not</strong> medical advice; always require <strong>human expert review</strong>.</p>
+</div></blockquote>
+<section id="step-1-chained-prompting">
+<h3>Step 1 — Chained Prompting<a class="headerlink" href="#step-1-chained-prompting" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span> <span class="n">role</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">clinical</span> <span class="n">data</span> <span class="n">analyst</span> <span class="n">supporting</span> <span class="n">a</span> <span class="n">hospital</span> <span class="n">quality</span><span class="o">-</span><span class="n">improvement</span> <span class="n">team</span><span class="o">.</span>
+<span class="n">Ethical</span> <span class="n">boundary</span><span class="p">:</span> <span class="n">Educational</span> <span class="n">exercise</span> <span class="n">only</span><span class="p">;</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">provide</span> <span class="n">medical</span> <span class="n">advice</span><span class="o">.</span>
+
+<span class="n">Reference</span><span class="p">:</span> <span class="n">Clinical</span> <span class="n">Guideline</span> <span class="p">(</span><span class="n">simplified</span><span class="p">):</span>
+<span class="p">[</span><span class="n">Upload</span> <span class="n">file</span> <span class="n">guideline</span><span class="o">.</span><span class="n">txt</span><span class="p">]</span>
+
+<span class="n">Task</span><span class="p">:</span>
+<span class="mi">1</span><span class="p">)</span> <span class="n">Read</span> <span class="n">the</span> <span class="n">following</span> <span class="n">anonymized</span> <span class="n">patient</span> <span class="n">data</span> <span class="kn">from</span><span class="w"> </span><span class="nn">patient_records.csv</span> <span class="p">(</span><span class="n">upload</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span>
+<span class="mi">2</span><span class="p">)</span> <span class="n">For</span> <span class="n">each</span> <span class="n">case</span><span class="p">,</span> <span class="n">summarize</span> <span class="n">under</span><span class="p">:</span> <span class="n">Key</span> <span class="n">Findings</span> <span class="o">|</span> <span class="n">Potential</span> <span class="n">Risks</span> <span class="o">|</span> <span class="n">Next</span> <span class="n">Steps</span> <span class="p">(</span><span class="n">guideline</span><span class="o">-</span><span class="n">aligned</span><span class="p">)</span><span class="o">.</span>
+<span class="mi">3</span><span class="p">)</span> <span class="n">Identify</span> <span class="n">potential</span> <span class="n">red</span> <span class="n">flags</span> <span class="k">for</span> <span class="n">escalation</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">guideline</span><span class="o">.</span>
+<span class="mi">4</span><span class="p">)</span> <span class="n">End</span> <span class="k">with</span> <span class="n">a</span> <span class="n">brief</span> <span class="n">caveat</span> <span class="n">noting</span> <span class="n">that</span> <span class="nb">all</span> <span class="n">recommendations</span> <span class="n">require</span> <span class="n">expert</span> <span class="n">validation</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2-llm-analysis-clinical-data-summary">
+<h3>Step 2 — LLM Analysis: Clinical Data Summary<a class="headerlink" href="#step-2-llm-analysis-clinical-data-summary" title="Link to this heading">#</a></h3>
+<p>Use an LLM to simulate the analytical reasoning of a healthcare analyst. Optional Extension Prompts:</p>
+<ol class="arabic">
+<li><p><strong>Comparative Reasoning</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Compare cases 1–3 and identify shared risk factors.
+Which follow-up steps appear most urgent according to the guideline?
+</pre></div>
+</div>
+</li>
+<li><p><strong>Format Variation</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rewrite</span> <span class="n">your</span> <span class="n">findings</span> <span class="k">as</span> <span class="n">a</span> <span class="n">short</span> <span class="n">clinical</span> <span class="n">summary</span> <span class="n">note</span> <span class="k">for</span> <span class="n">internal</span> <span class="n">reporting</span><span class="o">.</span>
+<span class="n">Use</span> <span class="n">headers</span><span class="p">:</span> <span class="n">Chief</span> <span class="n">Complaint</span><span class="p">,</span> <span class="n">Assessment</span> <span class="n">Summary</span><span class="p">,</span> <span class="n">Recommendations</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Bias Awareness</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Identify potential sources of bias or misinterpretation when using AI to analyze clinical data.
+How can these be mitigated in practice?
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="id1">
+<h4>Reflection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>How did contextualizing the task with the “clinical analyst” role affect the tone and precision of the response?</p></li>
+<li><p>What limitations must remain explicit when using AI in healthcare communication?</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="case-study-3-business-customer-insights-project-workspace">
+<h2>💼 Case Study 3 — Business: Customer Insights Project Workspace<a class="headerlink" href="#case-study-3-business-customer-insights-project-workspace" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong></p>
+<ul class="simple">
+<li><p>business/customer_feedback.csv</p></li>
+</ul>
+<section id="id2">
+<h3>Purpose<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>This case study teaches students how to build a <strong>Project Workspace</strong> for customer feedback analysis.</p>
+</section>
+<section id="id3">
+<h3>Learning Goal<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Create a structured, persistent, collaborative <strong>Project</strong> for analyzing customer sentiment, themes, and insights.</p>
+</section>
+<section id="step-1-define-the-project-name">
+<h3>Step 1 — Define the Project Name<a class="headerlink" href="#step-1-define-the-project-name" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Customer</span> <span class="n">Insights</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2-define-the-project-role">
+<h3>Step 2 — Define the Project Role<a class="headerlink" href="#step-2-define-the-project-role" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="o">*</span><span class="n">Customer</span> <span class="n">Insights</span> <span class="n">Workspace</span><span class="o">*</span> <span class="n">helps</span> <span class="n">structure</span><span class="p">,</span> <span class="n">analyze</span><span class="p">,</span> <span class="ow">and</span> <span class="n">track</span> <span class="n">customer</span> <span class="n">feedback</span> <span class="n">over</span> <span class="n">time</span> <span class="n">to</span> <span class="n">support</span> <span class="n">product</span> <span class="ow">and</span> <span class="n">marketing</span> <span class="n">decisions</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3-upload-the-knowledge-base">
+<h3>Step 3 — Upload the Knowledge Base<a class="headerlink" href="#step-3-upload-the-knowledge-base" title="Link to this heading">#</a></h3>
+<p>Upload into the Project:</p>
+<ul class="simple">
+<li><p>business/customer_feedback.csv</p></li>
+<li><p>Past reports (if any)</p></li>
+<li><p>Team notes or strategy documents (if any)</p></li>
+<li><p>Competitor benchmarks (if any)</p></li>
+</ul>
+</section>
+<section id="step-4-set-project-instructions">
+<h3>Step 4 — Set Project Instructions<a class="headerlink" href="#step-4-set-project-instructions" title="Link to this heading">#</a></h3>
+<p>Use this as the project’s instructions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Core</span> <span class="n">Role</span><span class="p">:</span> <span class="n">Customer</span> <span class="n">Insights</span> <span class="n">Workspace</span>
+
+<span class="n">Functions</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">Organize</span><span class="p">,</span> <span class="n">summarize</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">map</span> <span class="n">customer</span> <span class="n">feedback</span> <span class="n">across</span> <span class="n">datasets</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Cluster</span> <span class="n">feedback</span> <span class="n">into</span> <span class="n">themes</span> <span class="k">with</span> <span class="n">representative</span> <span class="n">evidence</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Track</span> <span class="n">changes</span> <span class="n">across</span> <span class="n">releases</span> <span class="ow">or</span> <span class="n">time</span> <span class="n">periods</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">Generate</span> <span class="n">personas</span><span class="p">,</span> <span class="n">sentiment</span> <span class="n">summaries</span><span class="p">,</span> <span class="ow">and</span> <span class="n">strategy</span> <span class="n">recommendations</span><span class="o">.</span>
+<span class="mf">5.</span> <span class="n">Maintain</span> <span class="n">consistency</span> <span class="n">across</span> <span class="n">analyses</span> <span class="n">performed</span> <span class="n">by</span> <span class="n">different</span> <span class="n">collaborators</span><span class="o">.</span>
+<span class="mf">6.</span> <span class="n">Serve</span> <span class="k">as</span> <span class="n">a</span> <span class="n">shared</span> <span class="n">knowledge</span> <span class="n">hub</span> <span class="n">supporting</span> <span class="n">product</span> <span class="ow">and</span> <span class="n">marketing</span> <span class="n">teams</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="inproject-task-prompt">
+<h3>In‑Project Task Prompt<a class="headerlink" href="#inproject-task-prompt" title="Link to this heading">#</a></h3>
+<p>Paste this prompt inside the Project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Task:
+1) Load customer_feedback.csv.
+2) Cluster feedback into 3–5 actionable themes.
+3) Create the table: Theme | Representative Quote | Suggested Action.
+4) Draft a 120-word executive summary.
+5) Identify negative sentiment drivers and risk signals.
+6) Save the output as “Insights Report v1” in the Project workspace.
+</pre></div>
+</div>
+</section>
+<section id="testing-the-project">
+<h3>Testing the Project<a class="headerlink" href="#testing-the-project" title="Link to this heading">#</a></h3>
+<p>Try prompts like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Update</span> <span class="n">our</span> <span class="n">personas</span> <span class="n">using</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">feedback</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Generate a decision‑maker slide for leadership.
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">competitive</span> <span class="n">analysis</span> <span class="n">placeholder</span> <span class="n">section</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Reflection<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Why is a <strong>Project</strong> more suitable than a Personalized Assistant for this task?</p></li>
+<li><p>Which components (files, system message, collaboration) improved organization?</p></li>
+<li><p>How can the project evolve as new datasets are added?</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="case-study-4-environment-reverse-prompt-engineering-lab">
+<h2>🌿 Case Study 4 — Environment: Reverse Prompt Engineering Lab<a class="headerlink" href="#case-study-4-environment-reverse-prompt-engineering-lab" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong></p>
+<ul class="simple">
+<li><p>environment/water_quality.csv</p></li>
+</ul>
+<section id="id5">
+<h3>Purpose<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>This case study teaches <strong>Reverse Prompt Engineering</strong>, a key technique to analyze and understand how prompts work.<br />
+Students will analyze a short pre‑generated AI environmental report, infer the likely prompt behind it, test their reconstruction, and refine it.<br />
+The focus is on <strong>understanding how prompts shape outputs</strong>.</p>
+</section>
+<section id="id6">
+<h3>Learning Goal<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Develop skills in:</p>
+<ul class="simple">
+<li><p>analyzing LLM outputs for structural and contextual clues</p></li>
+<li><p>reconstructing implicit prompt components</p></li>
+<li><p>testing and improving prompts</p></li>
+<li><p>understanding how to use meta-prompt to reverse prompting</p></li>
+</ul>
+</section>
+<section id="step-1-prompt-output">
+<h3>Step 1 — Prompt Output<a class="headerlink" href="#step-1-prompt-output" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Across the monitoring period, average chlorophyll-a levels varied substantially by site,
+with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk.
+River B, by contrast, averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L.
+Additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset,
+suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
+</pre></div>
+</div>
+</section>
+<section id="step-2-prompt-context-engineering-analysis">
+<h3>Step 2 — Prompt/Context Engineering Analysis<a class="headerlink" href="#step-2-prompt-context-engineering-analysis" title="Link to this heading">#</a></h3>
+<p>Identify what the model seems to have assumed:</p>
+<ul class="simple">
+<li><p><strong>Role</strong> (e.g., environmental analyst)</p></li>
+<li><p><strong>Instruction</strong> (e.g., identify anomalies, summarize risks)</p></li>
+<li><p><strong>Context</strong> (e.g., multi‑site water quality dataset)</p></li>
+<li><p><strong>Constraints</strong> (e.g., concise summary, structured findings)</p></li>
+<li><p><strong>Output Format</strong> (e.g., paragraphs, sections, recommendations)</p></li>
+<li><p><strong>Tone</strong> (e.g., scientific, cautious, formal)</p></li>
+</ul>
+<p>Record your observations.</p>
+</section>
+<section id="step-3-reconstruct-the-prompt">
+<h3>Step 3 — Reconstruct the Prompt<a class="headerlink" href="#step-3-reconstruct-the-prompt" title="Link to this heading">#</a></h3>
+<p>Using the structure presented above, reconstruct the prompt.
+Your reconstruction should be explicit and testable.</p>
+</section>
+<section id="step-4-test-the-reconstructed-prompt">
+<h3>Step 4 — Test the Reconstructed Prompt<a class="headerlink" href="#step-4-test-the-reconstructed-prompt" title="Link to this heading">#</a></h3>
+<p>Upload to the LLM (file in the ZIP):</p>
+<ul class="simple">
+<li><p>environment/water_quality.csv</p></li>
+</ul>
+<p>Run your reconstructed prompt and compare the generated output to the original prompt output presented in Step 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span> <span class="n">role</span><span class="p">:</span>
+<span class="n">Instruction</span><span class="p">:</span>
+<span class="n">Context</span><span class="p">:</span>
+<span class="n">Constraints</span><span class="p">:</span>
+<span class="n">Output</span> <span class="n">Format</span><span class="p">:</span>
+<span class="n">Tone</span><span class="p">:</span> 
+</pre></div>
+</div>
+<p>Questions to analyze:</p>
+<ul class="simple">
+<li><p>What parts match closely?</p></li>
+<li><p>What is missing or added?</p></li>
+<li><p>What does the model misinterpret or hallucinate?</p></li>
+</ul>
+</section>
+<section id="step-5-refine-the-prompt">
+<h3>Step 5 — Refine the Prompt<a class="headerlink" href="#step-5-refine-the-prompt" title="Link to this heading">#</a></h3>
+<p>Improve accuracy by adding:</p>
+<ul class="simple">
+<li><p>domain‑specific terminology</p></li>
+<li><p>clearer instructions</p></li>
+<li><p>explicit data references</p></li>
+<li><p>uncertainty/safety statements</p></li>
+<li><p>required sections (e.g., “Risk Indicators,” “Recommended Actions”)</p></li>
+<li><p>stylistic constraints</p></li>
+</ul>
+</section>
+<section id="step-6-meta-prompting">
+<h3>Step 6 — Meta-Prompting<a class="headerlink" href="#step-6-meta-prompting" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Here is an AI-generated output for the attached file:
+
+Across the monitoring period, average chlorophyll-a levels varied substantially by site,
+with Lake C showing the highest mean concentration (≈20.4 µg/L)—a level consistent with moderate ecological risk.
+River B, by contrast, averaged ≈11.3 µg/L and River A remained lowest at ≈7.7 µg/L.
+Additionally, a simple 3-week rolling trend analysis indicates a recent upward chlorophyll-a tendency (≈13.9 µg/L) across the dataset,
+suggesting that nutrient or temperature conditions may be becoming more favorable for algal activity and warrant continued monitoring.
+
+Your task is to reverse prompt this output.
+That means: propose one or more possible prompts that could have generated it.
+Explain your reasoning and show how different phrasings might affect the response.
+</pre></div>
+</div>
+<p>Compare you refined prompt with the reversed prompt generated by the model.</p>
+</section>
+<section id="id7">
+<h3>Reflection<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Which components of the prompt reconstruction were most influential in shaping the output?</p></li>
+<li><p>How does your engineered prompt compare with the model reverse prompt?</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="case-study-5-arts-meta-prompting-for-creative-tasks">
+<h2>🎨 Case Study 5 — Arts: Meta-Prompting for Creative Tasks<a class="headerlink" href="#case-study-5-arts-meta-prompting-for-creative-tasks" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong></p>
+<ul class="simple">
+<li><p>arts/story_seeds.csv</p></li>
+</ul>
+<section id="id8">
+<h3>Purpose<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>You will learn how to ask the model to <strong>generate a high-quality prompt</strong> tailored to your creative goals.<br />
+Similar to the previous case study, but with a different purpose, this develops the skill of <em>meta-prompting</em>, where the LLM designs the prompt you should use for the task.</p>
+</section>
+<section id="id9">
+<h3>Learning Goal<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Apply the principles of <strong>meta-prompting</strong>, <strong>prompt evaluation</strong>, and <strong>prompt refinement</strong> to generate a better creative-writing prompt than you might write manually.</p>
+</section>
+<section id="step-1-choose-a-story-seed">
+<h3>Step 1 — Choose a Story Seed<a class="headerlink" href="#step-1-choose-a-story-seed" title="Link to this heading">#</a></h3>
+<p>Choose a row from file arts/story_seeds.csv.</p>
+</section>
+<section id="step-2-ask-the-model-to-create-a-prompt-for-you">
+<h3>Step 2 — Ask the Model to Create a Prompt for You<a class="headerlink" href="#step-2-ask-the-model-to-create-a-prompt-for-you" title="Link to this heading">#</a></h3>
+<p>Use this meta-prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">high</span><span class="o">-</span><span class="n">quality</span> <span class="n">creative</span><span class="o">-</span><span class="n">writing</span> <span class="n">prompt</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">following</span> <span class="n">story</span> <span class="n">seed</span><span class="o">.</span>
+
+<span class="n">Seed</span><span class="p">:</span> <span class="p">[</span><span class="n">enter</span> <span class="n">the</span> <span class="n">story</span> <span class="n">seed</span><span class="p">]</span>
+
+<span class="n">Your</span> <span class="n">prompt</span> <span class="n">must</span><span class="p">:</span>
+
+<span class="mf">1.</span> <span class="n">Assign</span> <span class="n">a</span> <span class="n">role</span> <span class="n">to</span> <span class="n">the</span> <span class="n">model</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Define</span> <span class="n">a</span> <span class="n">clear</span> <span class="n">writing</span> <span class="n">task</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">seed</span> <span class="k">as</span> <span class="n">explicit</span> <span class="n">context</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">Specify</span> <span class="n">tone</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">mood</span><span class="p">,</span> <span class="ow">and</span> <span class="n">pacing</span> <span class="n">constraints</span><span class="o">.</span>
+<span class="mf">5.</span> <span class="n">Require</span> <span class="n">a</span> <span class="n">structured</span> <span class="n">output</span> <span class="nb">format</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">setting</span><span class="p">,</span> <span class="n">conflict</span><span class="p">,</span> <span class="n">turning</span> <span class="n">point</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span><span class="o">.</span>
+<span class="mf">6.</span> <span class="n">Include</span> <span class="n">a</span> <span class="n">length</span> <span class="n">target</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="o">~</span><span class="mi">150</span> <span class="n">words</span><span class="p">)</span><span class="o">.</span>
+<span class="mf">7.</span> <span class="n">Add</span> <span class="n">constraints</span> <span class="n">that</span> <span class="n">improve</span> <span class="n">narrative</span> <span class="n">clarity</span> <span class="ow">and</span> <span class="n">emotional</span> <span class="n">depth</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3-evaluate-the-ai-generated-prompt">
+<h3>Step 3 — Evaluate the AI-Generated Prompt<a class="headerlink" href="#step-3-evaluate-the-ai-generated-prompt" title="Link to this heading">#</a></h3>
+<p>Ask the model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Evaluate</span> <span class="n">this</span> <span class="n">prompt</span> <span class="n">using</span> <span class="n">criteria</span> <span class="n">such</span> <span class="k">as</span> <span class="n">relevance</span><span class="p">,</span> <span class="n">completeness</span><span class="p">,</span> <span class="n">clarity</span><span class="p">,</span> <span class="n">factual</span> <span class="n">accuracy</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">format</span><span class="o">.</span>
+<span class="n">Suggest</span> <span class="n">improvements</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>(Optional) Request a rubric:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">rubric</span> <span class="p">(</span><span class="n">criteria</span> <span class="o">+</span> <span class="n">descriptions</span><span class="p">)</span> <span class="k">for</span> <span class="n">evaluating</span> <span class="n">creative</span><span class="o">-</span><span class="n">writing</span> <span class="n">prompts</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-refine-the-prompt">
+<h3>Step 4 — Refine the Prompt<a class="headerlink" href="#step-4-refine-the-prompt" title="Link to this heading">#</a></h3>
+<p>Use a prompt like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rewrite</span> <span class="n">this</span> <span class="n">prompt</span> <span class="n">to</span> <span class="n">maximize</span> <span class="n">narrative</span> <span class="n">clarity</span><span class="p">,</span> <span class="n">improve</span> <span class="n">constraints</span><span class="p">,</span> 
+<span class="n">tighten</span> <span class="n">tone</span><span class="o">/</span><span class="n">style</span> <span class="n">guidance</span><span class="p">,</span> <span class="ow">and</span> <span class="n">require</span> <span class="n">a</span> <span class="n">stronger</span> <span class="n">turning</span> <span class="n">point</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Your refined prompt becomes the “Scene B”.</p>
+</section>
+<section id="step-5-generate-scenes-using-both-prompts">
+<h3>Step 5 — Generate Scenes Using Both Prompts<a class="headerlink" href="#step-5-generate-scenes-using-both-prompts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Scene A</strong> → created using the <em>model-generated prompt</em></p></li>
+<li><p><strong>Scene B</strong> → created using <em>your refined prompt</em></p></li>
+</ul>
+<p>Then compare the results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Compare Scene A and Scene B.
+Which prompt produced stronger storytelling, clearer structure, and richer sensory detail? Why?
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>Reflection<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>What features made the AI-generated prompt effective or ineffective?</p></li>
+<li><p>Why is meta-prompting a powerful professional skill?</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="submission-reflection">
+<h2>Submission &amp; Reflection<a class="headerlink" href="#submission-reflection" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Submit your <strong>prompts</strong>, <strong>AI outputs</strong>, and a <strong>short reflection (150–200 words)</strong> for one or more case studies.</p></li>
+<li><p>Discuss how <strong>prompt and context</strong> shaped your results, and where <strong>human judgment</strong> was most critical.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h2>Reflection<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Which of these case studies feels most relevant to your field or future career?</p></li>
+<li><p>How might you apply similar principles in your own work or research?</p></li>
+<li><p>What challenges or safeguards would you need to ensure responsible AI use?</p></li>
+</ol>
+</div></blockquote>
+<p>Reflect on how the lessons from these cases — transparency, context, and collaboration — can guide your personal or organizational approach to AI adoption.</p>
+</section>
+<section id="further-reading">
+<h2>📘 Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>World Economic Forum (2024). <em>Shaping the future of artificial intelligence: Reflections from the AI Governance Alliance.</em>, <a class="reference external" href="https://www.weforum.org/stories/2024/06/ai-governance-alliance-future-of-ai/">https://www.weforum.org/stories/2024/06/ai-governance-alliance-future-of-ai/</a></p></li>
+<li><p>UNESCO (2023). <em>Guidelines for AI in Education and Research.</em>, <a class="reference external" href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research">https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research</a></p></li>
+<li><p>European University Association (2023). <em>Artificial Intelligence in Science. Challenges, Opportunities and the Future of Research.</em>, <a class="reference external" href="https://www.eua.eu/news/member-and-partner-news/artificial-intelligence-in-science-challenges-opportunities-and-the-future-of-research.html">https://www.eua.eu/news/member-and-partner-news/artificial-intelligence-in-science-challenges-opportunities-and-the-future-of-research.html</a></p></li>
+<li><p>Mollick, E. &amp; Mollick, L. R. (2024). <em>Co-Intelligence: Living and Working with AI.</em>, Portfolio.</p></li>
+<li><p>European Commission (2019). <em>Ethics Guidelines for Trustworthy AI.</em>, <a class="reference external" href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai">https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai</a></p></li>
+<li><p>Dendritic Institute (2025). <em>AI Literacy Series – Module 8: Sample Case Studies and Applications of AI.</em> (Slides &amp; video lecture)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_7_Foundational_Models.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 7: Foundational Models, General-Purpose LLMs, and Applications</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Appendix_Ethics_and_Responsible_AI.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix - Ethics and Responsible AI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-1-education-build-an-instructional-design-personalized-assistant">🧑‍🏫 Case Study 1 — Education: Build an Instructional Design Personalized Assistant</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goal">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-the-pa-name">Step 1 — Define the PA Name</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-provide-the-pa-description">Step 2 — Provide the PA Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-instructions">Step 3 — Set Instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-conversation-starters">Step 4 — Conversation Starters <p></p></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-upload-the-knowledge-base">Step 5 — Upload the Knowledge Base</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-prompt-to-test-the-pa">Example Prompt to Test the PA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-2-healthcare-clinical-summary-educational-only">🩺 Case Study 2 — Healthcare: Clinical Summary (Educational Only)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-chained-prompting">Step 1 — Chained Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-llm-analysis-clinical-data-summary">Step 2 — LLM Analysis: Clinical Data Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Reflection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-3-business-customer-insights-project-workspace">💼 Case Study 3 — Business: Customer Insights Project Workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-the-project-name">Step 1 — Define the Project Name</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-define-the-project-role">Step 2 — Define the Project Role</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-upload-the-knowledge-base">Step 3 — Upload the Knowledge Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-set-project-instructions">Step 4 — Set Project Instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inproject-task-prompt">In‑Project Task Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-project">Testing the Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-4-environment-reverse-prompt-engineering-lab">🌿 Case Study 4 — Environment: Reverse Prompt Engineering Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-prompt-output">Step 1 — Prompt Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-prompt-context-engineering-analysis">Step 2 — Prompt/Context Engineering Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reconstruct-the-prompt">Step 3 — Reconstruct the Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-test-the-reconstructed-prompt">Step 4 — Test the Reconstructed Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-refine-the-prompt">Step 5 — Refine the Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-meta-prompting">Step 6 — Meta-Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-5-arts-meta-prompting-for-creative-tasks">🎨 Case Study 5 — Arts: Meta-Prompting for Creative Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Learning Goal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-choose-a-story-seed">Step 1 — Choose a Story Seed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-ask-the-model-to-create-a-prompt-for-you">Step 2 — Ask the Model to Create a Prompt for You</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-evaluate-the-ai-generated-prompt">Step 3 — Evaluate the AI-Generated Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-refine-the-prompt">Step 4 — Refine the Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-generate-scenes-using-both-prompts">Step 5 — Generate Scenes Using Both Prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Reflection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-reflection">Submission &amp; Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">📘 Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
