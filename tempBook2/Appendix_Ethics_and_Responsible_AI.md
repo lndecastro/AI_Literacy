@@ -247,15 +247,14 @@ Educators and learners must understand how AI works, where it fails, and how to 
 
 ## Further Reading
 
-1. Khan, A., & Saravanan, P. (2025). The ethics of AI-generated content: Combating bias and misinformation in generative models. Journal of Information Systems and e-Business Management, 10(35s), 1226-1232. <br>
-2. Zhou, X., Zhang, H., & Li, Y. (2023). Enhancing disinformation detection with explainable AI and named entity recognition. arXiv preprint arXiv:2302.04863. https://arxiv.org/abs/2502.04863. <br>
-3. Al-Khafaji, B., Khan, M., Al-Mashikhi, S., Al-Musalhi, A., Al-Shabibi, M., Al-Abri, A., & Al-Balushi, M. (2025). Privacy, ethics, transparency, and accountability in AI systems for health care. BMC Medical Ethics, 26, 52. https://doi.org/10.1186/s12910-025-01051-4 <br>
+1. Khan, A., & Saravanan, P. (2025). The ethics of AI-generated content: Combating bias and misinformation in generative models. Journal of Information Systems Engineering and Management, 10(35s), 1226-1232. <br>
+2. González-Silot, S., Montoro-Montarroso, A., Cámara, E. M., & Gómez-Romero, J. (2025). Enhancing Disinformation Detection with Explainable AI and Named Entity Replacement. arXiv preprint arXiv:2502.04863. <br>
+3. Radanliev, P. (2025). Privacy, ethics, transparency, and accountability in AI systems for wearable devices. Frontiers in Digital Health, 7, 1431246. <br>
 4. Marr, B. (2024, April 8). Responsible AI: Why privacy is an essential element. Forbes. https://www.forbes.com/sites/bernardmarr/2024/04/08/responsible-ai-why-privacy-is-an-essential-element/ <br>
 5. Appaya, S., & Ng, J. (2024). Global trends in AI governance: Evolving country approaches. World Bank. https://hdl.handle.net/10986/42500 <br>
-6. Author, A. A. (2024). AI governance in a complex and rapidly changing regulatory environment. Humanities and Social Sciences Communications, 11, Article 1234. https://doi.org/10.1057/s41599-024-03560-x <br>
-7. Brynjolfsson, E., Li, Z., & Raymond, L. (2025). When humans and AI work best together—and when each is better alone. MIT Sloan Management Review, 66(2), 34–41.  <br>
-8. https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone <br>
-9. Singh, R., & Mehta, S. (2023). The evolution of human–machine collaboration: Augmented intelligence in the age of automation. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.4456789 <br>
-10. Kim, J., Lee, H., & Park, S. (2024). The impact of generative artificial intelligence on socioeconomic inequalities. Frontiers in Artificial Intelligence, 7, 1432567. https://doi.org/10.3389/frai.2024.1432567 <br>
-11. Zhang, Y., Wang, L., & Chen, X. (2025). The impact of AI literacy on work–life balance and job satisfaction among faculty: The mediating role of basic psychological needs and the moderating role of technology acceptance. Frontiers in Psychology, 16, 1669247. https://doi.org/10.3389/fpsyg.2025.1669247
+6. Zaidan, E., & Ibrahim, I. A. (2024). AI governance in a complex and rapidly changing regulatory landscape: A global perspective. Humanities and Social Sciences Communications, 11(1). https://www.nature.com/articles/s41599-024-03560-x <br>
+7. Malone, T. W., & Vaccaro, M. (2024). When humans and AI work best together—and when each is better alone. MIT Sloan Management Review, 47. <br>
+8. Fatunmbi, T. O. (2023). Evolution of human–machine collaboration: Augmented intelligence in the age of automation. International Journal of Advanced Research in Engineering and Technology, 14(4), 10-34218. <br>
+9. Capraro, V., Lentsch, A., Acemoglu, D., Akgun, S., Akhmedova, A., Bilancini, E., ... & Viale, R. (2024). The impact of generative artificial intelligence on socioeconomic inequalities and policy making. PNAS nexus, 3(6), pgae191. https://academic.oup.com/pnasnexus/article/3/6/pgae191/7689236 <br>
+10. Huang, L., & Zhao, Y. (2025). The impact of AI literacy on work–life balance and job satisfaction among university faculty: a self-determination theory perspective. Frontiers in Psychology, 16, 1669247. https://doi.org/10.3389/fpsyg.2025.1669247
 ​
