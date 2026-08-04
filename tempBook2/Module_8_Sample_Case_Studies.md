@@ -322,7 +322,7 @@ Improve accuracy by adding:
 - required sections (e.g., “Risk Indicators,” “Recommended Actions”)  
 - stylistic constraints  
 
-### Step 6 — Meta-Prompting
+### Step 6 — Reverse-Prompting
 
 ```
 Here is an AI-generated output for the attached file:
