@@ -6,7 +6,7 @@ Generative Artificial Intelligence (GenAI) has become one of the most transforma
 
 After completing this module, you will be able to:
 
-- Understand the purpose and scope of prompt engineering.
+- Explain the purpose and scope of prompt engineering.
 - Identify the components that make up an effective prompt.
 - Identify and apply different types of prompt design patterns.
 - Compare how prompt structures influence AI outputs.
