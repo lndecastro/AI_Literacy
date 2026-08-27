@@ -147,7 +147,7 @@ By embedding **role, reference materials, task, and output format**, the model p
 
 ## 6.5 Example in Healthcare
 
-Download the [Anonimized patient case](../Data/AnonymizedPatientCase.pdf).
+Download the [Anonymized patient case](../Data/AnonymizedPatientCase.pdf).
 Download the [Reference file](../Data/ReferenceFile.pdf)
 
 **Prompt Engineering Example:** Upload the anonymized patient case.
@@ -414,7 +414,7 @@ Unlike a single chat, this space integrates:
 
 Together, these differences show that Projects serve as **collaborative workspaces**.
 
-### 6.6.3 Personalized Assistants vs. AI WOrkspaces
+### 6.6.3 Personalized Assistants vs. AI Workspaces
 
 Both **personalized assistants** (like Custom GPTs or Gems) and **AI Workspaces** (structured workspaces such as OpenAI Projects, Claude Projects, Grok Projects, or Perplexity Spaces) extend the power of foundational models. They serve different but complementary purposes.
 
@@ -443,7 +443,7 @@ Both **personalized assistants** (like Custom GPTs or Gems) and **AI Workspaces*
 ### 6.6.4 Similar Resources Across Platforms
 
 The idea of customizing and structuring generative AI is spreading across different ecosystems.
-Below is a **comparative table** (as of October 2025) of how major platforms implement features equivalent to **Personalzied Assistants** and **Projects**:
+Below is a **comparative table** of how major platforms implement features equivalent to **Personalized Assistants** and **Projects**:
 
 | Platform / Model          | Equivalent to **Personalized Assistants** | Equivalent to **AI Workspaces**  | Sample Use Cases                               |
 | ------------------------- | ----------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- |
@@ -451,7 +451,7 @@ Below is a **comparative table** (as of October 2025) of how major platforms imp
 | **Claude.ai (Anthropic)** | Artifacts                                 | Projects – persistent context with files + notes    | Team-based document analysis, compliance reviews        |
 | **Perplexity.ai**         | No direct equivalent                      | Spaces – save, organize, and share research threads | Market/competitor intelligence, curated knowledge bases |
 | **xAI Grok**              | No direct equivalent                      | Projects – thematic workspaces for structured tasks | Community engagement, startup branding assistants       |
-| **Google Gemini**         | Gems                                      | Via NotebookLM                                      | Research + planning inside Google ecosystem             |
+| **Google Gemini**         | Gems                                      | Via Gemini Notebook                                 | Research + planning inside Google ecosystem             |
 | **Microsoft Copilot**     | Copilot Agents                            | Copilot Pages is a similar feature                  | Enterprise workflows, sales/pitch preparation           |
 | **Meta LLaMA**            | No direct equivalent                      | No direct equivalent                                | Not applicable                                          |
 
