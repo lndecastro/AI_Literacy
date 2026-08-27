@@ -6,7 +6,7 @@ Welcome to the **AI Literacy Program**, part of the **FGCU AI Academy** led by t
 
 The goal of this program is to **equip learners with enough understanding to confidently use and critically evaluate Generative AI tools**. By the end of this journey, you will:
 
-- Understand what AI is, where it came from, and where it is heading.
+- Explain what AI is, where it came from, and where it is heading.
 - Recognize the main **branches, paradigms, and learning strategies** that underpin modern AI.
 - Develop awareness of how AI systems are built, trained, and applied responsibly.
 - Gain fluency in **Generative AI tools**, **prompt engineering**, and **context design**.
@@ -64,7 +64,7 @@ As you advance through these modules, keep reflecting on:
 
 - Professor in the **Department of Computing and Software Engineering**, U.A. Whitaker College of Engineering, FGCU.
 - Ph.D. in Computer Engineering with 30 years of experience in **Artificial Intelligence, Data Science, and Natural Computing**.
-- Director of the **Dendritic Institute for Artificial Intelligence and Data Science** at FGCU.
+- Director of the **Dendritic Institute for Human-Centered Artificial Intelligence and Data Science** at FGCU.
 - Author of various AI and Data Science books and papers, and recognized among the **Top 2% most influential researchers in Computer Science worldwide**.
 - Experienced entrepreneur, researcher, and educator with a focus on applying AI for innovation, business, and societal impact.
 - Active mentor and collaborator with international academic and industry partners.
