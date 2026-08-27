@@ -8,7 +8,7 @@ It follows the two parts presented in the recorded video and slides: **Learning 
 
 After completing this module, you will be able to:
 
-- Understand and explain the different paradigms and strategies for learning machines and how they differ from traditional programming.
+- Explain the different paradigms and strategies for learning machines and how they differ from traditional programming.
 - Distinguish among the main **learning paradigms** — supervised, unsupervised, semi-supervised, and reinforcement learning.
 - Describe key **learning strategies**, such as federated learning, transfer learning, evolution, hybrid and multi-modal learning.
 
