@@ -1,0 +1,1230 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 7: Foundational Models, General-Purpose LLMs, and Applications &#8212; AI Literacy</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_7_Foundational_Models';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 8: Sample Case Studies and Applications of AI" href="Module_8_Sample_Case_Studies.html" />
+    <link rel="prev" title="Module 6: Context Engineering - Advanced AI Communication" href="Module_6_Context_Engineering.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dendritic_logo.png" class="logo__image only-light" alt="AI Literacy - Home"/>
+    <img src="_static/dendritic_logo.png" class="logo__image only-dark pst-js-only" alt="AI Literacy - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI Literacy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_1_AI_History.html">Module 1: A Brief History of AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_2_AI_and_Its_Branches.html">Module 2: AI and Its Many Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_3_How_Machines_Learn.html">Module 3: How Machines Learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_4_GenAI_LLMs.html">Module 4: Generative AI (GenAI) and Large Language Models (LLMs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_5_Prompt_Engineering.html">Module 5: Fundamentals of Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_6_Context_Engineering.html">Module 6: Context Engineering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 7: Foundational Models and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_8_Sample_Case_Studies.html">Module 8: Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendix_Ethics_and_Responsible_AI.html">Appendix: Ethics and Responsible AI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lndecastro/AI_Literacy/edit/main/tempBook2/Module_7_Foundational_Models.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_7_Foundational_Models.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 7: Foundational Models, General-Purpose LLMs, and Applications</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-begin-what-makes-a-model-foundational">Before We Begin: What Makes a Model <em>Foundational</em>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-general-purpose-llms">7.1 Main General-Purpose LLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">ChatGPT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#claude-ai">Claude.ai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grok">Grok</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-ai-and-llama">Meta AI and Llama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copilot">Copilot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemini">Gemini</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity-ai">Perplexity.ai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-dimensions">7.2 Comparative Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-tools-and-features-of-general-purpose-llm-platforms">7.3 Main Tools and Features of General-Purpose LLM Platforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-and-discussion">Interpretation and Discussion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-tool-for-the-task">Choosing a Tool for the Task</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-and-societal-dimensions">7.4 Ethical and Societal Dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-questions-before-you-choose-a-tool">Practical Questions Before You Choose a Tool</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handson-exploration">7.5 Hands‑On Exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-compare-two-llms-core">Exercise 1 – Compare Two LLMs · <strong>Core</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-prompt-engineering-across-platforms-optional">Exercise 2 – Prompt Engineering Across Platforms · <strong>Optional</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-explore-assistants-and-workspaces-across-platforms-optional">Exercise 3 – Explore Assistants and Workspaces Across Platforms · <strong>Optional</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-ethical-audit-transparency-bias-core">Exercise 4 – Ethical Audit: Transparency &amp; Bias · <strong>Core</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-ai-tool-showcase-collaborative-project-core-in-session">Exercise 5 – AI Tool Showcase (Collaborative Project) · <strong>Core, in-session</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-update-the-snapshot-core">Exercise 6 – Update the Snapshot · <strong>Core</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">7.6 Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-vendorneutral">📘 Further Reading (vendor‑neutral)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-7-foundational-models-general-purpose-llms-and-applications">
+<h1>Module 7: Foundational Models, General-Purpose LLMs, and Applications<a class="headerlink" href="#module-7-foundational-models-general-purpose-llms-and-applications" title="Link to this heading">#</a></h1>
+<p>Artificial Intelligence has entered a new era driven by <strong>foundational models</strong>, that is, large-scale, general-purpose systems trained on massive multimodal datasets. These models can perform an extraordinary range of tasks, from reasoning and coding to generating text, images, and sound. They represent a shift from narrow, task-specific AI to universal, flexible architectures capable of adaptation across contexts.</p>
+<p>Foundational models, particularly <strong>Large Language Models (LLMs)</strong>, are now the backbone of the modern AI ecosystem. Understanding their design, strengths, and limitations is essential for anyone engaging with AI critically and creatively. This module explores some of today’s most influential foundational models, general-purpose AI systems and applications, such as <strong>ChatGPT, Claude, Gemini, Meta AI, Grok, Copilot, and Perplexity</strong>, comparing their capabilities, ecosystems, and implications for human-centered use.</p>
+<blockquote>
+<div><p><strong>Guiding Question:</strong> How have LLMs changed what it means for a machine to “know”, “create”, and “collaborate”?</p>
+</div></blockquote>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>By the end of this module, you will be able to:</p>
+<ul class="simple">
+<li><p>Define what foundational models and general-purpose LLMs are and explain their significance.</p></li>
+<li><p>Identify the key features and capabilities of ChatGPT, Claude, Copilot, Gemini, Meta AI, Perplexity, and Grok.</p></li>
+<li><p>Compare tools across dimensions such as reasoning, creativity, openness, and ethical alignment.</p></li>
+<li><p>Critically evaluate the trade-offs between open and proprietary AI systems.</p></li>
+<li><p>Distinguish <strong>durable principles</strong> from <strong>volatile details</strong> when reading about AI tools, and verify claims independently.</p></li>
+<li><p>Reflect on responsible and transparent use of general-purpose AI tools in academic, professional, and creative contexts.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">How to read this module</p>
+<p>This module operates on <strong>two layers</strong>:</p>
+<ul class="simple">
+<li><p><strong>Durable layer</strong>: what a foundation model is, the five comparative dimensions, the ethical questions, and the task-to-tool reasoning. These change slowly and are the real content of the module.</p></li>
+<li><p><strong>Snapshot layer</strong>: specific model names, version numbers, menu labels, and feature lists. These change at a high frequency, e.g. monthly. Every table marked <strong>📅 Snapshot</strong> below is a photograph of a moving subject.</p></li>
+</ul>
+<p><strong>Snapshot date: August 2026.</strong> If you are reading this later, assume the snapshot tables are partly outdated and treat verifying them as part of the exercise (see Exercise 6). The durable layer will still hold.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="before-we-begin-what-makes-a-model-foundational">
+<h2>Before We Begin: What Makes a Model <em>Foundational</em>?<a class="headerlink" href="#before-we-begin-what-makes-a-model-foundational" title="Link to this heading">#</a></h2>
+<p>A <strong>foundation model</strong> (the term introduced by Bommasani et al. at Stanford’s CRFM in 2021; “foundational model” is used interchangeably) is a model that is:</p>
+<ol class="arabic simple">
+<li><p><strong>Trained once, at scale, on broad data</strong>, not on one task, but on enormous general-purpose corpora of text, code, images, and audio. This stage is called <strong>pretraining</strong>, and it is where nearly all the cost and compute live.</p></li>
+<li><p><strong>Adapted afterwards to many tasks</strong>, through <strong>fine-tuning</strong>, <strong>instruction tuning</strong>, <strong>prompting</strong>, or <strong>retrieval</strong>. One pretrained model becomes a translator, a tutor, a summarizer, and a coding assistant without being retrained from scratch.</p></li>
+<li><p><strong>A shared base for other systems</strong>, hence “foundation”. Many products you use are not models at all; they are applications sitting on top of someone else’s foundation model.</p></li>
+</ol>
+<p>That third point explains the <strong>Status</strong> column in the table below, and it is the single most useful distinction in this module:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Layer</p></th>
+<th class="head text-left"><p>What it is</p></th>
+<th class="head text-left"><p>Who builds it</p></th>
+<th class="head text-left"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Model layer</strong></p></td>
+<td class="text-left"><p>The pretrained foundation model itself, usually reached via an API</p></td>
+<td class="text-left"><p>A handful of well-funded labs</p></td>
+<td class="text-left"><p>GPT, Claude, Gemini, Llama, Grok families</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Application layer</strong></p></td>
+<td class="text-left"><p>The interface, tools, memory, and workflows wrapped around a model</p></td>
+<td class="text-left"><p>Many companies, including the labs themselves</p></td>
+<td class="text-left"><p>ChatGPT, <a class="reference external" href="http://Claude.ai">Claude.ai</a>, Copilot, Perplexity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Some organizations occupy <strong>both</strong> layers: OpenAI builds the GPT models <em>and</em> the ChatGPT product. Others occupy only one: Perplexity builds a research application on top of models it largely licenses from others.</p>
+<p>Two further terms you will meet in this module:</p>
+<ul class="simple">
+<li><p><strong>Open-weight</strong> vs. <strong>open-source.</strong> A model is <em>open-weight</em> when you can download its trained parameters and run it yourself. It is <em>open-source</em> only when the code, data, and license also meet open-source criteria. Llama is open-weight, and its community license carries commercial restrictions, so calling it “open-source” is imprecise. The distinction matters for anyone deciding what they may legally build on.</p></li>
+<li><p><strong>Model family and tier.</strong> Labs no longer ship one model; they ship a family with tiers trading capability against speed and cost (a large flagship, a balanced mid-tier, a small fast one). “Which model is best?” usually resolves to “which tier, for which task, at which price?”</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is not covered in the recorded video lectures. It provides the conceptual grounding for the comparisons that follow.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="main-general-purpose-llms">
+<h2>7.1 Main General-Purpose LLMs<a class="headerlink" href="#main-general-purpose-llms" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">📅 Snapshot — August 2026</p>
+<p>The descriptions and table in this section reflect each platform as of <strong>August 2026</strong>. Model versions, upload limits, and feature names change frequently. Always verify against the vendor’s own documentation before relying on a specific capability.</p>
+</div>
+<section id="chatgpt">
+<h3>ChatGPT<a class="headerlink" href="#chatgpt" title="Link to this heading">#</a></h3>
+<p>ChatGPT is a versatile AI assistant developed by OpenAI, capable of interpreting natural language, performing statistical analyses, coding in Python, and generating data visualizations such as bar charts, pie charts, scatter plots, and histograms. It supports data uploads in common formats (CSV, XLSX, PDF, JSON, images) and can connect to cloud storage such as Google Drive and OneDrive. ChatGPT excels in broad general-purpose capabilities including data analysis, summarization, and storytelling, and it can retrieve current information from the web when browsing is enabled.</p>
+<p>Access ChatGPT here: <a class="reference external" href="https://chatgpt.com/">https://chatgpt.com/</a></p>
+</section>
+<section id="claude-ai">
+<h3><a class="reference external" href="http://Claude.ai">Claude.ai</a><a class="headerlink" href="#claude-ai" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="http://Claude.ai">Claude.ai</a> is Anthropic’s AI assistant, with strong natural language processing capabilities and well-developed tools for document and data work. It supports file uploads and can execute code within its Analysis Tool to perform complex calculations, data manipulation, and visualization, presenting results through its Artifacts feature. Claude is known for long context windows, which make it well suited to reasoning over large documents. It can also search the web for current information.</p>
+<p>Access <a class="reference external" href="http://Claude.ai">Claude.ai</a> here: <a class="reference external" href="https://claude.ai/">https://claude.ai/</a></p>
+</section>
+<section id="grok">
+<h3>Grok<a class="headerlink" href="#grok" title="Link to this heading">#</a></h3>
+<p>Grok is a conversational AI developed by xAI, designed to provide witty, insightful, and real-time responses. Integrated with the X platform, Grok emphasizes reasoning and personality-driven interaction, and it draws on live social data. It is positioned as a direct competitor to ChatGPT and Gemini.</p>
+<p>Access Grok here: <a class="reference external" href="https://grok.com/">https://grok.com/</a></p>
+</section>
+<section id="meta-ai-and-llama">
+<h3>Meta AI and Llama<a class="headerlink" href="#meta-ai-and-llama" title="Link to this heading">#</a></h3>
+<p>It is worth separating two things that share a brand. <strong>Llama</strong> is Meta’s family of <strong>open-weight foundation models</strong>, downloadable and deployable on your own infrastructure under Meta’s community license. <strong>Meta AI</strong> is the consumer <strong>application</strong> built on those models, embedded across Facebook, Instagram, WhatsApp, and Messenger, and available as a standalone assistant. It offers multimodal capabilities including text and image generation, real-time chat, and creative and productivity tasks.</p>
+<p>The distinction matters: Llama is what makes Meta significant to researchers and developers who need local or private deployment; Meta AI is what most people actually encounter.</p>
+<p>Access Meta AI here: <a class="reference external" href="https://www.meta.ai">https://www.meta.ai</a> — Llama models: <a class="reference external" href="https://www.llama.com/">https://www.llama.com/</a></p>
+</section>
+<section id="copilot">
+<h3>Copilot<a class="headerlink" href="#copilot" title="Link to this heading">#</a></h3>
+<p>Copilot is Microsoft’s AI assistant integrated across tools like Word, Excel, PowerPoint, Outlook, and Teams. It leverages large language models to help users draft content, analyze data, summarize meetings, and automate workflows. In Excel, it can generate formulas, create charts, and explain data trends. In Word and PowerPoint, it assists with writing, editing, and designing presentations. Copilot is deeply embedded in Microsoft 365, enhancing productivity through natural language commands.</p>
+<p>Access Copilot here: <a class="reference external" href="https://copilot.microsoft.com">https://copilot.microsoft.com</a></p>
+</section>
+<section id="gemini">
+<h3>Gemini<a class="headerlink" href="#gemini" title="Link to this heading">#</a></h3>
+<p>Gemini is Google’s family of multimodal AI models, integrated into Google Workspace and available via the Gemini web app. It assists users in drafting, summarizing, brainstorming, analyzing documents, and generating code. Within Docs, Gmail, and Sheets, Gemini enhances productivity by offering smart suggestions, data insights, and content generation. It also supports image, audio, and video understanding as well as code interpretation.</p>
+<p>Access Gemini here: <a class="reference external" href="https://gemini.google.com">https://gemini.google.com</a></p>
+</section>
+<section id="perplexity-ai">
+<h3><a class="reference external" href="http://Perplexity.ai">Perplexity.ai</a><a class="headerlink" href="#perplexity-ai" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="http://Perplexity.ai">Perplexity.ai</a> is an AI-powered research assistant designed to deliver real-time, cited answers by combining LLMs with live web retrieval. It excels at information synthesis, literature review, and market or scientific research, offering reference-based summaries rather than unsourced responses. Users can create <strong>Spaces</strong>, which serve as persistent, shareable research hubs to organize prompts, threads, and citations collaboratively. It is especially valuable for professionals and researchers who require up-to-date, verifiable information.</p>
+<p>Access Perplexity here: <a class="reference external" href="https://www.perplexity.ai/">https://www.perplexity.ai/</a></p>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<p>The table below summarizes and compares the platforms discussed in this chapter. It identifies the developer, whether the product is a foundation model or an application built on one (or both), the underlying model family, key strengths, main capabilities, and sample use cases.</p>
+<div class="warning admonition">
+<p class="admonition-title">📅 Snapshot — August 2026</p>
+<p>The <strong>Model Family</strong> column is the fastest-ageing information in this module. Flagship versions turn over every few months. Read the column as “which family,” not “which version.”</p>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Product / Platform</p></th>
+<th class="head"><p>Developer</p></th>
+<th class="head"><p>Status (Foundation / Application / Both)</p></th>
+<th class="head"><p>Model Family (Aug 2026)</p></th>
+<th class="head"><p>Key Strengths</p></th>
+<th class="head"><p>Primary Capabilities</p></th>
+<th class="head"><p>Example Use Cases</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ChatGPT</strong></p></td>
+<td><p>OpenAI</p></td>
+<td><p>Both</p></td>
+<td><p>GPT family (multimodal transformer models, several tiers)</p></td>
+<td><p>Conversational fluency, multimodal input (text, image, audio), broad tool and API ecosystem</p></td>
+<td><p>Text generation, coding, tutoring, analysis</p></td>
+<td><p>Education, productivity, software development</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><a class="reference external" href="http://Claude.ai">Claude.ai</a></strong></p></td>
+<td><p>Anthropic</p></td>
+<td><p>Both</p></td>
+<td><p>Claude family (Opus, Sonnet and Haiku tiers)</p></td>
+<td><p>Long context windows, stated safety focus, artifact creation, document reasoning</p></td>
+<td><p>Deep reading, structured writing, policy analysis</p></td>
+<td><p>Research synthesis, education, enterprise use</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Copilot</strong></p></td>
+<td><p>Microsoft</p></td>
+<td><p>Application</p></td>
+<td><p>Primarily OpenAI models via Azure, plus Microsoft’s own in-house models</p></td>
+<td><p>Integration with Microsoft 365 and GitHub</p></td>
+<td><p>Writing, summarizing, automating workflows</p></td>
+<td><p>Business productivity, programming support</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gemini</strong></p></td>
+<td><p>Google DeepMind</p></td>
+<td><p>Both</p></td>
+<td><p>Gemini family (multimodal, several tiers)</p></td>
+<td><p>Multimodal reasoning (text, image, video, audio), Google ecosystem integration</p></td>
+<td><p>Search, analysis, retrieval-augmented generation</p></td>
+<td><p>Data analytics, creative content, education</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><a class="reference external" href="http://Perplexity.ai">Perplexity.ai</a></strong></p></td>
+<td><p>Perplexity AI</p></td>
+<td><p>Application</p></td>
+<td><p>Routes to multiple third-party frontier models, plus in-house retrieval models</p></td>
+<td><p>Real-time web access with cited answers, source transparency, collaborative Spaces</p></td>
+<td><p>Research synthesis, source-based summarization</p></td>
+<td><p>Market intelligence, academic research, journalism</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Meta AI / Llama</strong></p></td>
+<td><p>Meta Platforms</p></td>
+<td><p>Both (Llama = foundation, Meta AI = app)</p></td>
+<td><p>Llama family (<strong>open-weight</strong>, community licence — not fully open-source)</p></td>
+<td><p>Downloadable weights, customizable, local and private deployment</p></td>
+<td><p>Language generation, chatbot integration</p></td>
+<td><p>Research, privacy-preserving AI, app development</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Grok</strong></p></td>
+<td><p>xAI</p></td>
+<td><p>Both</p></td>
+<td><p>Grok family (transformer-based; earlier generation weights released publicly)</p></td>
+<td><p>Real-time reasoning, personality, X platform integration</p></td>
+<td><p>Conversational analysis, summarization, trend detection</p></td>
+<td><p>Social media insights, public data monitoring</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="comparative-dimensions">
+<h2>7.2 Comparative Dimensions<a class="headerlink" href="#comparative-dimensions" title="Link to this heading">#</a></h2>
+<p>To understand how these systems differ, we analyze them through five key lenses:</p>
+<ol class="arabic simple">
+<li><p><strong>Knowledge Base &amp; Architecture</strong></p>
+<ul class="simple">
+<li><p>Model scale, multimodal capacity, and update frequency.</p></li>
+<li><p>How training data and architecture affect reasoning and creativity.</p></li>
+</ul>
+</li>
+<li><p><strong>Interface &amp; User Experience</strong></p>
+<ul class="simple">
+<li><p>Accessibility, collaboration tools, context length, and integration into daily workflows.</p></li>
+</ul>
+</li>
+<li><p><strong>Ethical Alignment &amp; Safety Mechanisms</strong></p>
+<ul class="simple">
+<li><p>Transparency, interpretability, bias mitigation, and alignment with human values.</p></li>
+</ul>
+</li>
+<li><p><strong>Customization &amp; Ecosystem</strong></p>
+<ul class="simple">
+<li><p>Plugin systems, fine‑tuning options, APIs, and open vs. closed models.</p></li>
+</ul>
+</li>
+<li><p><strong>Performance &amp; Use Contexts</strong></p>
+<ul class="simple">
+<li><p>When each model excels: logic, language, creativity, or data connectivity.</p></li>
+</ul>
+</li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Read row 3 critically</p>
+<p>The <strong>Ethical Alignment &amp; Safety</strong> row below reports each vendor’s <strong>stated approach</strong>, drawn largely from its own published materials. These are claims, not independently verified properties. A central skill in this program is telling the difference and Exercise 4 puts it into practice.</p>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Dimension</strong></p></th>
+<th class="head"><p><strong>ChatGPT (OpenAI)</strong></p></th>
+<th class="head"><p><strong>Claude (Anthropic)</strong></p></th>
+<th class="head"><p><strong>Copilot (Microsoft)</strong></p></th>
+<th class="head"><p><strong>Gemini (Google DeepMind)</strong></p></th>
+<th class="head"><p><strong><a class="reference external" href="http://Perplexity.ai">Perplexity.ai</a></strong></p></th>
+<th class="head"><p><strong>Meta AI / Llama</strong></p></th>
+<th class="head"><p><strong>Grok (xAI)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. Knowledge Base &amp; Architecture</strong></p></td>
+<td><p>Trained on diverse multimodal data; strong general reasoning and creativity</p></td>
+<td><p>Long-context transformer; optimized for comprehension and document synthesis</p></td>
+<td><p>Built on licensed and in-house models; connected to Microsoft 365 data</p></td>
+<td><p>Multimodal (text, image, video, audio); retrieval for live data</p></td>
+<td><p>Combines third-party frontier LLMs with real-time web retrieval and citation-based reasoning</p></td>
+<td><p>Open-weight Llama family; customizable; self-hostable</p></td>
+<td><p>Uses X platform data; real-time awareness; humor and personality</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. Interface &amp; User Experience</strong></p></td>
+<td><p>Chat interface, custom GPTs, memory features, APIs</p></td>
+<td><p>Structured chat, artifact outputs, projects, long-document workflows</p></td>
+<td><p>Embedded in Office, GitHub, Edge; seamless task automation</p></td>
+<td><p>Integrated with Google ecosystem and Workspace tools</p></td>
+<td><p>Research-oriented interface with “Spaces” for saving and sharing threads</p></td>
+<td><p>Accessible via API, consumer apps, and local deployments</p></td>
+<td><p>Conversational interface inside X; real-time analytics</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. Ethical Alignment &amp; Safety</strong> <em>(stated approaches)</em></p></td>
+<td><p>RLHF, red-teaming, and continuous moderation</p></td>
+<td><p>Constitutional AI; published safety research</p></td>
+<td><p>Enterprise compliance and data governance commitments</p></td>
+<td><p>Responsible AI framework; privacy controls</p></td>
+<td><p>Cited sources and visible evidence, intended to reduce unsupported claims</p></td>
+<td><p>Open research approach; community safety collaboration</p></td>
+<td><p>Lighter guardrails; more open tone; evolving policies</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4. Customization &amp; Ecosystem</strong></p></td>
+<td><p>Extensive tool and API ecosystem; fine-tuning options</p></td>
+<td><p>Projects, artifacts, and document-based workflows; API</p></td>
+<td><p>Strong app and cloud integration; enterprise focus</p></td>
+<td><p>Tightly coupled with Google services and APIs</p></td>
+<td><p>Focus on collaboration and knowledge curation through Spaces</p></td>
+<td><p>Downloadable weights; adaptable for research and private hosting</p></td>
+<td><p>Current flagship weights not released; integrated with X</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5. Performance &amp; Best Use</strong></p></td>
+<td><p>Balanced across reasoning, creativity, and code</p></td>
+<td><p>Deep reading, analysis, long-document work</p></td>
+<td><p>Productivity and workflow automation</p></td>
+<td><p>Data access, search, multimodal reasoning</p></td>
+<td><p>Real-time research, literature reviews, market and academic intelligence</p></td>
+<td><p>Research, privacy-preserving, experimentation</p></td>
+<td><p>Real-time conversation, social trend analysis</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="main-tools-and-features-of-general-purpose-llm-platforms">
+<h2>7.3 Main Tools and Features of General-Purpose LLM Platforms<a class="headerlink" href="#main-tools-and-features-of-general-purpose-llm-platforms" title="Link to this heading">#</a></h2>
+<p>Understanding how users interact with general-purpose models is as important as knowing how they work. Each platform provides a unique interface and ecosystem of tools that shape the user experience, productivity, and creative potential. Their features and characteristics are constantly changing and evolving, so some of the features presented here may differ or have expanded by the time you visit this program.</p>
+<div class="warning admonition">
+<p class="admonition-title">📅 Snapshot — August 2026</p>
+<p>Menu names and feature sets in this table change faster than anything else in the module. Treat the <strong>categories</strong> (a place to chat, a place to persist context, a way to build a reusable assistant, a way to generate media) as durable, and the <strong>labels</strong> as disposable.</p>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Platform</strong></p></th>
+<th class="head"><p><strong>Main Tools / Interface Elements</strong></p></th>
+<th class="head"><p><strong>Unique Menus and Functionalities</strong></p></th>
+<th class="head"><p><strong>Primary Strengths in Use</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ChatGPT</strong></p></td>
+<td><p>• <strong>Chats</strong> for conversation and multimodal input (text, image, file upload). <br>• <strong>Projects</strong> for organizing prompts, documents, and results. <br>• <strong>Custom GPTs</strong> that let users create specialized assistants with custom instructions and tools. <br>• <strong>Library</strong> of community GPTs.</p></td>
+<td><p>• Menus for <strong>Deep Research</strong>, <strong>Create Image</strong>, <strong>Agent Mode</strong>, and <strong>Explore GPTs</strong>. <br>• <strong>Advanced Data Analysis</strong> for Python, data visualization, and file processing.</p></td>
+<td><p>Comprehensive workspace that blends reasoning, coding, creative design, and research support in one interface.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Claude</strong></p></td>
+<td><p>• <strong>Chats</strong> for dialogue and document analysis. <br>• <strong>Projects</strong> to group related conversations and files with persistent instructions. <br>• <strong>Artifacts</strong> — live documents generated from chat results (e.g., essays, code, reports).</p></td>
+<td><p>• <strong>Extended Thinking</strong>, <strong>Projects</strong>, file uploads, and the <strong>Analysis Tool</strong> for executing code. <br>• Long context windows enable deep reasoning over large documents.</p></td>
+<td><p>Exceptional for reading, writing, and analyzing long documents.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Copilot</strong></p></td>
+<td><p>• Integrated directly in <strong>Microsoft 365 apps</strong> (Word, Excel, PowerPoint, Outlook, Teams). <br>• <strong>GitHub Copilot</strong> for code completion and review. <br>• <strong>Copilot Agents</strong> for reusable, task-specific assistants.</p></td>
+<td><p>• Contextual actions such as <strong>Ask Copilot</strong>, <strong>Summarize Email</strong>, <strong>Analyze Data</strong>, or <strong>Generate Slides</strong> within each app. <br>• Enterprise data handling via Microsoft Graph.</p></td>
+<td><p>Productivity automation across business and software environments; strong enterprise integration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gemini</strong></p></td>
+<td><p>• <strong>Chats</strong> (text, image, and code). <br>• <strong>Gems</strong> — customizable mini-assistants for specific tasks. <br>• <strong>NotebookLM</strong> for source-grounded research over your own documents.</p></td>
+<td><p>• Menus for <strong>Create Image</strong>, <strong>Deep Research</strong>, and <strong>Canvas</strong>. <br>• Integration with Google Workspace (Docs, Sheets, Slides, Gmail).</p></td>
+<td><p>Powerful multimodal reasoning and seamless connection with Google’s knowledge graph and cloud tools.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Perplexity</strong></p></td>
+<td><p>• <strong>Chats</strong> with real-time web search and citation-based responses. <br>• <strong>Projects</strong> — persistent, shareable research hubs for organizing queries and summaries. <br>• Collaboration tools for saving, sharing, and revisiting research threads.</p></td>
+<td><p>• Menus for <strong>Discover</strong>, guided multi-step research modes, and a <strong>Library</strong> of saved and public Spaces. <br>• Real-time retrieval with cited sources and transparent evidence display.</p></td>
+<td><p>Reliable, citation-driven research assistant ideal for fact-checking, academic reviews, and market intelligence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Meta AI</strong></p></td>
+<td><p>• <strong>Chat Interface</strong> via web or Instagram/WhatsApp integration. <br>• <strong>AI Studio</strong> for creating simple custom AI characters and assistants. <br>• APIs and local deployment options for developers using Llama weights.</p></td>
+<td><p>• Tools for <strong>Image Generation</strong> and <strong>Web Search</strong>. <br>• Downloadable Llama weights for research and customization (community licence).</p></td>
+<td><p>Research-friendly, privacy-preserving, and adaptable for custom deployments or local experimentation.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Grok</strong></p></td>
+<td><p>• <strong>Chat interface</strong> within the <strong>X platform</strong> and standalone app. <br>• <strong>Projects</strong> for organizing related work. <br>• Access to real-time social data streams.</p></td>
+<td><p>• Menus for <strong>Ask Grok</strong>, trend summaries, and post explanation. <br>• Humor-infused persona and live awareness of current topics.</p></td>
+<td><p>Real-time analysis of public discourse and social trends; conversational tone with personality.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The **Custom GPTs / Gems / Projects ** entries above are treated in depth in <span class="xref std std-ref">Module 6, Section 6.6</span>, which explains <em>why</em> persistent context changes model behavior. This section covers <em>what each interface offers</em>; Module 6 covers <em>how to design what goes inside</em>.</p>
+</div>
+<section id="interpretation-and-discussion">
+<h3>Interpretation and Discussion<a class="headerlink" href="#interpretation-and-discussion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>ChatGPT</strong>, <strong>Claude</strong>, and <strong>Gemini</strong> provide the richest standalone workspaces for general creative and analytical use.</p></li>
+<li><p><strong>Perplexity</strong> distinguishes itself as a <em>research-oriented assistant</em>, combining real-time web retrieval with citation-based transparency and collaborative Spaces for organizing findings.</p></li>
+<li><p><strong>Copilot</strong> excels in <em>embedded productivity</em>, bringing AI to familiar office applications.</p></li>
+<li><p><strong>Meta AI / Llama</strong> emphasizes <em>openness and developer control</em>, aligning with research and privacy priorities.</p></li>
+<li><p><strong>Grok</strong> is a <em>socially-aware assistant</em>, focused on real-time trend analysis and cultural insight.</p></li>
+</ul>
+<p>Together, these ecosystems illustrate the <strong>diversification of AI use contexts</strong> — from private research and writing to collaborative productivity and live data reasoning.</p>
+</section>
+<section id="choosing-a-tool-for-the-task">
+<h3>Choosing a Tool for the Task<a class="headerlink" href="#choosing-a-tool-for-the-task" title="Link to this heading">#</a></h3>
+<p>Version numbers change; the shape of the task does not. This table is organized by <strong>what you are trying to do</strong> rather than by vendor, and should stay useful long after the snapshot tables above have aged.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>If you need to…</p></th>
+<th class="head text-left"><p>Start with</p></th>
+<th class="head text-left"><p>Because…</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Find current information <strong>with sources you can check</strong></p></td>
+<td class="text-left"><p>A retrieval-first assistant</p></td>
+<td class="text-left"><p>Citations let you verify; a model answering from memory gives you nothing to check</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Reason over a <strong>long document or many documents</strong></p></td>
+<td class="text-left"><p>A long-context assistant with file upload and persistent projects</p></td>
+<td class="text-left"><p>Context length and document workflows are the binding constraint</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Work <strong>inside Word, Excel, PowerPoint, or Outlook</strong></p></td>
+<td class="text-left"><p>An embedded office assistant</p></td>
+<td class="text-left"><p>The value is proximity to your files, not raw model capability</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Analyze a <strong>dataset</strong> and produce charts</p></td>
+<td class="text-left"><p>Any assistant with a code-execution tool</p></td>
+<td class="text-left"><p>Code execution gives reproducible arithmetic; text-only generation invents numbers</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Build a <strong>reusable assistant</strong> others can use</p></td>
+<td class="text-left"><p>A platform with configurable assistants (custom GPTs, Gems, agents)</p></td>
+<td class="text-left"><p>You configure once and reuse, instead of re-prompting each time</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Keep data <strong>on your own infrastructure</strong></p></td>
+<td class="text-left"><p>An open-weight model you can self-host</p></td>
+<td class="text-left"><p>The only reliable privacy guarantee is data that never leaves</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Track <strong>live public conversation</strong></p></td>
+<td class="text-left"><p>An assistant with real-time social data access</p></td>
+<td class="text-left"><p>Most models’ training data is months old</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Generate images, audio, or video</p></td>
+<td class="text-left"><p>A multimodal or dedicated generative tool</p></td>
+<td class="text-left"><p>Text-only models cannot, regardless of how you prompt them</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Notice that no row names a version number, and most rows name a <strong>capability</strong> rather than a product. That is the durable way to choose a tool: decide what the task requires, then check which current products offer it.</p>
+</div>
+</section>
+</section>
+<section id="ethical-and-societal-dimensions">
+<h2>7.4 Ethical and Societal Dimensions<a class="headerlink" href="#ethical-and-societal-dimensions" title="Link to this heading">#</a></h2>
+<p>The growing dominance of foundational models and the applications built on them raises important societal questions:</p>
+<ul class="simple">
+<li><p>Who controls access to these systems and their data?</p></li>
+<li><p>How can transparency, fairness, and accessibility be ensured?</p></li>
+<li><p>What responsibilities do developers and users share in shaping AI behavior?</p></li>
+</ul>
+<p>The discussion of <strong>AI sovereignty</strong>, that is, balancing innovation with independence, is now central to digital ethics. Open-weight models such as <strong>Llama</strong> and community-driven alternatives highlight the importance of democratizing AI infrastructure, while also raising questions about who is accountable when a downloadable model is misused.</p>
+<section id="practical-questions-before-you-choose-a-tool">
+<h3>Practical Questions Before You Choose a Tool<a class="headerlink" href="#practical-questions-before-you-choose-a-tool" title="Link to this heading">#</a></h3>
+<p>Beyond the broad ethical debate, five practical questions affect every user directly. They are rarely visible in the interface, and all five have answers you can look up.</p>
+<ol class="arabic simple">
+<li><p><strong>Cost and access.</strong> Which capabilities are free, and which require a paid tier? Free tiers typically cap usage, restrict the strongest model tier, and limit file uploads. Where a course or workplace requires a paid tool, that is a question of <strong>equity</strong>, not just budget.</p></li>
+<li><p><strong>Data retention and training.</strong> Are your conversations stored, and are they used to train future models? Policies differ by vendor and by plan; consumer plans and enterprise plans often have opposite defaults. Most platforms offer a setting to opt out; find it before you paste anything sensitive.</p></li>
+<li><p><strong>What should never be pasted.</strong> Student records, patient data, unpublished research, personnel matters, and anything under FERPA, HIPAA, or a non-disclosure agreement. Institutional accounts may carry contractual protections that personal accounts do not.</p></li>
+<li><p><strong>Academic and professional integrity.</strong> Disclosure norms vary by course, journal, and employer. The relevant question is not “is this allowed?” but “what am I expected to disclose, and to whom?”</p></li>
+<li><p><strong>Vendor lock-in and continuity.</strong> Assistants, workspaces, and custom instructions built on one platform rarely transfer to another. Providers also discontinue models with limited notice. Ask what happens to your work if the tool changes or disappears.</p></li>
+</ol>
+</section>
+</section>
+<section id="handson-exploration">
+<h2>7.5 Hands‑On Exploration<a class="headerlink" href="#handson-exploration" title="Link to this heading">#</a></h2>
+<p>Exercises are marked <strong>Core</strong> or <strong>Optional</strong>. The Core exercises are enough to meet this module’s learning objectives; the others extend them for learners who want to go further.</p>
+<section id="exercise-1-compare-two-llms-core">
+<h3>Exercise 1 – Compare Two LLMs · <strong>Core</strong><a class="headerlink" href="#exercise-1-compare-two-llms-core" title="Link to this heading">#</a></h3>
+<p><strong>Goal:</strong> Develop critical literacy by contrasting how models interpret and respond to the same task.</p>
+<p><strong>Instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Choose <strong>two models</strong> (e.g., ChatGPT vs Claude, or Gemini vs Copilot).</p></li>
+<li><p>Ask both to perform the same task — for example:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Summarize</span> <span class="n">a</span> <span class="n">recent</span> <span class="n">AI</span> <span class="n">policy</span> <span class="n">report</span> <span class="ow">in</span> <span class="mi">200</span> <span class="n">words</span> <span class="ow">and</span> <span class="nb">list</span> <span class="n">three</span> <span class="n">implications</span> <span class="k">for</span> <span class="n">education</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Compare results for <strong>depth, tone, structure, accuracy, and bias</strong>.</p></li>
+<li><p>Write a short (300-word) reflection: <em>What do these differences reveal about each model’s design and training?</em></p></li>
+</ol>
+<p><strong>Deliverable:</strong> Reflection document or discussion post with screenshots or transcripts.</p>
+</section>
+<section id="exercise-2-prompt-engineering-across-platforms-optional">
+<h3>Exercise 2 – Prompt Engineering Across Platforms · <strong>Optional</strong><a class="headerlink" href="#exercise-2-prompt-engineering-across-platforms-optional" title="Link to this heading">#</a></h3>
+<p><strong>Goal:</strong> Explore how prompt structure affects creativity and precision in different ecosystems. This exercise applies the patterns from <span class="xref std std-ref">Module 5</span> across platforms.</p>
+<p><strong>Instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Create a <strong>base prompt</strong>, e.g.:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="n">a</span> <span class="n">persuasive</span> <span class="n">paragraph</span> <span class="n">encouraging</span> <span class="n">sustainable</span> <span class="n">AI</span> <span class="n">development</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Modify it three times using different techniques:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Add context or persona:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">policy</span> <span class="n">advisor</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add constraints:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Limit</span> <span class="n">to</span> <span class="mi">120</span> <span class="n">words</span> <span class="ow">and</span> <span class="n">cite</span> <span class="n">one</span> <span class="n">credible</span> <span class="n">source</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add tone:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Write</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">motivational</span> <span class="n">style</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Test each version in at least <strong>two LLMs</strong>.</p></li>
+<li><p>Record and analyze how output changes with each variation.</p></li>
+</ol>
+<p><strong>Deliverable:</strong> Prompt table + 250-word analysis of prompt-response patterns.</p>
+</section>
+<section id="exercise-3-explore-assistants-and-workspaces-across-platforms-optional">
+<h3>Exercise 3 – Explore Assistants and Workspaces Across Platforms · <strong>Optional</strong><a class="headerlink" href="#exercise-3-explore-assistants-and-workspaces-across-platforms-optional" title="Link to this heading">#</a></h3>
+<p><strong>Goal:</strong> Experience how <em>different platforms</em> implement customization and contextual persistence.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <span class="xref std std-ref">Module 6</span> you built a personalized assistant and a workspace in depth. This exercise is deliberately <strong>shallow and wide</strong>: the point is to compare how several platforms handle the same idea, not to build another assistant from scratch.</p>
+</div>
+<p><strong>Options — try at least two:</strong></p>
+<ul class="simple">
+<li><p>In <strong>ChatGPT</strong>, create a <strong>Custom GPT</strong> with a defined role, e.g.:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AI</span> <span class="n">Writing</span> <span class="n">Coach</span> <span class="k">for</span> <span class="n">Environmental</span> <span class="n">Science</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In <strong>Claude</strong>, organize a <strong>Project</strong> with custom instructions and use <strong>Artifacts</strong> to iteratively refine an essay or code snippet.</p></li>
+<li><p>In <strong>Perplexity</strong>, create a <strong>Space</strong> related to your work area. Explore the Spaces → Templates section and choose one for your project.</p></li>
+<li><p>In <strong>Grok</strong>, create a <strong>Project</strong> to organize your work or study material.</p></li>
+<li><p>In <strong>Gemini</strong>, design a <strong>Gem</strong> that assists with a research or creative task.</p></li>
+</ul>
+<p><strong>Deliverable:</strong> A short comparison (one paragraph per platform) of what each made easy, what it made hard, and what it did not support at all.</p>
+</section>
+<section id="exercise-4-ethical-audit-transparency-bias-core">
+<h3>Exercise 4 – Ethical Audit: Transparency &amp; Bias · <strong>Core</strong><a class="headerlink" href="#exercise-4-ethical-audit-transparency-bias-core" title="Link to this heading">#</a></h3>
+<p><strong>Goal:</strong> Strengthen ethical reasoning and critical evaluation skills.</p>
+<p><strong>Instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Choose one platform (e.g. ChatGPT, Claude, or Gemini).</p></li>
+<li><p>Ask it to:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Explain</span> <span class="n">your</span> <span class="n">own</span> <span class="n">limitations</span> <span class="ow">and</span> <span class="n">potential</span> <span class="n">biases</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">where</span> <span class="n">your</span> <span class="n">training</span> <span class="n">data</span> <span class="n">may</span> <span class="n">introduce</span> <span class="n">cultural</span> <span class="ow">or</span> <span class="n">regional</span> <span class="n">imbalance</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Evaluate how transparent and self-aware the model appears. Compare its self-description with the vendor’s <strong>published</strong> documentation, do they agree?</p></li>
+<li><p>Discuss potential societal impacts and propose one mitigation strategy.</p></li>
+</ol>
+<p><strong>Deliverable:</strong> 400-word analytical brief with evidence excerpts.</p>
+</section>
+<section id="exercise-5-ai-tool-showcase-collaborative-project-core-in-session">
+<h3>Exercise 5 – AI Tool Showcase (Collaborative Project) · <strong>Core, in-session</strong><a class="headerlink" href="#exercise-5-ai-tool-showcase-collaborative-project-core-in-session" title="Link to this heading">#</a></h3>
+<p><strong>Goal:</strong> Apply comparative insights to a real-world scenario.</p>
+<p><strong>Instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Form small groups. Each group is assigned or selects <strong>one of the platforms</strong>.</p></li>
+<li><p>Research its ecosystem, pricing, data policy, and integration options.</p></li>
+<li><p>Demonstrate a practical use (e.g. Copilot for Excel analytics, Gemini for multimodal design).</p></li>
+<li><p>Present findings as a 5-slide presentation or short recorded demo.</p></li>
+</ol>
+<p><strong>Deliverable:</strong> Presentation + one-page executive summary highlighting strengths, weaknesses, and best-fit contexts.</p>
+</section>
+<section id="exercise-6-update-the-snapshot-core">
+<h3>Exercise 6 – Update the Snapshot · <strong>Core</strong><a class="headerlink" href="#exercise-6-update-the-snapshot-core" title="Link to this heading">#</a></h3>
+<p><strong>Goal:</strong> Practice the most important skill in this module: recognizing that published information about AI tools decays, and verifying it yourself.</p>
+<p><strong>Instructions:</strong></p>
+<ol class="arabic simple">
+<li><p>Pick <strong>one row</strong> from any table in Sections 7.1, 7.2, or 7.3.</p></li>
+<li><p>Check the snapshot date at the top of the module. How old is the claim you selected?</p></li>
+<li><p>Using the vendor’s <strong>own</strong> documentation, verify every cell in that row. Note what is still accurate, what has changed, and what no longer exists.</p></li>
+<li><p>Rewrite the row as it should read today, and note the date you verified it.</p></li>
+<li><p>Answer: which cells changed, and which held? What does that tell you about which kinds of claims about AI tools are worth memorizing?</p></li>
+</ol>
+<p><strong>Deliverable:</strong> A corrected table row with a verification date, plus a short paragraph on what proved durable and what did not.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Corrections that hold up can be submitted to the instructor for inclusion in the next edition of this module. This module is designed to be maintained, not merely read.</p>
+</div>
+</section>
+</section>
+<section id="key-takeaways">
+<h2>7.6 Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Foundational and general-purpose models act as <strong>infrastructure for intelligence</strong> — adaptable across domains and modalities.</p></li>
+<li><p>The <strong>model layer</strong> and the <strong>application layer</strong> are different things; knowing which you are using explains most of what a tool can and cannot do.</p></li>
+<li><p>Each platform embodies the <strong>values and priorities</strong> of its developer ecosystem, and its published safety claims are claims to be evaluated, not facts to be accepted.</p></li>
+<li><p><strong>Critical literacy and human oversight</strong> remain essential for all AI interactions.</p></li>
+<li><p>The future lies in <strong>interoperable and multimodal AI</strong>, where systems collaborate across tools and contexts.</p></li>
+<li><p><strong>Specifics decay; principles persist.</strong> Anything in this module with a version number or a menu name will be outdated within months. The five comparative dimensions, the task-to-capability reasoning, and the ethical questions will not.</p></li>
+</ul>
+</section>
+<section id="reflection">
+<h2>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Return to the guiding question that opened this module: <strong>How have LLMs changed what it means for a machine to “know”, “create”, and “collaborate”?</strong></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>A model that answers from pretraining is doing something quite different from one that retrieves and cites sources. Which of the two better deserves the word <strong>know</strong>? What does your answer imply about how you should verify what a model tells you?</p></li>
+<li><p>When a model produces an essay, an image, or working code, what part of the result is yours? Where would you draw the line, and would you draw it in the same place for a student’s assignment as for your own work?</p></li>
+<li><p>The platforms in this module all now offer persistent workspaces and configurable assistants. Does that make AI a <strong>collaborator</strong>, or a very well-organized tool? Does the distinction change how you should use it?</p></li>
+<li><p>Which of these seven platforms would you actually adopt for your own work, and which trade-off (cost, privacy, capability, or convenience), decided it?</p></li>
+</ul>
+<p>Reflect on how your answers would have differed two years ago, and what that suggests about how confidently anyone should predict the next two.</p>
+</section>
+<section id="further-reading-vendorneutral">
+<h2>📘 Further Reading (vendor‑neutral)<a class="headerlink" href="#further-reading-vendorneutral" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Bommasani, R., Hudson, D. A., Adeli, E. et al. (2021). <em>On the Opportunities and Risks of Foundation Models.</em> Stanford Center for Research on Foundation Models (CRFM). <a class="reference external" href="https://arxiv.org/abs/2108.07258">https://arxiv.org/abs/2108.07258</a></p></li>
+<li><p>Bubeck, S., Chandrasekaran, V., Eldan, R. et al. (2023). <em>Sparks of Artificial General Intelligence: Early Experiments with GPT-4.</em> Microsoft Research. <a class="reference external" href="https://arxiv.org/abs/2303.12712">https://arxiv.org/abs/2303.12712</a></p></li>
+<li><p>Google DeepMind. <em>Gemini: A Family of Highly Capable Multimodal Models.</em> <a class="reference external" href="https://arxiv.org/abs/2312.11805">https://arxiv.org/abs/2312.11805</a></p></li>
+<li><p>Mollick, E. &amp; Mollick, L. R. (2024). <em>Co-Intelligence: Living and Working with AI.</em> Portfolio.</p></li>
+<li><p>Stanford HAI. <em>AI Index Report</em> (published annually; use the most recent edition). <a class="reference external" href="https://aiindex.stanford.edu/report/">https://aiindex.stanford.edu/report/</a></p></li>
+<li><p>OpenAI. <em>Models and documentation.</em> <a class="reference external" href="https://platform.openai.com/docs/models">https://platform.openai.com/docs/models</a></p></li>
+<li><p>Anthropic. <em>Research and model documentation.</em> <a class="reference external" href="https://www.anthropic.com/research">https://www.anthropic.com/research</a></p></li>
+<li><p>Meta AI. <em>Llama models and licence terms.</em> <a class="reference external" href="https://www.llama.com/">https://www.llama.com/</a></p></li>
+<li><p>Microsoft. <em>Copilot learning hub.</em> <a class="reference external" href="https://learn.microsoft.com/en-us/copilot">https://learn.microsoft.com/en-us/copilot</a></p></li>
+<li><p>xAI. <em>Grok.</em> <a class="reference external" href="https://x.ai/grok">https://x.ai/grok</a></p></li>
+<li><p>Perplexity AI. <em>About Perplexity.</em> <a class="reference external" href="https://www.perplexity.ai/about">https://www.perplexity.ai/about</a></p></li>
+<li><p>Dendritic Institute (2025). <em>AI Literacy Series – Module 7: Foundational Models and General-Purpose LLMs.</em> (Slides &amp; Video Lecture)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_6_Context_Engineering.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 6: Context Engineering - Advanced AI Communication</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_8_Sample_Case_Studies.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 8: Sample Case Studies and Applications of AI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-begin-what-makes-a-model-foundational">Before We Begin: What Makes a Model <em>Foundational</em>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-general-purpose-llms">7.1 Main General-Purpose LLMs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatgpt">ChatGPT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#claude-ai">Claude.ai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grok">Grok</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-ai-and-llama">Meta AI and Llama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copilot">Copilot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemini">Gemini</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity-ai">Perplexity.ai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-dimensions">7.2 Comparative Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-tools-and-features-of-general-purpose-llm-platforms">7.3 Main Tools and Features of General-Purpose LLM Platforms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-and-discussion">Interpretation and Discussion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-tool-for-the-task">Choosing a Tool for the Task</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-and-societal-dimensions">7.4 Ethical and Societal Dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-questions-before-you-choose-a-tool">Practical Questions Before You Choose a Tool</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handson-exploration">7.5 Hands‑On Exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-compare-two-llms-core">Exercise 1 – Compare Two LLMs · <strong>Core</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-prompt-engineering-across-platforms-optional">Exercise 2 – Prompt Engineering Across Platforms · <strong>Optional</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-explore-assistants-and-workspaces-across-platforms-optional">Exercise 3 – Explore Assistants and Workspaces Across Platforms · <strong>Optional</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-ethical-audit-transparency-bias-core">Exercise 4 – Ethical Audit: Transparency &amp; Bias · <strong>Core</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-ai-tool-showcase-collaborative-project-core-in-session">Exercise 5 – AI Tool Showcase (Collaborative Project) · <strong>Core, in-session</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-update-the-snapshot-core">Exercise 6 – Update the Snapshot · <strong>Core</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">7.6 Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">Reflection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-vendorneutral">📘 Further Reading (vendor‑neutral)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Leandro Nunes de Castro, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
