@@ -61,29 +61,21 @@ Context engineering integrates multiple techniques to shape how AI systems inter
   1️⃣ **Retrieve** relevant documents or passages based on the user’s query.  
   2️⃣ **Augment and Generate** the final answer using both the retrieved data and the model’s reasoning.
 
+Download the report [Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models](../Data/WHO_Ethics_and_Governance_2025.pdf) and attach it to your prompt.
+
    _Example:_
 
    ```
-   You are demonstrating Retrieval-Augmented Generation (RAG) for a classroom lesson.
+   You are demonstrating Retrieval-Augmented Generation for a classroom lesson.
+   Step 1 — Retrieve: From the attached report only, locate the passages that address governance challenges in the use of AI for healthcare diagnostics. Quote 3 to 5 sentences verbatim and give the page or section number for each.
 
-   Step 1 – Retrieve:
-   Search any reliable sources you know for factual information about **governance challenges in the use of AI for healthcare diagnostics**. Simulate this as if you retrieved content from an external WHO 2024 report.
+   Step 2 — Label: Present those passages under the heading Retrieved Content. Do not paraphrase them and do not add material that is not in the document.
 
-   Step 2 – Augment:
-   Insert a short, factual snippet (3–5 sentences) that could plausibly come from that report.
-   Label it clearly as "Retrieved Content."
+   Step 3 — Generate: Under the heading Generated Summary, write three sentences explaining the main governance challenges, using only the retrieved passages.
 
-   Step 3 – Generate:
-   Based on the retrieved content, produce a concise, evidence-based summary (3 sentences)
-   explaining the main governance challenges of AI in diagnostics.
+   Step 4 — Verify: Open the source document and confirm each quotation. Note any that the model altered, merged, or invented.
 
-   Clearly separate the output into two sections:
-   **Retrieved Content:**  
-   (text that simulates what the retrieval system found)
-   **Generated Summary:**  
-   (text that uses that retrieved information to answer the question)
-
-   Briefly explain the RAG process you implemented here, including the sources of information you used to create the short and factual snippet. Also, explain why this is different from simply adding the context in the prompt (contextual priming).
+   Step 5 — Explain: Describe why this differs from contextual priming, where you supply the passage yourself and the model performs no selection.
    ```
 
 6. **Chained Prompts** – Break complex tasks into sequential, interdependent stages.  
