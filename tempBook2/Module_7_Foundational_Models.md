@@ -1,8 +1,8 @@
 # Module 7: Foundational Models, General-Purpose LLMs, and Applications
 
-Artificial Intelligence has entered a new era driven by **foundational models** — large-scale, general-purpose systems trained on massive multimodal datasets. These models can perform an extraordinary range of tasks, from reasoning and coding to generating text, images, and sound. They represent a shift from narrow, task-specific AI to universal, flexible architectures capable of adaptation across contexts.
+Artificial Intelligence has entered a new era driven by **foundational models**, that is, large-scale, general-purpose systems trained on massive multimodal datasets. These models can perform an extraordinary range of tasks, from reasoning and coding to generating text, images, and sound. They represent a shift from narrow, task-specific AI to universal, flexible architectures capable of adaptation across contexts.
 
-Foundational models, particularly **Large Language Models (LLMs)**, are now the backbone of the modern AI ecosystem. Understanding their design, strengths, and limitations is essential for anyone engaging with AI critically and creatively. This module explores some of today's most influential foundational models, general-purpose AI systems and applications — **ChatGPT, Claude, Gemini, Meta AI, Grok, Copilot, and Perplexity** — comparing their capabilities, ecosystems, and implications for human-centered use.
+Foundational models, particularly **Large Language Models (LLMs)**, are now the backbone of the modern AI ecosystem. Understanding their design, strengths, and limitations is essential for anyone engaging with AI critically and creatively. This module explores some of today's most influential foundational models, general-purpose AI systems and applications, such as **ChatGPT, Claude, Gemini, Meta AI, Grok, Copilot, and Perplexity**, comparing their capabilities, ecosystems, and implications for human-centered use.
 
 > **Guiding Question:** How have LLMs changed what it means for a machine to "know", "create", and "collaborate"?
 
@@ -22,23 +22,21 @@ By the end of this module, you will be able to:
 
 This module operates on **two layers**:
 
-- **Durable layer** — what a foundation model is, the five comparative dimensions, the ethical questions, and the task-to-tool reasoning. These change slowly and are the real content of the module.
-- **Snapshot layer** — specific model names, version numbers, menu labels, and feature lists. These change *monthly*. Every table marked **📅 Snapshot** below is a photograph of a moving subject.
+- **Durable layer**: what a foundation model is, the five comparative dimensions, the ethical questions, and the task-to-tool reasoning. These change slowly and are the real content of the module.
+- **Snapshot layer**: specific model names, version numbers, menu labels, and feature lists. These change at a high frequency, e.g. monthly. Every table marked **📅 Snapshot** below is a photograph of a moving subject.
 
-**Snapshot date: August 2026.** If you are reading this later, assume the snapshot tables are partly wrong and treat verifying them as part of the exercise (see Exercise 6). The durable layer will still hold.
+**Snapshot date: August 2026.** If you are reading this later, assume the snapshot tables are partly outdated and treat verifying them as part of the exercise (see Exercise 6). The durable layer will still hold.
 ```
 
 ---
 
 ## Before We Begin: What Makes a Model *Foundational*?
 
-The module title promises "foundational models," so it is worth pinning down the term before touring the tools.
-
 A **foundation model** (the term introduced by Bommasani et al. at Stanford's CRFM in 2021; "foundational model" is used interchangeably) is a model that is:
 
-1. **Trained once, at scale, on broad data** — not on one task, but on enormous general-purpose corpora of text, code, images, and audio. This stage is called **pretraining**, and it is where nearly all the cost and compute live.
-2. **Adapted afterwards to many tasks** — through **fine-tuning**, **instruction tuning**, **prompting**, or **retrieval**. One pretrained model becomes a translator, a tutor, a summarizer, and a coding assistant without being retrained from scratch.
-3. **A shared base for other systems** — hence "foundation." Many products you use are not models at all; they are applications sitting on top of someone else's foundation model.
+1. **Trained once, at scale, on broad data**, not on one task, but on enormous general-purpose corpora of text, code, images, and audio. This stage is called **pretraining**, and it is where nearly all the cost and compute live.
+2. **Adapted afterwards to many tasks**, through **fine-tuning**, **instruction tuning**, **prompting**, or **retrieval**. One pretrained model becomes a translator, a tutor, a summarizer, and a coding assistant without being retrained from scratch.
+3. **A shared base for other systems**, hence "foundation". Many products you use are not models at all; they are applications sitting on top of someone else's foundation model.
 
 That third point explains the **Status** column in the table below, and it is the single most useful distinction in this module:
 
@@ -159,7 +157,7 @@ To understand how these systems differ, we analyze them through five key lenses:
 ```{admonition} Read row 3 critically
 :class: tip
 
-The **Ethical Alignment & Safety** row below reports each vendor's **stated approach**, drawn largely from its own published materials. These are claims, not independently verified properties. A central skill in this program is telling the difference — Exercise 4 puts it into practice.
+The **Ethical Alignment & Safety** row below reports each vendor's **stated approach**, drawn largely from its own published materials. These are claims, not independently verified properties. A central skill in this program is telling the difference and Exercise 4 puts it into practice.
 ```
 
 | **Dimension**                        | **ChatGPT (OpenAI)**                                                             | **Claude (Anthropic)**                                                       | **Copilot (Microsoft)**                                    | **Gemini (Google DeepMind)**                              | **Perplexity.ai**                                                        | **Meta AI / Llama**                                    | **Grok (xAI)**                                                   |
@@ -186,12 +184,12 @@ Menu names and feature sets in this table change faster than anything else in th
 | **Claude**     | • **Chats** for dialogue and document analysis. <br>• **Projects** to group related conversations and files with persistent instructions. <br>• **Artifacts** — live documents generated from chat results (e.g., essays, code, reports).                                                    | • **Extended Thinking**, **Projects**, file uploads, and the **Analysis Tool** for executing code. <br>• Long context windows enable deep reasoning over large documents.                        | Exceptional for reading, writing, and analyzing long documents.                                                    |
 | **Copilot**    | • Integrated directly in **Microsoft 365 apps** (Word, Excel, PowerPoint, Outlook, Teams). <br>• **GitHub Copilot** for code completion and review. <br>• **Copilot Agents** for reusable, task-specific assistants.                                                                         | • Contextual actions such as **Ask Copilot**, **Summarize Email**, **Analyze Data**, or **Generate Slides** within each app. <br>• Enterprise data handling via Microsoft Graph.                  | Productivity automation across business and software environments; strong enterprise integration.                  |
 | **Gemini**     | • **Chats** (text, image, and code). <br>• **Gems** — customizable mini-assistants for specific tasks. <br>• **NotebookLM** for source-grounded research over your own documents.                                                                                                            | • Menus for **Create Image**, **Deep Research**, and **Canvas**. <br>• Integration with Google Workspace (Docs, Sheets, Slides, Gmail).                                                          | Powerful multimodal reasoning and seamless connection with Google's knowledge graph and cloud tools.               |
-| **Perplexity** | • **Chats** with real-time web search and citation-based responses. <br>• **Spaces** — persistent, shareable research hubs for organizing queries and summaries. <br>• Collaboration tools for saving, sharing, and revisiting research threads.                                             | • Menus for **Discover**, guided multi-step research modes, and a **Library** of saved and public Spaces. <br>• Real-time retrieval with cited sources and transparent evidence display.         | Reliable, citation-driven research assistant ideal for fact-checking, academic reviews, and market intelligence.   |
+| **Perplexity** | • **Chats** with real-time web search and citation-based responses. <br>• **Projects** — persistent, shareable research hubs for organizing queries and summaries. <br>• Collaboration tools for saving, sharing, and revisiting research threads.                                             | • Menus for **Discover**, guided multi-step research modes, and a **Library** of saved and public Spaces. <br>• Real-time retrieval with cited sources and transparent evidence display.         | Reliable, citation-driven research assistant ideal for fact-checking, academic reviews, and market intelligence.   |
 | **Meta AI**    | • **Chat Interface** via web or Instagram/WhatsApp integration. <br>• **AI Studio** for creating simple custom AI characters and assistants. <br>• APIs and local deployment options for developers using Llama weights.                                                                     | • Tools for **Image Generation** and **Web Search**. <br>• Downloadable Llama weights for research and customization (community licence).                                                        | Research-friendly, privacy-preserving, and adaptable for custom deployments or local experimentation.              |
 | **Grok**       | • **Chat interface** within the **X platform** and standalone app. <br>• **Projects** for organizing related work. <br>• Access to real-time social data streams.                                                                                                                            | • Menus for **Ask Grok**, trend summaries, and post explanation. <br>• Humor-infused persona and live awareness of current topics.                                                               | Real-time analysis of public discourse and social trends; conversational tone with personality.                    |
 
 ```{seealso}
-The **Custom GPTs / Gems / Projects / Spaces** entries above are treated in depth in {ref}`Module 6, Section 6.6 <module6-workspaces>`, which explains *why* persistent context changes model behavior. This section covers *what each interface offers*; Module 6 covers *how to design what goes inside*.
+The **Custom GPTs / Gems / Projects ** entries above are treated in depth in {ref}`Module 6, Section 6.6 <module6-workspaces>`, which explains *why* persistent context changes model behavior. This section covers *what each interface offers*; Module 6 covers *how to design what goes inside*.
 ```
 
 ### Interpretation and Discussion
@@ -220,7 +218,7 @@ Version numbers change; the shape of the task does not. This table is organized 
 | Generate images, audio, or video                          | A multimodal or dedicated generative tool | Text-only models cannot, regardless of how you prompt them          |
 
 ```{tip}
-Notice that no row names a version number, and most rows name a **capability** rather than a product. That is the durable way to choose a tool — decide what the task requires, then check which current products offer it.
+Notice that no row names a version number, and most rows name a **capability** rather than a product. That is the durable way to choose a tool: decide what the task requires, then check which current products offer it.
 ```
 
 ## 7.4 Ethical and Societal Dimensions
@@ -231,27 +229,17 @@ The growing dominance of foundational models and the applications built on them 
 - How can transparency, fairness, and accessibility be ensured?
 - What responsibilities do developers and users share in shaping AI behavior?
 
-The discussion of **AI sovereignty** — balancing innovation with independence — is now central to digital ethics. Open-weight models such as **Llama** and community-driven alternatives highlight the importance of democratizing AI infrastructure, while also raising questions about who is accountable when a downloadable model is misused.
+The discussion of **AI sovereignty**, that is, balancing innovation with independence, is now central to digital ethics. Open-weight models such as **Llama** and community-driven alternatives highlight the importance of democratizing AI infrastructure, while also raising questions about who is accountable when a downloadable model is misused.
 
 ### Practical Questions Before You Choose a Tool
 
 Beyond the broad ethical debate, five practical questions affect every user directly. They are rarely visible in the interface, and all five have answers you can look up.
 
 1. **Cost and access.** Which capabilities are free, and which require a paid tier? Free tiers typically cap usage, restrict the strongest model tier, and limit file uploads. Where a course or workplace requires a paid tool, that is a question of **equity**, not just budget.
-2. **Data retention and training.** Are your conversations stored, and are they used to train future models? Policies differ by vendor and by plan — consumer plans and enterprise plans often have opposite defaults. Most platforms offer a setting to opt out; find it before you paste anything sensitive.
+2. **Data retention and training.** Are your conversations stored, and are they used to train future models? Policies differ by vendor and by plan; consumer plans and enterprise plans often have opposite defaults. Most platforms offer a setting to opt out; find it before you paste anything sensitive.
 3. **What should never be pasted.** Student records, patient data, unpublished research, personnel matters, and anything under FERPA, HIPAA, or a non-disclosure agreement. Institutional accounts may carry contractual protections that personal accounts do not.
 4. **Academic and professional integrity.** Disclosure norms vary by course, journal, and employer. The relevant question is not "is this allowed?" but "what am I expected to disclose, and to whom?"
 5. **Vendor lock-in and continuity.** Assistants, workspaces, and custom instructions built on one platform rarely transfer to another. Providers also discontinue models with limited notice. Ask what happens to your work if the tool changes or disappears.
-
-```{note}
-FGCU users: Microsoft Copilot is available through the institutional Microsoft 365 licence, which carries different data handling terms than a personal account on the same product. Check current institutional guidance before assuming which tools are approved for university work.
-```
-
-### Environmental and Concentration Costs
-
-Two further costs sit behind every prompt. **Training and serving** these models consumes substantial energy and water, and the largest models are the most expensive to run. And because pretraining at frontier scale requires capital available to very few organizations, the **model layer is highly concentrated** even as the application layer proliferates. A great many products, worldwide, ultimately depend on a small number of foundation models — a dependency worth noticing.
-
-> **Reflection Prompt:** What trade‑offs exist between convenience and control when choosing between open and proprietary AI systems?
 
 ## 7.5 Hands‑On Exploration
 
@@ -352,7 +340,7 @@ Explain your own limitations and potential biases.
 List where your training data may introduce cultural or regional imbalance.
 ```
 
-3. Evaluate how transparent and self-aware the model appears. Compare its self-description with the vendor's **published** documentation — do they agree?
+3. Evaluate how transparent and self-aware the model appears. Compare its self-description with the vendor's **published** documentation, do they agree?
 4. Discuss potential societal impacts and propose one mitigation strategy.
 
 **Deliverable:** 400-word analytical brief with evidence excerpts.
@@ -372,7 +360,7 @@ List where your training data may introduce cultural or regional imbalance.
 
 ### Exercise 6 – Update the Snapshot · **Core**
 
-**Goal:** Practice the most important skill in this module — recognizing that published information about AI tools decays, and verifying it yourself.
+**Goal:** Practice the most important skill in this module: recognizing that published information about AI tools decays, and verifying it yourself.
 
 **Instructions:**
 
@@ -404,7 +392,7 @@ Corrections that hold up can be submitted to the instructor for inclusion in the
 - A model that answers from pretraining is doing something quite different from one that retrieves and cites sources. Which of the two better deserves the word **know**? What does your answer imply about how you should verify what a model tells you?
 - When a model produces an essay, an image, or working code, what part of the result is yours? Where would you draw the line, and would you draw it in the same place for a student's assignment as for your own work?
 - The platforms in this module all now offer persistent workspaces and configurable assistants. Does that make AI a **collaborator**, or a very well-organized tool? Does the distinction change how you should use it?
-- Which of these seven platforms would you actually adopt for your own work, and which trade-off — cost, privacy, capability, or convenience — decided it?
+- Which of these seven platforms would you actually adopt for your own work, and which trade-off (cost, privacy, capability, or convenience), decided it?
 
 Reflect on how your answers would have differed two years ago, and what that suggests about how confidently anyone should predict the next two.
 
@@ -423,8 +411,4 @@ Reflect on how your answers would have differed two years ago, and what that sug
 - Perplexity AI. _About Perplexity._ <https://www.perplexity.ai/about>
 - Dendritic Institute (2025). _AI Literacy Series – Module 7: Foundational Models and General-Purpose LLMs._ (Slides & Video Lecture)
 
-```{admonition} Maintaining this module
-:class: seealso
 
-**Snapshot date: August 2026.** To update this module, revise only the tables marked **📅 Snapshot** in Sections 7.1, 7.2, and 7.3, and change the date in the "How to read this module" box at the top. The narrative text is written to be version-agnostic and should not need editing.
-```
