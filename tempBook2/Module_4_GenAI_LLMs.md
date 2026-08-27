@@ -9,14 +9,14 @@ After completing this module, you will be able to:
 - Explain what Generative AI is and how it differs from traditional AI.
 - Describe the core architecture and functioning of **Large Language Models (LLMs)**.
 - Identify key applications, benefits, and risks associated with generative models.
-- Understand how prompts, tokens, and context shape AI-generated content.
+- Explain how prompts, tokens, and context shape AI-generated content.
 - Reflect on the ethical, social, and creative implications of AI that can generate new knowledge and artifacts.
 
 ## Part I — From Traditional AI to Generative AI
 
 ### 1.1 Traditional AI: Learning to Solve Specific Tasks
 
-**Traditional** AI systems — such as those used in classification, recommendation, or forecasting — are mostly analytical in nature. They analyze data, detect patterns, make predictions, cluster, recommend, etc., based on what they have learned. They are also sometimes called **narrow AI**, because they are design to perform specific tasks.
+**Traditional** AI systems — such as those used in classification, recommendation, or forecasting — are mostly analytical in nature. They analyze data, detect patterns, make predictions, cluster, recommend, etc., based on what they have learned. They are also sometimes called **narrow AI**, because they are designed to perform specific tasks.
 
 Examples include:
 
@@ -59,13 +59,13 @@ Generative AI learns _how data is structured_, not just _what it contains_.
 
 ### 2.1 What Is a Large Language Model?
 
-A **Large Language Model (LLM)** is a neural network trained on vasts amounts of text to **predict the next word (token)** in a sequence. Through this simple objective, it learns grammar, facts, style, reasoning patterns, and even creative expression.
+A **Large Language Model (LLM)** is a neural network trained on vast amounts of text to **predict the next word (token)** in a sequence. Through this simple objective, it learns grammar, facts, style, reasoning patterns, and even creative expression.
 
 LLMs do not “know” language, they **model** it.
 
 **Key characteristics:**
 
-- Trained on vasts amounts of text data (e.g. books, articles, web content, code).
+- Trained on vast amounts of text data (e.g. books, articles, web content, code).
 - Contain billions to trillions of parameters (learned weights).
 - Use **transformer architectures** with _self-attention mechanisms_ to capture context.
 
@@ -101,11 +101,11 @@ LLMs are **general-purpose language engines** — capable of performing multiple
 
 ### 3.2 Cross-Modal Generative AI
 
-The boundaries between modalities are dissolving — many modern models are **multimodal**. They can process **text, images, audio, and video** in the same framework.
+The boundaries between modalities are dissolving, many modern models are **multimodal**. They can process **text, images, audio, and video** in the same framework.
 
 Examples:
 
-- **GPT-4o, Gemini, Claude 3.5** — integrate text, image, and speech.
+- **GPT, Gemini, Claude** — integrate text, image, and speech.
 - **Runway Gen-2, Pika** — generate video from text prompts.
 - **ImageBind** — learns representations across six sensory modalities.
 
